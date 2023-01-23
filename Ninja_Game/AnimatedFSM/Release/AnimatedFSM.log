@@ -1,0 +1,47 @@
+﻿  AnimatedSprite.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\AnimatedSprite.cpp(1,10): fatal  error C1083: Cannot open include file: 'AnimatedSprite.h': No such file or directory
+  AnimatedSpriteEnemy.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\AnimatedSpriteEnemy.cpp(1,10): fatal  error C1083: Cannot open include file: 'AnimatedSpriteEnemy.h': No such file or directory
+  AttackPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\AttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  circle.cpp
+  ClimbDownPlayerState.cpp
+  AccendLadderPlayerState.cpp
+  ClimbPausePlayerState.cpp
+  ClimbUpPlayerState.cpp
+  DecendLadderPlayerState.cpp
+  DiedPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\DiedPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  Enemy.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Enemy.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Events.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Events.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  GlidePlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\GlidePlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  IdleEnemyState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\IdleEnemyState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  JumpAttackPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\JumpAttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  JumpPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\JumpPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  JumpThrowAttackPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\JumpThrowAttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  Player.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Player.cpp(2,10): fatal  error C1083: Cannot open include file: 'Player.h': No such file or directory
+  main.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\main.cpp(1,10): fatal  error C1083: Cannot open include file: 'Defines.h': No such file or directory
+  IdlePlayerState.cpp
+  Compiling...
+  Rectangle.cpp
+  RevivedPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\RevivedPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  RunRightPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\RunRightPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  Set1.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  SlidePlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\SlidePlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  ThrowAttackEnemyState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\ThrowAttackEnemyState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+  ThrowAttackPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\ThrowAttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory

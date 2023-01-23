@@ -1,0 +1,18 @@
+﻿  main.cpp
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(35,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(35,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(35,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(35,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(35,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(35,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(36,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(36,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(36,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(36,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(36,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(36,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(208,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(241,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(264,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\AnimatedFSM\main.cpp(938,21): warning C4018: '<': signed/unsigned mismatch
+  AnimatedFSM.vcxproj -> C:\Users\c00290201\Documents\Gameplay-Programming-I\Ninja_Game\Debug\AnimatedFSM.exe
