@@ -26,6 +26,7 @@ void Player::handleInput(gpp::Events input) {
 
 void Player::update() {
 	m_tiles = m_tilesPtr->getTiles();
+	std::cout << m_tilesPtr << "\n";
 	m_feet_collision = sf::FloatRect(getAnimatedSprite().getPosition().x + 2.0f,
 									 getAnimatedSprite().getPosition().y + getAnimatedSprite().getGlobalBounds().height - 20.0f,
 									 getAnimatedSprite().getGlobalBounds().width - 15.0f,
@@ -74,3 +75,8 @@ void Player::setAnimatedSprite(AnimatedSprite& animated_sprite) {
 PlayerState* Player::getPlayerState() { return this->m_state; }
 
 void Player::setPlayerState(PlayerState* state) { this->m_state = state; }
+
+Tiles* Player::getTiles()
+{
+	return m_tilesPtr;
+}

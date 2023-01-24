@@ -22,6 +22,7 @@ public:
 	void setAnimatedSprite(AnimatedSprite&);
 	PlayerState* getPlayerState();
 	void setPlayerState(PlayerState*);
+	Tiles* getTiles();
 	float m_friction = 1.0f;
 	bool m_isGrounded = true;
 	bool m_tileIntersection = false;

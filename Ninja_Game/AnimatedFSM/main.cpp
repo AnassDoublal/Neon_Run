@@ -7,6 +7,7 @@
 #include <Debug.h>
 #include <Tiles.h>
 #include <Set1.h>
+#include <Set2.h>
 #include "circle.h"
 #include "Rectangle.h"
 #include "EndScreen.h"
@@ -39,6 +40,8 @@ bool rectangle_to_rectangle(Rectangle& a, Rectangle& b)
 
 int main()
 {
+	srand(time(NULL));
+
 	// Create the main window
 	sf::RenderWindow window(sf::VideoMode(800, 600), "Player Finite State Machine");
 
@@ -129,10 +132,29 @@ int main()
 	Tiles* tilesPtr = nullptr;
 
 	Set1 set1;
+	Set2 set2;
 
-	tilesPtr = &set1;
+	set1.init(tile_texture, window);
+	set2.init(tile_texture, window);
 
-	tilesPtr->init(tile_texture, window);
+	int randomSet = rand() % 2 + 1;
+
+	switch (randomSet)
+	{
+		case 1:
+			tilesPtr = &set1;
+			break;
+		case 2:
+			tilesPtr = &set2;
+			break;
+	}
+
+	for (int i = 0; i < tilesPtr->getTiles().size(); i++)
+	{
+		tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
+	}
+
+	//tilesPtr->init(tile_texture, window);
 
 	//std::vector<sf::Sprite> tiles = tilesPtr->getTiles();
 
@@ -569,6 +591,33 @@ int main()
 		}
 
 		tilesPtr->update(window, &player);
+
+		if (tilesPtr->getTiles()[tilesPtr->getTiles().size() - 1].getPosition().x < -31)
+		{
+			std::cout << "WE'RE IN !!! POGCHAMP\n";
+
+			for (int i = 0; i < tilesPtr->getTiles().size(); i++)
+			{
+				tilesPtr->getTiles()[i].setScale(.0f, .0f);
+			}
+
+			randomSet = rand() % 2 + 1;
+
+			switch (randomSet)
+			{
+			case 1:
+				tilesPtr = &set1;
+				break;
+			case 2:
+				tilesPtr = &set2;
+				break;
+			}
+
+			for (int i = 0; i < tilesPtr->getTiles().size(); i++)
+			{
+				tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
+			}
+		}
 
 		if (player.m_daggers.size() > 0)
 		{

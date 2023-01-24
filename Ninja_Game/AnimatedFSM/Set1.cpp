@@ -59,6 +59,11 @@ void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 
 	m_sprites.push_back(m_sprite_edge_right_top);
 
+	for (int i = 0; i < m_sprites.size(); i++)
+	{
+		m_sprites[i].setScale(.0f, .0f);
+	}
+
 	enemy.init(window);
 	medkit.init(window);
 	extraKunais.init(window);

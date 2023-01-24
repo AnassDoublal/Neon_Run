@@ -103,7 +103,7 @@ void Enemy::update(sf::RenderWindow& window, Player* player)
 
 	m_state->update(*this);
 	
-	if (m_daggers.size() > 0)
+	if (m_daggers.size() > 0 && m_daggers_rectangles.size() > 0)
 	{
 		if (m_daggerThrow)
 		{
