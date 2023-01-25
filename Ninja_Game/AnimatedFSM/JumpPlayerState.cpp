@@ -17,17 +17,17 @@ PlayerState* JumpPlayerState::handleInput(gpp::Events& input)
 	if (input.getCurrent() == gpp::Events::Event::ATTACK_START_EVENT)
 	{
 		DEBUG_MSG("JumpPlayerState -> JumpAttackPlayerState");
-		return new JumpAttackPlayerState(m_tiles);
+		return new JumpAttackPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::THROW_START_EVENT)
 	{
 		DEBUG_MSG("JumpPlayerState -> JumpThrowAttackPlayerState");
-		return new JumpThrowAttackPlayerState(m_tiles);
+		return new JumpThrowAttackPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::GLIDE_EVENT)
 	{
 		DEBUG_MSG("JumpPlayerState -> GlidePlayerState");
-		return new GlidePlayerState(m_tiles);
+		return new GlidePlayerState();
 	}
 	return nullptr;
 }
@@ -36,7 +36,7 @@ void JumpPlayerState::update(Player& player) {
 	
 	if (player.getAnimatedSprite().getPosition().y <= 405.0f && !player.m_tileIntersection)
 	{
-		for (auto& tile : m_tiles)
+		for (auto& tile : player.getTiles())
 		{
 			if (player.m_friction < 0.0f)
 			{
@@ -66,7 +66,7 @@ void JumpPlayerState::update(Player& player) {
 		else
 			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, std::floor(player.getAnimatedSprite().getPosition().y + 10.0f)));
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new RunRightPlayerState(m_tiles);
+		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -104,3 +104,8 @@ void JumpPlayerState::exit(Player& player)
 
 	player.m_tileIntersection = false;
 }
+
+//void JumpPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

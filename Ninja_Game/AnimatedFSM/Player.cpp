@@ -5,11 +5,11 @@
 #include <RunRightPlayerState.h>
 #include <DiedPlayerState.h>
 
-Player::Player(const AnimatedSprite& sprite, Tiles* t_tilesPtr) : m_animated_sprite(sprite), m_tilesPtr(t_tilesPtr), m_tiles(m_tilesPtr->getTiles())
+Player::Player(const AnimatedSprite& sprite) : m_animated_sprite(sprite)
 {
-	// Set the Player to Default to IdlePlayer State 
+	// Set the Player to Default to RunRightPlayer State 
 	// and Enter that State
-	m_state = new RunRightPlayerState(m_tiles);
+	m_state = new RunRightPlayerState();
 	m_state->enter(*this);
 }
 
@@ -25,8 +25,11 @@ void Player::handleInput(gpp::Events input) {
 }
 
 void Player::update() {
-	m_tiles = m_tilesPtr->getTiles();
-	std::cout << m_tilesPtr << "\n";
+	//std::cout << m_tilesPtr << "\n";
+	//m_tiles = m_tilesPtr->getTiles();
+
+	//std::cout << "PLAYER POINTER : " << m_tilesPtr << "\n\n";
+
 	m_feet_collision = sf::FloatRect(getAnimatedSprite().getPosition().x + 2.0f,
 									 getAnimatedSprite().getPosition().y + getAnimatedSprite().getGlobalBounds().height - 20.0f,
 									 getAnimatedSprite().getGlobalBounds().width - 15.0f,
@@ -44,7 +47,7 @@ void Player::update() {
 			PlayerState* temp;
 			PlayerState* state;
 			temp = getPlayerState();
-			state = new DiedPlayerState(m_tiles);
+			state = new DiedPlayerState();
 			getPlayerState()->exit(*this);
 			setPlayerState(state);
 			getPlayerState()->enter(*this);
@@ -76,7 +79,12 @@ PlayerState* Player::getPlayerState() { return this->m_state; }
 
 void Player::setPlayerState(PlayerState* state) { this->m_state = state; }
 
-Tiles* Player::getTiles()
+void Player::setTiles(std::vector<sf::Sprite>& t_tiles)
 {
-	return m_tilesPtr;
+	m_tiles = t_tiles;
+}
+
+std::vector<sf::Sprite>& Player::getTiles()
+{
+	return m_tiles;
 }

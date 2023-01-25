@@ -28,7 +28,7 @@ void ThrowAttackPlayerState::update(Player& player) {
 	if (m_clock.getElapsedTime().asSeconds() > .3f) {
 		DEBUG_MSG("ThrowAttackPlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new RunRightPlayerState(m_tiles);
+		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -62,3 +62,8 @@ void ThrowAttackPlayerState::exit(Player& player)
 {
 	DEBUG_MSG("Exiting AttackPlayerState");
 }
+
+//void ThrowAttackPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

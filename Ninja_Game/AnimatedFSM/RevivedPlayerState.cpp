@@ -20,7 +20,7 @@ void RevivedPlayerState::update(Player& player) {
 	DEBUG_MSG("RevivedPlayerState -> RunRightPlayerState");
 	if (m_clock.getElapsedTime().asSeconds() > 0.5f) {
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new RunRightPlayerState(m_tiles);
+		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -62,3 +62,8 @@ void RevivedPlayerState::exit(Player& player)
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(true);
 }
+
+//void RevivedPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

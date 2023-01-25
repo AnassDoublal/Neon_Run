@@ -11,6 +11,8 @@ void ExtraKunais::init(sf::RenderWindow& window)
 	m_sprite.setTexture(m_texture);
 	m_sprite.setScale(.5f, .5f);
 	m_sprite.setPosition(window.getSize().x + 620.0f, 255.0f);
+
+	m_sprite.setScale(.0f, .0f);
 }
 
 void ExtraKunais::update(sf::RenderWindow& window, Player* player)

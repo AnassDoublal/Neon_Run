@@ -12,7 +12,7 @@ PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 	if (input.getCurrent() == gpp::Events::Event::HIT_GROUND_EVENT)
 	{
 		DEBUG_MSG("GlidePlayerState -> RunRightPlayerState");
-		return new RunRightPlayerState(m_tiles);
+		return new RunRightPlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT)
 	{
@@ -22,7 +22,7 @@ PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 	else if (input.getCurrent() == gpp::Events::Event::GLIDE_STOP_EVENT)
 	{
 		DEBUG_MSG("GlidePlayerState -> JumpPlayerState");
-		return new JumpPlayerState(m_tiles);
+		return new JumpPlayerState();
 	}
 	return nullptr;
 }
@@ -37,7 +37,7 @@ void GlidePlayerState::update(Player& player) {
 		player.m_isGrounded = true;
 	}
 
-	for (auto& tile : m_tiles)
+	for (auto& tile : player.getTiles())
 	{
 		if (player.m_feet_collision.intersects(tile.getGlobalBounds()))
 		{
@@ -48,7 +48,7 @@ void GlidePlayerState::update(Player& player) {
 
 	if (player.m_isGrounded) {
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new RunRightPlayerState(m_tiles);
+		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -84,3 +84,8 @@ void GlidePlayerState::exit(Player& player)
 
 	DEBUG_MSG("Exiting GlidePlayerState");
 }
+
+//void GlidePlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

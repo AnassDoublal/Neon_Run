@@ -71,6 +71,8 @@ void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 
 void Set1::update(sf::RenderWindow& window, Player* player)
 {
+	//std::cout << "SET 1 X : " << m_sprites[m_sprites.size() - 1].getPosition().x << "\n\n";
+
 	if(player->m_isDead)
 		m_friction *= .999f;
 
@@ -83,11 +85,6 @@ void Set1::update(sf::RenderWindow& window, Player* player)
 		else
 		{
 			m_sprites[i].move(-m_friction, .0f);
-		}
-
-		if (m_sprites[i].getPosition().x <= -m_sprites[i].getGlobalBounds().width)
-		{
-			m_sprites[i].setPosition(m_sprites[i].getPosition().x + window.getSize().x * 3, m_sprites[i].getPosition().y);
 		}
 	}
 
@@ -108,6 +105,8 @@ void Set1::render(sf::RenderWindow& window)
 
 std::vector<sf::Sprite>& Set1::getTiles()
 {
+	//std::cout << "SET 1 ZONE\n";
+
 	return m_sprites;
 }
 

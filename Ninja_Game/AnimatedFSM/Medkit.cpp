@@ -11,6 +11,8 @@ void Medkit::init(sf::RenderWindow& window)
 	m_sprite.setTexture(m_texture);
 	m_sprite.setScale(.1f, .1f);
 	m_sprite.setPosition(window.getSize().x + 850.0f, 153.0f);
+
+	m_sprite.setScale(.0f, .0f);
 }
 
 void Medkit::update(sf::RenderWindow& window, Player* player)

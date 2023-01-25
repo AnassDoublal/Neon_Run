@@ -8,13 +8,8 @@
 
 class Player
 {
-private:
-	PlayerState* m_state;
-	AnimatedSprite m_animated_sprite;
-	Tiles* m_tilesPtr;
-	std::vector<sf::Sprite>& m_tiles;
 public:
-	Player(const AnimatedSprite&, Tiles*);
+	Player(const AnimatedSprite&);
 	virtual void handleInput(gpp::Events);
 	virtual void update();
 	AnimatedSprite& getAnimatedSprite();
@@ -22,7 +17,8 @@ public:
 	void setAnimatedSprite(AnimatedSprite&);
 	PlayerState* getPlayerState();
 	void setPlayerState(PlayerState*);
-	Tiles* getTiles();
+	void setTiles(std::vector<sf::Sprite>& t_tiles);
+	std::vector<sf::Sprite>& getTiles();
 	float m_friction = 1.0f;
 	bool m_isGrounded = true;
 	bool m_tileIntersection = false;
@@ -41,6 +37,10 @@ public:
 
 	int m_totalShots = 0;
 	int m_shotsHit = 0;
+private:
+	PlayerState* m_state;
+	AnimatedSprite m_animated_sprite;
+	std::vector<sf::Sprite> m_tiles;
 };
 #endif
 

@@ -57,6 +57,8 @@ void Enemy::init(sf::RenderWindow& window)
 
 		m_daggers_rectangles.push_back(rDagger);
 	}
+
+	m_animated_sprite.setScale(.0f, .0f);
 }
 
 void Enemy::update(sf::RenderWindow& window, Player* player)

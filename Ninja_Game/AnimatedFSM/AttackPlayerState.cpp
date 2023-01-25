@@ -12,12 +12,12 @@ PlayerState* AttackPlayerState::handleInput(gpp::Events& input)
 	if (input.getCurrent() == gpp::Events::Event::RUN_RIGHT_START_EVENT)
 	{
 		DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
-		return new RunRightPlayerState(m_tiles);
+		return new RunRightPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::ATTACK_STOP_EVENT)
 	{
 		DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
-		return new RunRightPlayerState(m_tiles);
+		return new RunRightPlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
 		DEBUG_MSG("AttackPlayerState -> DiedPlayerState");
@@ -26,14 +26,14 @@ PlayerState* AttackPlayerState::handleInput(gpp::Events& input)
 	return nullptr;
 }
 void AttackPlayerState::update(Player& player) {
-	for (int i = 0; i < m_tiles.size(); i++)
+	for (int i = 0; i < player.getTiles().size(); i++)
 	{
-		if (player.m_feet_collision.intersects(m_tiles[i].getGlobalBounds()))
+		if (player.m_feet_collision.intersects(player.getTiles()[i].getGlobalBounds()))
 		{
 			player.m_collision_helper++;
 		}
 
-		if (i >= m_tiles.size() - 1)
+		if (i >= player.getTiles().size() - 1)
 		{
 			//std::cout << "NUMBER : " << player.m_collision_helper << "\n";
 
@@ -50,7 +50,7 @@ void AttackPlayerState::update(Player& player) {
 	if (m_clock.getElapsedTime().asSeconds() > .33f || player.getAnimatedSprite().getPosition().y < 405.0f && player.m_canFall) {
 		DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new RunRightPlayerState(m_tiles);
+		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -83,3 +83,8 @@ void AttackPlayerState::exit(Player& player)
 
 	player.m_isAttacking = false;
 }
+
+//void AttackPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

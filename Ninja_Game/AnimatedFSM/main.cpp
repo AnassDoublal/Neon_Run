@@ -2,7 +2,7 @@
 
 #include <iostream>
 #include <SFML/Graphics.hpp>
-#include <Player.h>
+//#include <Player.h>
 #include <Events.h>
 #include <Debug.h>
 #include <Tiles.h>
@@ -12,6 +12,16 @@
 #include "Rectangle.h"
 #include "EndScreen.h"
 #include "Audio.h"
+#include "SlidePlayerState.h"
+#include "RunRightPlayerState.h"
+#include "AttackPlayerState.h"
+#include "JumpAttackPlayerState.h"
+#include "JumpPlayerState.h"
+#include "JumpThrowAttackPlayerState.h"
+#include "ThrowAttackPlayerState.h"
+#include "DiedEnemyState.h"
+#include "RevivedPlayerState.h"
+#include "GlidePlayerState.h"
 
 using namespace std;
 
@@ -154,13 +164,17 @@ int main()
 		tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
 	}
 
+	tilesPtr->getEnemy().getAnimatedSprite().setScale(-.3f, .3f);
+	tilesPtr->getMedkit().getSprite().setScale(.1f, .1f);
+	tilesPtr->getExtraKunais().getSprite().setScale(.5f, .5f);
+
 	//tilesPtr->init(tile_texture, window);
 
 	//std::vector<sf::Sprite> tiles = tilesPtr->getTiles();
 
 	//std::cout << *(tiles).size() << "\n";
 
-	Player player(player_animated_sprite, tilesPtr);
+	Player player(player_animated_sprite);
 
 	player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 405.0f));
 
@@ -590,16 +604,23 @@ int main()
 			player.m_friction = 1.0f;
 		}
 
+		player.setTiles(tilesPtr->getTiles());
+
 		tilesPtr->update(window, &player);
 
-		if (tilesPtr->getTiles()[tilesPtr->getTiles().size() - 1].getPosition().x < -31)
+		if (tilesPtr->getTiles()[tilesPtr->getTiles().size() - 1].getPosition().x < -tilesPtr->getTiles()[tilesPtr->getTiles().size() - 1].getGlobalBounds().width)
 		{
 			std::cout << "WE'RE IN !!! POGCHAMP\n";
 
 			for (int i = 0; i < tilesPtr->getTiles().size(); i++)
 			{
+				tilesPtr->getTiles()[i].setPosition(tilesPtr->getTiles()[i].getPosition().x + window.getSize().x * 3, tilesPtr->getTiles()[i].getPosition().y);
 				tilesPtr->getTiles()[i].setScale(.0f, .0f);
 			}
+
+			tilesPtr->getEnemy().getAnimatedSprite().setScale(.0f, .0f);
+			tilesPtr->getMedkit().getSprite().setScale(.0f, .0f);
+			tilesPtr->getExtraKunais().getSprite().setScale(.0f, .0f);
 
 			randomSet = rand() % 2 + 1;
 
@@ -607,9 +628,11 @@ int main()
 			{
 			case 1:
 				tilesPtr = &set1;
+				std::cout << "SET1\n";
 				break;
 			case 2:
 				tilesPtr = &set2;
+				std::cout << "SET2\n";
 				break;
 			}
 
@@ -617,7 +640,13 @@ int main()
 			{
 				tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
 			}
+
+			tilesPtr->getEnemy().getAnimatedSprite().setScale(-.3f, .3f);
+			tilesPtr->getMedkit().getSprite().setScale(.1f, .1f);
+			tilesPtr->getExtraKunais().getSprite().setScale(.5f, .5f);
 		}
+
+		//std::cout << "TILE POINTER : " << tilesPtr << "\n";
 
 		if (player.m_daggers.size() > 0)
 		{

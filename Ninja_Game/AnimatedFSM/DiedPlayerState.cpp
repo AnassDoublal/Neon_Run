@@ -18,7 +18,7 @@ void DiedPlayerState::update(Player& player) {
 
 	if (player.getAnimatedSprite().getPosition().y < 405.0f && !player.m_tileIntersection && !player.m_isGrounded)
 	{
-		for (auto& tile : m_tiles)
+		for (auto& tile : player.getTiles())
 		{
 			if (player.m_friction < 0.0f)
 			{
@@ -85,3 +85,8 @@ void DiedPlayerState::exit(Player& player)
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(true);
 }
+
+//void DiedPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

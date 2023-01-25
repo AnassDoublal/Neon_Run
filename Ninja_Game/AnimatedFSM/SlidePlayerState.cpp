@@ -12,7 +12,7 @@ PlayerState* SlidePlayerState::handleInput(gpp::Events& input)
 	if (input.getCurrent() == gpp::Events::Event::RUN_RIGHT_START_EVENT)
 	{
 		DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
-		return new RunRightPlayerState(m_tiles);
+		return new RunRightPlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
 		DEBUG_MSG("SlidePlayerState -> DiedPlayerState");
@@ -20,7 +20,7 @@ PlayerState* SlidePlayerState::handleInput(gpp::Events& input)
 	}*/
 	else if (input.getCurrent() == gpp::Events::Event::JUMP_UP_EVENT) {
 		DEBUG_MSG("SlidePlayerState -> JumpPlayerState");
-		return new JumpPlayerState(m_tiles);
+		return new JumpPlayerState();
 	}
 	return nullptr;
 }
@@ -32,14 +32,14 @@ void SlidePlayerState::update(Player& player) {
 	// state and animation at the end of the slide
 	// this was added so sliding does not go one indefinitely
 
-	for (int i = 0; i < m_tiles.size(); i++)
+	for (int i = 0; i < player.getTiles().size(); i++)
 	{
-		if (player.m_feet_collision.intersects(m_tiles[i].getGlobalBounds()))
+		if (player.m_feet_collision.intersects(player.getTiles()[i].getGlobalBounds()))
 		{
 			player.m_collision_helper++;
 		}
 
-		if (i >= m_tiles.size() - 1)
+		if (i >= player.getTiles().size() - 1)
 		{
 			//std::cout << "NUMBER : " << player.m_collision_helper << "\n";
 
@@ -56,7 +56,7 @@ void SlidePlayerState::update(Player& player) {
 	if (m_clock.getElapsedTime().asSeconds() > 2.0f || player.getAnimatedSprite().getPosition().y < 405.0f && player.m_canFall) {
 		DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new RunRightPlayerState(m_tiles);
+		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -91,3 +91,8 @@ void SlidePlayerState::exit(Player& player)
 
 	DEBUG_MSG("Exiting SlidePlayerState");
 }
+
+//void SlidePlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}

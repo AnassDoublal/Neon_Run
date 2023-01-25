@@ -16,12 +16,12 @@ PlayerState* RunRightPlayerState::handleInput(gpp::Events& input)
 	if (input.getCurrent() == gpp::Events::Event::ATTACK_START_EVENT)
 	{
 		DEBUG_MSG("RunRightPlayerState -> AttackPlayerState");
-		return new AttackPlayerState(m_tiles);
+		return new AttackPlayerState();
 	}
 	if (input.getCurrent() == gpp::Events::Event::THROW_START_EVENT)
 	{
 		DEBUG_MSG("RunRightPlayerState -> ThrowAttackPlayerState");
-		return new ThrowAttackPlayerState(m_tiles);
+		return new ThrowAttackPlayerState();
 	}
 	//else if (input.getCurrent() == gpp::Events::Event::HIT_WALL_EVENT || input.getCurrent() == gpp::Events::Event::RUN_RIGHT_STOP_EVENT)
 	//{
@@ -40,11 +40,11 @@ PlayerState* RunRightPlayerState::handleInput(gpp::Events& input)
 	//}
 	else if (input.getCurrent() == gpp::Events::Event::JUMP_UP_EVENT) {
 		DEBUG_MSG("IdlePlayerState -> JumpPlayerState");
-		return new JumpPlayerState(m_tiles);
+		return new JumpPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::SLIDE_EVENT) {
 		DEBUG_MSG("RunRightPlayerState -> SlidePlayerState");
-		return new SlidePlayerState(m_tiles);
+		return new SlidePlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
 		DEBUG_MSG("RunRightPlayerState -> DiedPlayerState");
@@ -54,14 +54,16 @@ PlayerState* RunRightPlayerState::handleInput(gpp::Events& input)
 }
 void RunRightPlayerState::update(Player& player) {
 
-	for (int i=0; i<m_tiles.size(); i++)
+	//std::cout << m_tiles.size() << "\n";
+
+	for (int i=0; i< player.getTiles().size(); i++)
 	{
-		if (player.m_feet_collision.intersects(m_tiles[i].getGlobalBounds()))
+		if (player.m_feet_collision.intersects(player.getTiles()[i].getGlobalBounds()))
 		{
 			player.m_collision_helper++;
 		}
 
-		if (i >= m_tiles.size() - 1)
+		if (i >= player.getTiles().size() - 1)
 		{
 			//std::cout << "NUMBER : " << player.m_collision_helper << "\n";
 
@@ -79,7 +81,7 @@ void RunRightPlayerState::update(Player& player) {
 	{
 		player.m_friction = .0f;
 		PlayerState* temp = player.getPlayerState();
-		PlayerState* state = new JumpPlayerState(m_tiles);
+		PlayerState* state = new JumpPlayerState();
 		player.getPlayerState()->exit(player);
 		player.setPlayerState(state);
 		player.getPlayerState()->enter(player);
@@ -110,3 +112,8 @@ void RunRightPlayerState::exit(Player& player)
 {
 	DEBUG_MSG("Exiting RunRightPlayerState");
 }
+
+//void RunRightPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
+//{
+//	m_tiles = t_tiles;
+//}
