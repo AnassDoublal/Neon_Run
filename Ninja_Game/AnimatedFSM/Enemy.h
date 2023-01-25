@@ -11,7 +11,7 @@ class Player;
 class Enemy
 {
 	public:
-		void init(sf::RenderWindow& window);
+		void init(sf::RenderWindow& window, float posX, float posY);
 		void update(sf::RenderWindow& window, Player* player);
 		void render(sf::RenderWindow& window);
 

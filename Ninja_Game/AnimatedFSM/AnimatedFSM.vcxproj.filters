@@ -195,6 +195,9 @@
     <ClInclude Include="Set2.h">
       <Filter>Header Files\Tiles</Filter>
     </ClInclude>
+    <ClInclude Include="Set3.h">
+      <Filter>Header Files\Tiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -297,6 +300,9 @@
       <Filter>Source Files\GameObjects</Filter>
     </ClCompile>
     <ClCompile Include="Set2.cpp">
+      <Filter>Source Files\Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Set3.cpp">
       <Filter>Source Files\Tiles</Filter>
     </ClCompile>
   </ItemGroup>

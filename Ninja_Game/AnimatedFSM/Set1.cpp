@@ -64,7 +64,7 @@ void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 		m_sprites[i].setScale(.0f, .0f);
 	}
 
-	enemy.init(window);
+	enemy.init(window, 400.0f, 245.0f);
 	medkit.init(window);
 	extraKunais.init(window);
 }

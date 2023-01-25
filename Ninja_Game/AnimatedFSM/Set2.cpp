@@ -105,7 +105,7 @@ void Set2::init(sf::Texture& texture, sf::RenderWindow& window)
 		m_sprites[i].setScale(.0f, .0f);
 	}
 
-	enemy.init(window);
+	enemy.init(window, 750.0f, 250.0f);
 }
 
 void Set2::update(sf::RenderWindow& window, Player* player)

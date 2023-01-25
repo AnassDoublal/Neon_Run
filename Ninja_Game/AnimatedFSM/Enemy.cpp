@@ -8,7 +8,7 @@
 //
 //}
 
-void Enemy::init(sf::RenderWindow& window)
+void Enemy::init(sf::RenderWindow& window, float posX, float PosY)
 {
 	if (!m_texture.loadFromFile("assets/EnemySpriteSheet.png")) {
 		std::cout << "error loading enemy spritesheet";
@@ -17,7 +17,7 @@ void Enemy::init(sf::RenderWindow& window)
 	m_animated_sprite.setTexture(m_texture);
 	m_animated_sprite.setTextureRect(sf::IntRect(3900, 0, 232, 439));
 	m_animated_sprite.setScale(-.3f, .3f);
-	m_animated_sprite.setPosition(window.getSize().x + 400.0f, 245.0f);
+	m_animated_sprite.setPosition(window.getSize().x + posX, PosY);
 
 	m_state = new IdleEnemyState();
 	m_state->enter(*this);

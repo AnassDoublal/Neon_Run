@@ -12,16 +12,7 @@
 #include "Rectangle.h"
 #include "EndScreen.h"
 #include "Audio.h"
-#include "SlidePlayerState.h"
-#include "RunRightPlayerState.h"
-#include "AttackPlayerState.h"
-#include "JumpAttackPlayerState.h"
-#include "JumpPlayerState.h"
-#include "JumpThrowAttackPlayerState.h"
-#include "ThrowAttackPlayerState.h"
-#include "DiedEnemyState.h"
-#include "RevivedPlayerState.h"
-#include "GlidePlayerState.h"
+#include "Set3.h"
 
 using namespace std;
 
@@ -143,11 +134,13 @@ int main()
 
 	Set1 set1;
 	Set2 set2;
+	Set3 set3;
 
 	set1.init(tile_texture, window);
 	set2.init(tile_texture, window);
+	set3.init(tile_texture, window);
 
-	int randomSet = rand() % 2 + 1;
+	int randomSet = rand() % 3 + 1;
 
 	switch (randomSet)
 	{
@@ -156,6 +149,9 @@ int main()
 			break;
 		case 2:
 			tilesPtr = &set2;
+			break;
+		case 3:
+			tilesPtr = &set3;
 			break;
 	}
 
@@ -622,7 +618,7 @@ int main()
 			tilesPtr->getMedkit().getSprite().setScale(.0f, .0f);
 			tilesPtr->getExtraKunais().getSprite().setScale(.0f, .0f);
 
-			randomSet = rand() % 2 + 1;
+			randomSet = rand() % 3 + 1;
 
 			switch (randomSet)
 			{
@@ -633,6 +629,10 @@ int main()
 			case 2:
 				tilesPtr = &set2;
 				std::cout << "SET2\n";
+				break;
+			case 3:
+				tilesPtr = &set3;
+				std::cout << "SET3\n";
 				break;
 			}
 
