@@ -8,7 +8,7 @@ EnemyState* DiedEnemyState::setAction() {
 }
 
 void DiedEnemyState::update(Enemy& enemy) {
-	if (enemy.m_animated_sprite.getPosition().x > 1000.0f)
+	if (enemy.m_animated_sprite.getPosition().x > 2120.0f)
 	{
 		enemy.m_isDead = false;
 		enemy.m_rectangle.setWidth(enemy.getAnimatedSprite().getGlobalBounds().width);

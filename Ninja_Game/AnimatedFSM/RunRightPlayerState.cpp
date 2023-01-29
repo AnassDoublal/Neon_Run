@@ -77,7 +77,7 @@ void RunRightPlayerState::update(Player& player) {
 		}
 	}
 
-	if (player.getAnimatedSprite().getPosition().y < 405.0f && player.m_canFall)
+	if (player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall)
 	{
 		player.m_friction = .0f;
 		PlayerState* temp = player.getPlayerState();

@@ -7,7 +7,7 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 
 	m_sprite_edge_left.setTexture(texture);
 	m_sprite_edge_left.setTextureRect(sf::IntRect(32 * 4, 32, 32, 32));
-	m_sprite_edge_left.setPosition(sf::Vector2f(window.getSize().x, 420.0f));
+	m_sprite_edge_left.setPosition(sf::Vector2f(window.getSize().x, 820.0f));
 
 	m_PosX = window.getSize().x + 31.99f;
 
@@ -16,19 +16,19 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 		sf::Sprite sprite_middle;
 		sprite_middle.setTexture(texture);
 		sprite_middle.setTextureRect(sf::IntRect(32 * 5, 32, 32, 32));
-		sprite_middle.setPosition(sf::Vector2f(m_PosX, 420.0f));
+		sprite_middle.setPosition(sf::Vector2f(m_PosX, 820.0f));
 		m_sprites_middle.push_back(sprite_middle);
 		m_PosX += 31.99f;
 	}
 
 	m_sprite_edge_right.setTexture(texture);
 	m_sprite_edge_right.setTextureRect(sf::IntRect(32 * 6, 32, 32, 32));
-	m_sprite_edge_right.setPosition(sf::Vector2f(m_sprites_middle[m_sprites_middle.size() - 1].getPosition().x + 31.99f, 420.0f));
+	m_sprite_edge_right.setPosition(sf::Vector2f(m_sprites_middle[m_sprites_middle.size() - 1].getPosition().x + 31.99f, 820.0f));
 
 	// Middle tiles
 
 	m_sprite_edge_left_middle = m_sprite_edge_left;
-	m_sprite_edge_left_middle.setPosition(sf::Vector2f(window.getSize().x + 275.0f, 300.0f));
+	m_sprite_edge_left_middle.setPosition(sf::Vector2f(window.getSize().x + 275.0f, 700.0f));
 
 	m_PosX_middle = 31.99f;
 
@@ -48,7 +48,7 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 	// Top tiles
 
 	m_sprite_edge_left_top = m_sprite_edge_left;
-	m_sprite_edge_left_top.setPosition(sf::Vector2f(window.getSize().x + 700.0f, 175.0f));
+	m_sprite_edge_left_top.setPosition(sf::Vector2f(window.getSize().x + 700.0f, 575.0f));
 
 	m_PosX_top = 31.99f;
 
@@ -69,7 +69,7 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 
 	m_sprite_edge_left_right.setTexture(texture);
 	m_sprite_edge_left_right.setTextureRect(sf::IntRect(32 * 4, 32, 32, 32));
-	m_sprite_edge_left_right.setPosition(sf::Vector2f(window.getSize().x + 900.0f, 420.0f));
+	m_sprite_edge_left_right.setPosition(sf::Vector2f(window.getSize().x + 900.0f, 820.0f));
 
 	m_PosX_right = window.getSize().x + 900.0f + 31.99f;
 
@@ -78,14 +78,14 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 		sf::Sprite sprite_middle;
 		sprite_middle.setTexture(texture);
 		sprite_middle.setTextureRect(sf::IntRect(32 * 5, 32, 32, 32));
-		sprite_middle.setPosition(sf::Vector2f(m_PosX_right, 420.0f));
+		sprite_middle.setPosition(sf::Vector2f(m_PosX_right, 820.0f));
 		m_sprites_middle_right.push_back(sprite_middle);
 		m_PosX_right += 31.99f;
 	}
 
 	m_sprite_edge_right_right.setTexture(texture);
 	m_sprite_edge_right_right.setTextureRect(sf::IntRect(32 * 6, 32, 32, 32));
-	m_sprite_edge_right_right.setPosition(sf::Vector2f(m_sprites_middle_right[m_sprites_middle_right.size() - 1].getPosition().x + 31.99f, 420.0f));
+	m_sprite_edge_right_right.setPosition(sf::Vector2f(m_sprites_middle_right[m_sprites_middle_right.size() - 1].getPosition().x + 31.99f, 820.0f));
 
 	// Left tiles
 
@@ -136,7 +136,7 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 
 	m_sprites.push_back(m_sprite_edge_right_top);
 
-	enemy.init(window, 1400.0f, 45.0f);
+	enemy.init(window, 1400.0f, 445.0f);
 }
 
 void Set3::update(sf::RenderWindow& window, Player* player)
@@ -148,7 +148,7 @@ void Set3::update(sf::RenderWindow& window, Player* player)
 	{
 		if (!player->m_isDead)
 		{
-			m_sprites[i].move(-.2f, .0f);
+			m_sprites[i].move(-.5f, .0f);
 		}
 		else
 		{

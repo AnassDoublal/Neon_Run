@@ -20,9 +20,9 @@ PlayerState* JumpThrowAttackPlayerState::handleInput(gpp::Events& input)
 	return nullptr;
 }
 void JumpThrowAttackPlayerState::update(Player& player) {
-	player.m_friction -= .002f;
+	player.m_friction -= .0075f;
 
-	if (player.getAnimatedSprite().getPosition().y <= 405.0f && !player.m_tileIntersection)
+	if (player.getAnimatedSprite().getPosition().y <= 805.0f && !player.m_tileIntersection)
 	{
 		for (auto& tile : player.getTiles())
 		{
@@ -37,7 +37,7 @@ void JumpThrowAttackPlayerState::update(Player& player) {
 
 			}
 		}
-		player.getAnimatedSprite().move(sf::Vector2f(.0f, -1.0f * player.m_friction));
+		player.getAnimatedSprite().move(sf::Vector2f(.0f, -4.0f * player.m_friction));
 	}
 	else
 	{
@@ -47,7 +47,7 @@ void JumpThrowAttackPlayerState::update(Player& player) {
 	if (player.m_isGrounded) {
 		DEBUG_MSG("JumpThrowAttackPlayerState -> RunRightPlayerState");
 		if (!player.m_tileIntersection)
-			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 405.0f));
+			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
 		else
 			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, std::floor(player.getAnimatedSprite().getPosition().y - 25.0f)));
 		PlayerState* temp = player.getPlayerState();

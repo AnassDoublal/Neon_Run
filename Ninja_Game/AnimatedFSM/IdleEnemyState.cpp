@@ -42,7 +42,7 @@ EnemyState* IdleEnemyState::setAction() {
 void IdleEnemyState::update(Enemy& enemy) {
 	if (!enemy.m_isDead)
 	{
-		if (enemy.m_animated_sprite.getPosition().x < 800.0f && !enemy.m_isPlayerDead)
+		if (enemy.m_animated_sprite.getPosition().x < 1920.0f && !enemy.m_isPlayerDead)
 		{
 			if (m_clock.getElapsedTime().asSeconds() > 1.0f) {
 				DEBUG_MSG("IdleEnemyState -> ThrowAttackEnemyState");

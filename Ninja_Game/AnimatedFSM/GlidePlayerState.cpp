@@ -29,11 +29,11 @@ PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 void GlidePlayerState::update(Player& player) {
 	DEBUG_MSG("GlidePlayerState -> RunRightPlayerState");
 
-	player.getAnimatedSprite().move(sf::Vector2f(.0f, .1f));
+	player.getAnimatedSprite().move(sf::Vector2f(.0f, .25f));
 
-	if (player.getAnimatedSprite().getPosition().y >= 405.0f)
+	if (player.getAnimatedSprite().getPosition().y >= 805.0f)
 	{
-		player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 405.0f));
+		player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
 		player.m_isGrounded = true;
 	}
 

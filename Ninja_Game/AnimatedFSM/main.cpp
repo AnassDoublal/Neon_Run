@@ -44,7 +44,7 @@ int main()
 	srand(time(NULL));
 
 	// Create the main window
-	sf::RenderWindow window(sf::VideoMode(800, 600), "Player Finite State Machine");
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Player Finite State Machine");
 
 	window.setKeyRepeatEnabled(false);
 
@@ -78,13 +78,13 @@ int main()
 
 	sf::Sprite bg_sprite;
 	bg_sprite.setTexture(bg_texture);
-	bg_sprite.setScale(sf::Vector2f(.6f, .6f));
+	//bg_sprite.setScale(sf::Vector2f(.6f, .6f));
 
 	sf::Sprite bg_sprite_copy;
 	bg_sprite_copy.setTexture(bg_texture);
 	bg_sprite_copy.setOrigin(sf::Vector2f(bg_sprite_copy.getGlobalBounds().width / 2.0f, bg_sprite_copy.getGlobalBounds().height / 2.0f));
 	bg_sprite_copy.setPosition(sf::Vector2f(bg_sprite.getGlobalBounds().width + bg_sprite.getGlobalBounds().width/2.0f - 1.0f, bg_sprite.getGlobalBounds().height / 2.0f));
-	bg_sprite_copy.setScale(sf::Vector2f(-.6f, .6f));
+	bg_sprite_copy.setScale(sf::Vector2f(-1.0f, 1.0f));
 
 	float bg_friction = .05f;
 
@@ -97,32 +97,32 @@ int main()
 	std::vector<sf::Sprite> tiles_ground_1;
 	float ground_1_PosX = .0f;
 
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 40; i++)
 	{
 		sf::Sprite ground;
 		ground.setTexture(tile_texture);
 		ground.setTextureRect(sf::IntRect(32, 32, 32, 32));
 		ground.setScale(sf::Vector2f(1.5f, 1.5f));
-		ground.setPosition(sf::Vector2f(ground_PosX, 536.0f));
+		ground.setPosition(sf::Vector2f(ground_PosX, window.getSize().y - 128.0f - 16.0f));
 		tiles_ground.push_back(ground);
-		ground_PosX += 32.0f;
+		ground_PosX += 32.0f * 1.5f;
 
 		sf::Sprite ground_1;
 		ground_1.setTexture(tile_texture);
 		ground_1.setTextureRect(sf::IntRect(32, 64, 32, 32));
 		ground_1.setScale(sf::Vector2f(1.5f, 1.5f));
-		ground_1.setPosition(sf::Vector2f(ground_1_PosX, 568.0f));
+		ground_1.setPosition(sf::Vector2f(ground_1_PosX, window.getSize().y - 96.0f - 16.0f));
 		tiles_ground_1.push_back(ground_1);
-		ground_1_PosX += 32.0f;
+		ground_1_PosX += 32.0f * 1.5f;
 	}
 
 	std::vector<sf::Sprite> tiles_ground_copy = tiles_ground;
 	std::vector<sf::Sprite> tiles_ground_1_copy = tiles_ground_1;
 
-	for (int i = 0; i < 25; i++)
+	for (int i = 0; i < 40; i++)
 	{
-		tiles_ground_copy[i].setPosition(tiles_ground_copy[i].getPosition().x + 32.0f * 25.0f, 536.0f);
-		tiles_ground_1_copy[i].setPosition(tiles_ground_1_copy[i].getPosition().x + 32.0f * 25.0f, 568.0f);
+		tiles_ground_copy[i].setPosition(tiles_ground_copy[i].getPosition().x + 32.0f * 25.0f, window.getSize().y - 128.0f - 16.0f);
+		tiles_ground_1_copy[i].setPosition(tiles_ground_1_copy[i].getPosition().x + 32.0f * 25.0f, window.getSize().y - 96.0f - 16.0f);
 	}
 
 	bool allowPositionChangeGround1 = true;
@@ -141,6 +141,7 @@ int main()
 	set3.init(tile_texture, window);
 
 	int randomSet = rand() % 3 + 1;
+	int currentSet = 0;
 
 	switch (randomSet)
 	{
@@ -155,6 +156,8 @@ int main()
 			break;
 	}
 
+	currentSet = randomSet;
+
 	for (int i = 0; i < tilesPtr->getTiles().size(); i++)
 	{
 		tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
@@ -164,6 +167,8 @@ int main()
 	tilesPtr->getMedkit().getSprite().setScale(.1f, .1f);
 	tilesPtr->getExtraKunais().getSprite().setScale(.5f, .5f);
 
+	float baseTilePos = .0f;
+
 	//tilesPtr->init(tile_texture, window);
 
 	//std::vector<sf::Sprite> tiles = tilesPtr->getTiles();
@@ -172,7 +177,7 @@ int main()
 
 	Player player(player_animated_sprite);
 
-	player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 405.0f));
+	player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
 
 	sf::Texture daggerTexture;
 
@@ -441,7 +446,7 @@ int main()
 
 			if (enemyBlood.getTextureRect().left < 3072)
 			{
-				if (enemyBloodFrame > 60)
+				if (enemyBloodFrame > 20)
 				{
 					enemyBlood.setTextureRect(sf::IntRect(enemyBlood.getTextureRect().left + 512, 0, 512, 512));
 					enemyBloodFrame = 0;
@@ -463,7 +468,7 @@ int main()
 
 			if (playerBlood.getTextureRect().left < 3072)
 			{
-				if (playerBloodFrame > 60)
+				if (playerBloodFrame > 20)
 				{
 					playerBlood.setTextureRect(sf::IntRect(playerBlood.getTextureRect().left + 512, 0, 512, 512));
 					playerBloodFrame = 0;
@@ -544,10 +549,10 @@ int main()
 
 		if (tiles_ground_copy[0].getPosition().x <= 0.0f && allowPositionChangeGround1)
 		{
-			for (int i = 0; i < 25; i++)
+			for (int i = 0; i < 40; i++)
 			{
-				tiles_ground[i].setPosition(tiles_ground_copy[i].getPosition().x + 32.0f * 25.0f, 536.0f);
-				tiles_ground_1[i].setPosition(tiles_ground_1_copy[i].getPosition().x + 32.0f * 25.0f, 568.0f);
+				tiles_ground[i].setPosition(tiles_ground_copy[i].getPosition().x + 32.0f * 1.5f * 40.0f, window.getSize().y - 128.0f - 16.0f);
+				tiles_ground_1[i].setPosition(tiles_ground_1_copy[i].getPosition().x + 32.0f * 1.5f * 40.0f, window.getSize().y - 96.0f - 16.0f);
 				allowPositionChangeGround1 = false;
 				allowPositionChangeGround2 = true;
 			}
@@ -555,10 +560,10 @@ int main()
 
 		if (tiles_ground[0].getPosition().x <= 0.0f && allowPositionChangeGround2)
 		{
-			for (int i = 0; i < 25; i++)
+			for (int i = 0; i < 40; i++)
 			{
-				tiles_ground_copy[i].setPosition(tiles_ground[i].getPosition().x + 32.0f * 25.0f, 536.0f);
-				tiles_ground_1_copy[i].setPosition(tiles_ground_1[i].getPosition().x + 32.0f * 25.0f, 568.0f);
+				tiles_ground_copy[i].setPosition(tiles_ground[i].getPosition().x + 32.0f * 1.5f *  40.0f, window.getSize().y - 128.0f - 16.0f);
+				tiles_ground_1_copy[i].setPosition(tiles_ground_1[i].getPosition().x + 32.0f * 1.5f * 40.0f, window.getSize().y - 96.0f - 16.0f);
 				allowPositionChangeGround1 = true;
 				allowPositionChangeGround2 = false;
 			}
@@ -566,15 +571,15 @@ int main()
 
 		if (!player.m_isDead)
 		{
-			bg_sprite.move(sf::Vector2f(-.05f, .0f));
-			bg_sprite_copy.move(sf::Vector2f(-.05f, .0f));
+			bg_sprite.move(sf::Vector2f(-.2f, .0f));
+			bg_sprite_copy.move(sf::Vector2f(-.2f, .0f));
 
-			for (int i = 0; i < 25; i++)
+			for (int i = 0; i < 40; i++)
 			{
-				tiles_ground[i].move(sf::Vector2f(-.2f, .0f));
-				tiles_ground_1[i].move(sf::Vector2f(-.2f, .0f));
-				tiles_ground_copy[i].move(sf::Vector2f(-.2f, .0f));
-				tiles_ground_1_copy[i].move(sf::Vector2f(-.2f, .0f));
+				tiles_ground[i].move(sf::Vector2f(-.5f, .0f));
+				tiles_ground_1[i].move(sf::Vector2f(-.5f, .0f));
+				tiles_ground_copy[i].move(sf::Vector2f(-.5f, .0f));
+				tiles_ground_1_copy[i].move(sf::Vector2f(-.5f, .0f));
 			}
 		}
 		else
@@ -583,7 +588,7 @@ int main()
 			bg_sprite.move(sf::Vector2f(-bg_friction, .0f));
 			bg_sprite_copy.move(sf::Vector2f(-bg_friction, .0f));
 
-			for (int i = 0; i < 25; i++)
+			for (int i = 0; i < 40; i++)
 			{
 				tiles_ground[i].move(sf::Vector2f(-bg_friction, .0f));
 				tiles_ground_1[i].move(sf::Vector2f(-bg_friction, .0f));
@@ -608,17 +613,36 @@ int main()
 		{
 			std::cout << "WE'RE IN !!! POGCHAMP\n";
 
-			for (int i = 0; i < tilesPtr->getTiles().size(); i++)
+			baseTilePos = std::abs(tilesPtr->getTiles()[0].getPosition().x);
+			tilesPtr->getTiles()[0].setPosition(window.getSize().x, tilesPtr->getTiles()[0].getPosition().y);
+
+			for (int i = 1; i < tilesPtr->getTiles().size(); i++)
 			{
-				tilesPtr->getTiles()[i].setPosition(tilesPtr->getTiles()[i].getPosition().x + window.getSize().x * 3, tilesPtr->getTiles()[i].getPosition().y);
-				tilesPtr->getTiles()[i].setScale(.0f, .0f);
+				tilesPtr->getTiles()[i].setPosition(window.getSize().x + baseTilePos - std::abs(tilesPtr->getTiles()[i].getPosition().x), tilesPtr->getTiles()[i].getPosition().y);
+				//tilesPtr->getTiles()[i].setScale(.0f, .0f);
 			}
 
-			tilesPtr->getEnemy().getAnimatedSprite().setScale(.0f, .0f);
-			tilesPtr->getMedkit().getSprite().setScale(.0f, .0f);
-			tilesPtr->getExtraKunais().getSprite().setScale(.0f, .0f);
+			/*tilesptr->getenemy().getanimatedsprite().setscale(.0f, .0f);
+			tilesptr->getmedkit().getsprite().setscale(.0f, .0f);
+			tilesptr->getextrakunais().getsprite().setscale(.0f, .0f);*/
 
-			randomSet = rand() % 3 + 1;
+			switch (currentSet)
+			{
+			case 1:
+				tilesPtr->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 400.0f, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
+				tilesPtr->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tilesPtr->getMedkit().getSprite().getPosition().y);
+				tilesPtr->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tilesPtr->getExtraKunais().getSprite().getPosition().y);
+				break;
+			case 2:
+				tilesPtr->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 750.0f, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
+				break;
+			case 3:
+				tilesPtr->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 1400.0f, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
+				break;
+			}
+
+			while(randomSet == currentSet)
+				randomSet = rand() % 3 + 1;
 
 			switch (randomSet)
 			{
@@ -636,6 +660,8 @@ int main()
 				break;
 			}
 
+			currentSet = randomSet;
+
 			for (int i = 0; i < tilesPtr->getTiles().size(); i++)
 			{
 				tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
@@ -652,7 +678,7 @@ int main()
 		{
 			if (daggerThrow && !player.m_isDead)
 			{
-				player.m_daggers[0].move(1.5f, .0f);
+				player.m_daggers[0].move(10.0f, .0f);
 				//rDaggersReps[0].setPosition(player.m_daggers[0].getPosition().x, player.m_daggers[0].getPosition().y);
 				player.m_daggers_rectangles[0].updateX(player.m_daggers[0].getPosition().x, .0f);
 				player.m_daggers_rectangles[0].updateY(player.m_daggers[0].getPosition().y);
@@ -994,7 +1020,7 @@ int main()
 		window.draw(daggersHUDText);
 		window.draw(daggersHUD);
 
-		for (int i = 0; i < 25; i++)
+		for (int i = 0; i < 40; i++)
 		{
 			window.draw(tiles_ground[i]);
 			window.draw(tiles_ground_1[i]);

@@ -11,7 +11,7 @@ EnemyState* ThrowAttackEnemyState::setAction() {
 void ThrowAttackEnemyState::update(Enemy& enemy) {
 	if (!enemy.m_isDead)
 	{
-		if (enemy.m_animated_sprite.getPosition().x < 800.0f)
+		if (enemy.m_animated_sprite.getPosition().x < 1920.0f)
 		{
 			if (m_clock.getElapsedTime().asSeconds() > .3f) {
 				DEBUG_MSG("ThrowAttackEnemyState -> IdleEnemyState");
@@ -41,7 +41,7 @@ void ThrowAttackEnemyState::enter(Enemy& enemy)
 	DEBUG_MSG("ENTERED THE THROWING ENEMY STATE");
 	enemy.getAnimatedSprite().clearFrames();
 
-	if (enemy.m_animated_sprite.getPosition().x < 800.0f)
+	if (enemy.m_animated_sprite.getPosition().x < 1920.0f)
 	{
 		for (int i = 0; i < enemy.m_daggers.size(); i++)
 		{

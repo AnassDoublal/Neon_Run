@@ -53,7 +53,7 @@ void SlidePlayerState::update(Player& player) {
 		}
 	}
 
-	if (m_clock.getElapsedTime().asSeconds() > 2.0f || player.getAnimatedSprite().getPosition().y < 405.0f && player.m_canFall) {
+	if (m_clock.getElapsedTime().asSeconds() > 2.0f || player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall) {
 		DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();

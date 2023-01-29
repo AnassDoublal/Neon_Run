@@ -73,7 +73,7 @@ void Enemy::update(sf::RenderWindow& window, Player* player)
 
 	if (!player->m_isDead)
 	{
-		m_animated_sprite.move(-.2f, .0f);
+		m_animated_sprite.move(-.5f, .0f);
 	}
 	else
 	{
@@ -81,11 +81,6 @@ void Enemy::update(sf::RenderWindow& window, Player* player)
 		m_animated_sprite.move(-m_friction, .0f);
 
 		m_isPlayerDead = true;
-	}
-
-	if (m_animated_sprite.getPosition().x <= -m_animated_sprite.getGlobalBounds().width)
-	{
-		m_animated_sprite.setPosition(m_animated_sprite.getPosition().x + window.getSize().x * 3, m_animated_sprite.getPosition().y);
 	}
 
 	m_animated_sprite.update();
@@ -109,7 +104,7 @@ void Enemy::update(sf::RenderWindow& window, Player* player)
 	{
 		if (m_daggerThrow)
 		{
-			m_daggers[0].move(-1.5f, .0f);
+			m_daggers[0].move(-10.0f, .0f);
 			m_daggers_rectangles[0].updateX(m_daggers[0].getPosition().x, .0f);
 			m_daggers_rectangles[0].updateY(m_daggers[0].getPosition().y);
 		}

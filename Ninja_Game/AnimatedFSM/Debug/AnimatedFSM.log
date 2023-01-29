@@ -1,13 +1,29 @@
-﻿  Set3.cpp
-C:\Users\c00290201\Documents\Ninja-Runner\Ninja_Game\AnimatedFSM\Set3.cpp(10,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+﻿  Medkit.cpp
+  main.cpp
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(44,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(161,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(245,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(278,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(301,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(617,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-          and
-          [
-              T=float
-          ]
-C:\Users\c00290201\Documents\Ninja-Runner\Ninja_Game\AnimatedFSM\Set3.cpp(123,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\c00290201\Documents\Ninja-Runner\Ninja_Game\AnimatedFSM\Set3.cpp(147,20): warning C4018: '<': signed/unsigned mismatch
-  AnimatedFSM.vcxproj -> C:\Users\c00290201\Documents\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(619,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(665,22): warning C4018: '<': signed/unsigned mismatch
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(1042,21): warning C4018: '<': signed/unsigned mismatch
+  Generating Code...
+  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe
