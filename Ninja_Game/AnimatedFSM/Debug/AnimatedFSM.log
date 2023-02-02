@@ -1,5 +1,4 @@
-﻿  Medkit.cpp
-  main.cpp
+﻿  main.cpp
 C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(37,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -13,17 +12,13 @@ C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,122)
 C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(38,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(44,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(161,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(245,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(278,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(301,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(617,56): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(246,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(279,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(302,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(536,61): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
           with
           [
               T=unsigned int
           ]
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(619,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(665,22): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(1042,21): warning C4018: '<': signed/unsigned mismatch
-  Generating Code...
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\main.cpp(1037,21): warning C4018: '<': signed/unsigned mismatch
   AnimatedFSM.vcxproj -> C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe

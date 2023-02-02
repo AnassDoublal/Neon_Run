@@ -130,48 +130,49 @@ int main()
 
 #pragma endregion
 
-	Tiles* tilesPtr = nullptr;
+	//Tiles* tilesPtr = nullptr;
 
 	Set1 set1;
 	Set2 set2;
 	Set3 set3;
 
+	std::vector<Tiles*> tileArray;
+	std::vector<bool> tileMove;
+
 	set1.init(tile_texture, window);
 	set2.init(tile_texture, window);
 	set3.init(tile_texture, window);
 
+	tileArray.push_back(&set1);
+	tileArray.push_back(&set2);
+	tileArray.push_back(&set3);
+
+	tileMove.push_back(false);
+	tileMove.push_back(false);
+	tileMove.push_back(false);
+
+	for (size_t i = 0; i < tileArray.size(); i++)
+	{
+		for (size_t j = 0; j < tileArray[i]->getTiles().size(); j++)
+		{
+			tileArray[i]->getTiles()[j].setScale(1.0f, 1.0f);
+		}
+
+		tileArray[i]->getEnemy().getAnimatedSprite().setScale(-.3f, .3f);
+		tileArray[i]->getMedkit().getSprite().setScale(.1f, .1f);
+		tileArray[i]->getExtraKunais().getSprite().setScale(.5f, .5f);
+	}
+
 	int randomSet = rand() % 3 + 1;
 	int currentSet = 0;
 
-	switch (randomSet)
-	{
-		case 1:
-			tilesPtr = &set1;
-			break;
-		case 2:
-			tilesPtr = &set2;
-			break;
-		case 3:
-			tilesPtr = &set3;
-			break;
-	}
-
 	currentSet = randomSet;
 
-	for (int i = 0; i < tilesPtr->getTiles().size(); i++)
-	{
-		tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
-	}
+	tileMove[currentSet - 1] = true;
 
-	tilesPtr->getEnemy().getAnimatedSprite().setScale(-.3f, .3f);
-	tilesPtr->getMedkit().getSprite().setScale(.1f, .1f);
-	tilesPtr->getExtraKunais().getSprite().setScale(.5f, .5f);
+	bool gotNewTileset = false;
 
 	float baseTilePos = .0f;
-
-	//tilesPtr->init(tile_texture, window);
-
-	//std::vector<sf::Sprite> tiles = tilesPtr->getTiles();
 
 	//std::cout << *(tiles).size() << "\n";
 
@@ -361,103 +362,202 @@ int main()
 		cPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x, 
 							   player.getAnimatedSprite().getPosition().y);*/
 
-		/*if (circle_to_circle(cPlayer, tilesPtr->getEnemyCircle()))
-		{
-			std::cout << "COLLISION BETWEEN THE BOIS\n";
-		}*/
-
 		rPlayer.updateX(player.getAnimatedSprite().getPosition().x, .0f);
 		rPlayer.updateY(player.getAnimatedSprite().getPosition().y);
 
 		rPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
 
-		if (rectangle_to_rectangle(rPlayer, tilesPtr->getEnemy().m_rectangle))
+		std::cout << "x : " << tileArray[currentSet - 1]->getTiles()[tileArray[currentSet - 1]->getTiles().size() - 1].getPosition().x << "\n";
+
+		for (size_t i = 0; i < tileArray.size(); i++)
 		{
-			if (player.m_isAttacking)
+			if (rectangle_to_rectangle(rPlayer, tileArray[i]->getEnemy().m_rectangle))
 			{
-				std::cout << "RIP ENEMY NINJA\n";
-				//tilesPtr->getEnemy().getAnimatedSprite().setScale(.0f, .0f);
-				tilesPtr->getEnemy().m_rectangle.setWidth(.0f);
-				tilesPtr->getEnemy().m_rectangle.setHeight(.0f);
-				tilesPtr->getEnemy().m_isDead = true;
-
-				enemiesHit++;
-
-				audio.playHurtSound();
-				
-				isEnemyHit = true;
-			}
-		}
-
-		if (player.getAnimatedSprite().getGlobalBounds().intersects(tilesPtr->getMedkit().getSprite().getGlobalBounds()))
-		{
-			if (lives.size() < 3)
-			{
-				sf::Sprite life;
-				life.setTexture(lives_texture);
-				life.setTextureRect(sf::IntRect(0, 0, 211, 200));
-				life.setScale(.2f, .2f);
-				life.setPosition(lives[lives.size() - 1].getPosition().x + 50.0f, 20.0f);
-				lives.push_back(life);
-
-				tilesPtr->getMedkit().getSprite().setScale(.0f, .0f);
-				player.m_health++;
-			}
-		}
-
-		if (player.getAnimatedSprite().getGlobalBounds().intersects(tilesPtr->getExtraKunais().getSprite().getGlobalBounds()))
-		{
-			if (player.m_daggers.size() < 50)
-			{
-				if (player.m_daggers.size() > 47)
+				if (player.m_isAttacking)
 				{
-					numExtraKunais = 50 - player.m_daggers.size();
+					std::cout << "RIP ENEMY NINJA\n";
+					tileArray[i]->getEnemy().m_rectangle.setWidth(.0f);
+					tileArray[i]->getEnemy().m_rectangle.setHeight(.0f);
+					tileArray[i]->getEnemy().m_isDead = true;
+
+					enemiesHit++;
+
+					audio.playHurtSound();
+
+					isEnemyHit = true;
+				}
+			}
+
+			if (player.getAnimatedSprite().getGlobalBounds().intersects(tileArray[i]->getMedkit().getSprite().getGlobalBounds()))
+			{
+				if (lives.size() < 3)
+				{
+					sf::Sprite life;
+					life.setTexture(lives_texture);
+					life.setTextureRect(sf::IntRect(0, 0, 211, 200));
+					life.setScale(.2f, .2f);
+					life.setPosition(lives[lives.size() - 1].getPosition().x + 50.0f, 20.0f);
+					lives.push_back(life);
+
+					tileArray[i]->getMedkit().getSprite().setScale(.0f, .0f);
+					player.m_health++;
+				}
+			}
+
+			if (player.getAnimatedSprite().getGlobalBounds().intersects(tileArray[i]->getExtraKunais().getSprite().getGlobalBounds()))
+			{
+				if (player.m_daggers.size() < 50)
+				{
+					if (player.m_daggers.size() > 47)
+					{
+						numExtraKunais = 50 - player.m_daggers.size();
+					}
+					else
+						numExtraKunais = 3;
+
+					numDaggers += numExtraKunais;
+
+					for (int i = 0; i < numExtraKunais; i++)
+					{
+						sf::Sprite dagger;
+						dagger.setTexture(daggerTexture);
+						dagger.setPosition(-100.0f, -100.0f);
+						dagger.setScale(.5f, .5f);
+						player.m_daggers.push_back(dagger);
+
+						Rectangle rDagger(player.m_daggers[i].getPosition().x,
+							player.m_daggers[i].getPosition().y,
+							player.m_daggers[i].getGlobalBounds().width,
+							player.m_daggers[i].getGlobalBounds().height);
+
+						player.m_daggers_rectangles.push_back(rDagger);
+					}
+
+					tileArray[i]->getExtraKunais().getSprite().setScale(.0f, .0f);
+				}
+			}
+
+			if (isEnemyHit)
+			{
+				enemyBlood.setPosition(tileArray[i]->getEnemy().getAnimatedSprite().getPosition().x - tileArray[i]->getEnemy().getAnimatedSprite().getGlobalBounds().width, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+
+				enemyBloodFrame++;
+
+				if (enemyBlood.getTextureRect().left < 3072)
+				{
+					if (enemyBloodFrame > 20)
+					{
+						enemyBlood.setTextureRect(sf::IntRect(enemyBlood.getTextureRect().left + 512, 0, 512, 512));
+						enemyBloodFrame = 0;
+					}
 				}
 				else
-					numExtraKunais = 3;
-
-				numDaggers += numExtraKunais;
-
-				for (int i = 0; i < numExtraKunais; i++)
 				{
-					sf::Sprite dagger;
-					dagger.setTexture(daggerTexture);
-					dagger.setPosition(-100.0f, -100.0f);
-					dagger.setScale(.5f, .5f);
-					player.m_daggers.push_back(dagger);
-
-					Rectangle rDagger(player.m_daggers[i].getPosition().x,
-									  player.m_daggers[i].getPosition().y,
-									  player.m_daggers[i].getGlobalBounds().width,
-									  player.m_daggers[i].getGlobalBounds().height);
-
-					player.m_daggers_rectangles.push_back(rDagger);
-				}
-
-				tilesPtr->getExtraKunais().getSprite().setScale(.0f, .0f);
-			}
-		}
-
-		if (isEnemyHit)
-		{
-			enemyBlood.setPosition(tilesPtr->getEnemy().getAnimatedSprite().getPosition().x - tilesPtr->getEnemy().getAnimatedSprite().getGlobalBounds().width, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
-
-			enemyBloodFrame++;
-
-			if (enemyBlood.getTextureRect().left < 3072)
-			{
-				if (enemyBloodFrame > 20)
-				{
-					enemyBlood.setTextureRect(sf::IntRect(enemyBlood.getTextureRect().left + 512, 0, 512, 512));
-					enemyBloodFrame = 0;
+					enemyBlood.setTextureRect(sf::IntRect(0, 0, 512, 512));
+					enemyBlood.setPosition(-2000.0f, -2000.0f);
+					isEnemyHit = false;
 				}
 			}
-			else
+
+			if (player.m_daggers_rectangles.size() > 0)
 			{
-				enemyBlood.setTextureRect(sf::IntRect(0, 0, 512, 512));
-				enemyBlood.setPosition(-2000.0f, -2000.0f);
-				isEnemyHit = false;
+				if (rectangle_to_rectangle(player.m_daggers_rectangles[0], tileArray[i]->getEnemy().m_rectangle))
+				{
+					std::cout << "RIP ENEMY NINJA\n";
+					tileArray[i]->getEnemy().m_rectangle.setWidth(.0f);
+					tileArray[i]->getEnemy().m_rectangle.setHeight(.0f);
+					tileArray[i]->getEnemy().m_isDead = true;
+
+					enemiesHit++;
+					player.m_shotsHit++;
+
+					audio.playHurtSound();
+
+					isEnemyHit = true;
+				}
 			}
+
+			if (tileArray[i]->getEnemy().m_daggers_rectangles.size() > 0)
+			{
+				if (rectangle_to_rectangle(tileArray[i]->getEnemy().m_daggers_rectangles[0], rPlayer))
+				{
+					if (!minusOneLife && lives.size() > 0)
+					{
+						std::cout << "OUCH THAT HURTS\n";
+						/*lives.pop_back();
+						player.m_health--;*/
+						minusOneLife = true;
+
+						audio.playHurtSound();
+
+						isPlayerHit = true;
+					}
+				}
+				else
+				{
+					minusOneLife = false;
+				}
+			}
+			
+			if (tileMove[i])
+			{
+				tileArray[i]->update(window, &player);
+				player.setTiles(tileArray[i]->getTiles());
+			}
+
+			if (tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getPosition().x < -tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getGlobalBounds().width + 1600.0f && !gotNewTileset)
+			{
+				gotNewTileset = true;
+
+				std::cout << "WE'RE IN !!! POGCHAMP\n";
+
+				while (randomSet == currentSet)
+					randomSet = rand() % 3 + 1;
+
+				currentSet = randomSet;
+
+				tileMove[currentSet - 1] = true;
+
+				/*for (int j = 0; j < tileArray[i]->getTiles().size(); j++)
+				{
+					tileArray[i]->getTiles()[j].setScale(1.0f, 1.0f);
+				}
+
+				tileArray[i]->getEnemy().getAnimatedSprite().setScale(-.3f, .3f);
+				tileArray[i]->getMedkit().getSprite().setScale(.1f, .1f);
+				tileArray[i]->getExtraKunais().getSprite().setScale(.5f, .5f);*/
+			}
+
+			if (tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getPosition().x < -tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getGlobalBounds().width)
+			{
+				tileMove[i] = false;
+
+				baseTilePos = std::abs(tileArray[i]->getTiles()[0].getPosition().x);
+				tileArray[i]->getTiles()[0].setPosition(window.getSize().x, tileArray[i]->getTiles()[0].getPosition().y);
+
+				for (size_t j = 1; j < tileArray[i]->getTiles().size(); j++)
+				{
+					tileArray[i]->getTiles()[j].setPosition(window.getSize().x + baseTilePos - std::abs(tileArray[i]->getTiles()[j].getPosition().x), tileArray[i]->getTiles()[j].getPosition().y);
+				}
+
+				switch (currentSet)
+				{
+				case 1:
+					tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+					tileArray[i]->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tileArray[i]->getMedkit().getSprite().getPosition().y);
+					tileArray[i]->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tileArray[i]->getExtraKunais().getSprite().getPosition().y);
+					break;
+				case 2:
+					tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 750.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+					break;
+				case 3:
+					tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 1400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+					break;
+				}
+
+				gotNewTileset = false;
+			}
+
 		}
 
 		if (isPlayerHit)
@@ -482,25 +582,6 @@ int main()
 			}
 		}
 
-		if (player.m_daggers_rectangles.size() > 0)
-		{
-			if (rectangle_to_rectangle(player.m_daggers_rectangles[0], tilesPtr->getEnemy().m_rectangle))
-			{
-				std::cout << "RIP ENEMY NINJA\n";
-				//tilesPtr->getEnemy().getAnimatedSprite().setScale(.0f, .0f);
-				tilesPtr->getEnemy().m_rectangle.setWidth(.0f);
-				tilesPtr->getEnemy().m_rectangle.setHeight(.0f);
-				tilesPtr->getEnemy().m_isDead = true;
-
-				enemiesHit++;
-				player.m_shotsHit++;
-
-				audio.playHurtSound();
-
-				isEnemyHit = true;
-			}
-		}
-
 		enemiesHitText.setString(std::to_string(enemiesHit));
 		enemiesHitText.setPosition(window.getSize().x - enemiesHitText.getGlobalBounds().width - 20.0f, 20.0f);
 
@@ -510,28 +591,6 @@ int main()
 		daggersHUDText.setPosition(window.getSize().x - daggersHUDText.getGlobalBounds().width - 20.0f, 80.0f);
 
 		daggersHUD.setPosition(daggersHUDText.getPosition().x - daggersHUD.getGlobalBounds().width - 10.0f, 105.0f);
-
-		if (tilesPtr->getEnemy().m_daggers_rectangles.size() > 0)
-		{
-			if (rectangle_to_rectangle(tilesPtr->getEnemy().m_daggers_rectangles[0], rPlayer))
-			{
-				if (!minusOneLife && lives.size() > 0)
-				{
-					std::cout << "OUCH THAT HURTS\n";
-					lives.pop_back();
-					player.m_health--;
-					minusOneLife = true;
-
-					audio.playHurtSound();
-
-					isPlayerHit = true;
-				}
-			}
-			else
-			{
-				minusOneLife = false;
-			}
-		}
 
 		if (bg_sprite_copy.getPosition().x <= bg_sprite_copy.getGlobalBounds().width / 2.0f && allowPositionChangeBg1)
 		{
@@ -605,74 +664,6 @@ int main()
 			player.m_friction = 1.0f;
 		}
 
-		player.setTiles(tilesPtr->getTiles());
-
-		tilesPtr->update(window, &player);
-
-		if (tilesPtr->getTiles()[tilesPtr->getTiles().size() - 1].getPosition().x < -tilesPtr->getTiles()[tilesPtr->getTiles().size() - 1].getGlobalBounds().width)
-		{
-			std::cout << "WE'RE IN !!! POGCHAMP\n";
-
-			baseTilePos = std::abs(tilesPtr->getTiles()[0].getPosition().x);
-			tilesPtr->getTiles()[0].setPosition(window.getSize().x, tilesPtr->getTiles()[0].getPosition().y);
-
-			for (int i = 1; i < tilesPtr->getTiles().size(); i++)
-			{
-				tilesPtr->getTiles()[i].setPosition(window.getSize().x + baseTilePos - std::abs(tilesPtr->getTiles()[i].getPosition().x), tilesPtr->getTiles()[i].getPosition().y);
-				//tilesPtr->getTiles()[i].setScale(.0f, .0f);
-			}
-
-			/*tilesptr->getenemy().getanimatedsprite().setscale(.0f, .0f);
-			tilesptr->getmedkit().getsprite().setscale(.0f, .0f);
-			tilesptr->getextrakunais().getsprite().setscale(.0f, .0f);*/
-
-			switch (currentSet)
-			{
-			case 1:
-				tilesPtr->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 400.0f, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
-				tilesPtr->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tilesPtr->getMedkit().getSprite().getPosition().y);
-				tilesPtr->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tilesPtr->getExtraKunais().getSprite().getPosition().y);
-				break;
-			case 2:
-				tilesPtr->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 750.0f, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
-				break;
-			case 3:
-				tilesPtr->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 1400.0f, tilesPtr->getEnemy().getAnimatedSprite().getPosition().y);
-				break;
-			}
-
-			while(randomSet == currentSet)
-				randomSet = rand() % 3 + 1;
-
-			switch (randomSet)
-			{
-			case 1:
-				tilesPtr = &set1;
-				std::cout << "SET1\n";
-				break;
-			case 2:
-				tilesPtr = &set2;
-				std::cout << "SET2\n";
-				break;
-			case 3:
-				tilesPtr = &set3;
-				std::cout << "SET3\n";
-				break;
-			}
-
-			currentSet = randomSet;
-
-			for (int i = 0; i < tilesPtr->getTiles().size(); i++)
-			{
-				tilesPtr->getTiles()[i].setScale(1.0f, 1.0f);
-			}
-
-			tilesPtr->getEnemy().getAnimatedSprite().setScale(-.3f, .3f);
-			tilesPtr->getMedkit().getSprite().setScale(.1f, .1f);
-			tilesPtr->getExtraKunais().getSprite().setScale(.5f, .5f);
-		}
-
-		//std::cout << "TILE POINTER : " << tilesPtr << "\n";
 
 		if (player.m_daggers.size() > 0)
 		{
@@ -1028,7 +1019,11 @@ int main()
 			window.draw(tiles_ground_1_copy[i]);
 		}
 
-		tilesPtr->render(window);
+
+		for (size_t i = 0; i < tileArray.size(); i++)
+		{
+			tileArray[i]->render(window);
+		}
 
 		//window.draw(rect);
 

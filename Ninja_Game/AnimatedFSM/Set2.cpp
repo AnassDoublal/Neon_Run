@@ -120,6 +120,7 @@ void Set2::update(sf::RenderWindow& window, Player* player)
 		if (!player->m_isDead)
 		{
 			m_sprites[i].move(-.5f, .0f);
+
 		}
 		else
 		{
