@@ -37,6 +37,9 @@ public:
 
 	int m_totalShots = 0;
 	int m_shotsHit = 0;
+
+	sf::Clock m_invincibilityTime;
+	bool m_isInvincibilityClockRestarted = false;
 private:
 	PlayerState* m_state;
 	AnimatedSprite m_animated_sprite;

@@ -46,11 +46,9 @@ void JumpPlayerState::update(Player& player) {
 					//std::cout << tile.getPosition().x << "\n";
 					player.m_tileIntersection = true;
 				}
-
 			}
 		}
 		player.getAnimatedSprite().move(sf::Vector2f(.0f, -4.0f * player.m_friction));
-
 	}
 	else
 	{

@@ -165,6 +165,7 @@ int main()
 
 	int randomSet = rand() % 3 + 1;
 	int currentSet = 0;
+	int previousSet = 0;
 
 	currentSet = randomSet;
 
@@ -347,9 +348,29 @@ int main()
 	bool isPlayerHit = false;
 	bool isEnemyHit = false;
 
+	int hitEnemy = 0;
+
 	int numExtraKunais = 0;
 
 	std::cout << sf::Joystick::ButtonCount << "\n";
+
+	//std::vector<sf::Sprite> playerTiles;
+
+	/*std::vector<reference_wrapper<sf::Sprite const>> playerTiles;
+
+	for (Tiles* i : tileArray)
+	{
+		for (size_t j = 0; j < i->getTiles().size(); j++)
+		{
+			playerTiles.push_back(i->getTiles()[j]);
+		}
+
+		playerTiles.insert(playerTiles.end(), i->getTiles().begin(), i->getTiles().end());
+	}*/
+
+	std::vector<sf::Sprite> emptyVector;
+	bool isTileOccupied = false;
+	int occupyingTile = 0;
 
 	gpp::Events input;
 
@@ -359,7 +380,7 @@ int main()
 		/*cPlayer.updateX(player.getAnimatedSprite().getPosition().x, .0f);
 		cPlayer.updateY(player.getAnimatedSprite().getPosition().y);
 
-		cPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x, 
+		cPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x,
 							   player.getAnimatedSprite().getPosition().y);*/
 
 		rPlayer.updateX(player.getAnimatedSprite().getPosition().x, .0f);
@@ -367,7 +388,8 @@ int main()
 
 		rPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y);
 
-		std::cout << "x : " << tileArray[currentSet - 1]->getTiles()[tileArray[currentSet - 1]->getTiles().size() - 1].getPosition().x << "\n";
+		//std::cout << "x : " << tileArray[currentSet - 1]->getTiles()[tileArray[currentSet - 1]->getTiles().size() - 1].getPosition().x << "\n";
+		//std::cout << playerTiles.size() << "\n";
 
 		for (size_t i = 0; i < tileArray.size(); i++)
 		{
@@ -439,7 +461,7 @@ int main()
 
 			if (isEnemyHit)
 			{
-				enemyBlood.setPosition(tileArray[i]->getEnemy().getAnimatedSprite().getPosition().x - tileArray[i]->getEnemy().getAnimatedSprite().getGlobalBounds().width, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+				enemyBlood.setPosition(tileArray[hitEnemy]->getEnemy().getAnimatedSprite().getPosition().x - tileArray[hitEnemy]->getEnemy().getAnimatedSprite().getGlobalBounds().width, tileArray[hitEnemy]->getEnemy().getAnimatedSprite().getPosition().y);
 
 				enemyBloodFrame++;
 
@@ -474,6 +496,7 @@ int main()
 					audio.playHurtSound();
 
 					isEnemyHit = true;
+					hitEnemy = i;
 				}
 			}
 
@@ -484,8 +507,8 @@ int main()
 					if (!minusOneLife && lives.size() > 0)
 					{
 						std::cout << "OUCH THAT HURTS\n";
-						/*lives.pop_back();
-						player.m_health--;*/
+						lives.pop_back();
+						player.m_health--;
 						minusOneLife = true;
 
 						audio.playHurtSound();
@@ -493,16 +516,49 @@ int main()
 						isPlayerHit = true;
 					}
 				}
-				else
+				//else
+				//{
+				//	minusOneLife = false;
+				//}
+			}
+
+			if (minusOneLife)
+			{
+				if (!player.m_isInvincibilityClockRestarted)
+				{
+					player.m_invincibilityTime.restart();
+					player.m_isInvincibilityClockRestarted = true;
+				}
+
+				if (player.m_invincibilityTime.getElapsedTime().asSeconds() > 2.0f)
 				{
 					minusOneLife = false;
+					player.m_isInvincibilityClockRestarted = false;
 				}
+
+				std::cout << player.m_invincibilityTime.getElapsedTime().asSeconds() << "\n";
 			}
-			
+
 			if (tileMove[i])
 			{
 				tileArray[i]->update(window, &player);
+			}
+
+			if (player.getAnimatedSprite().getPosition().x >= tileArray[i]->getTiles()[0].getPosition().x - player.getAnimatedSprite().getGlobalBounds().width
+			 && player.getAnimatedSprite().getPosition().x <= tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getPosition().x)
+			{
+				occupyingTile = i;
 				player.setTiles(tileArray[i]->getTiles());
+				isTileOccupied = true;
+			}
+
+			if (isTileOccupied)
+			{
+				if (player.getAnimatedSprite().getPosition().x > tileArray[occupyingTile]->getTiles()[tileArray[occupyingTile]->getTiles().size() - 1].getPosition().x)
+				{
+					player.setTiles(emptyVector);
+					isTileOccupied = false;
+				}
 			}
 
 			if (tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getPosition().x < -tileArray[i]->getTiles()[tileArray[i]->getTiles().size() - 1].getGlobalBounds().width + 1600.0f && !gotNewTileset)
@@ -540,22 +596,27 @@ int main()
 					tileArray[i]->getTiles()[j].setPosition(window.getSize().x + baseTilePos - std::abs(tileArray[i]->getTiles()[j].getPosition().x), tileArray[i]->getTiles()[j].getPosition().y);
 				}
 
-				switch (currentSet)
+				switch (i + 1)
 				{
-				case 1:
-					tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
-					tileArray[i]->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tileArray[i]->getMedkit().getSprite().getPosition().y);
-					tileArray[i]->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tileArray[i]->getExtraKunais().getSprite().getPosition().y);
-					break;
-				case 2:
-					tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 750.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
-					break;
-				case 3:
-					tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 1400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
-					break;
+					case 1:
+						tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+						tileArray[i]->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tileArray[i]->getMedkit().getSprite().getPosition().y);
+						tileArray[i]->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tileArray[i]->getExtraKunais().getSprite().getPosition().y);
+						break;
+					case 2:
+						tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 750.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+						break;
+					case 3:
+						tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 1400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+						break;
 				}
 
+				tileArray[i]->getMedkit().getSprite().setScale(.1f, .1f);
+				tileArray[i]->getExtraKunais().getSprite().setScale(.5f, .5f);
+
 				gotNewTileset = false;
+
+				//std::cout << "YEEEEEEEEEEEEAAAAAAAAAAAAAAAAAAAAAAAAH " << i + 1 << currentSet << "\n";
 			}
 
 		}

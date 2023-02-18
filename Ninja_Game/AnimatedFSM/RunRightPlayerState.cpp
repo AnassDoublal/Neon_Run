@@ -77,6 +77,11 @@ void RunRightPlayerState::update(Player& player) {
 		}
 	}
 
+	if (player.getTiles().size() == 0)
+	{
+		player.m_canFall = true;
+	}
+
 	if (player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall)
 	{
 		player.m_friction = .0f;
