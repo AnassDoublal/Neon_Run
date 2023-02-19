@@ -14,7 +14,7 @@ PlayerState* DiedPlayerState::handleInput(gpp::Events& input)
 	return nullptr;
 }
 void DiedPlayerState::update(Player& player) {
-	player.m_friction -= .002f;
+	player.m_friction -= .0075f;
 
 	if (player.getAnimatedSprite().getPosition().y < 805.0f && !player.m_tileIntersection && !player.m_isGrounded)
 	{
@@ -30,7 +30,7 @@ void DiedPlayerState::update(Player& player) {
 				}
 			}
 		}
-		player.getAnimatedSprite().move(sf::Vector2f(.0f, -1.0f * player.m_friction));
+		player.getAnimatedSprite().move(sf::Vector2f(.0f, -4.0f * player.m_friction));
 	}
 	else
 	{
@@ -47,7 +47,28 @@ void DiedPlayerState::update(Player& player) {
 		}
 		else
 		{
-			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, std::floor(player.getAnimatedSprite().getPosition().y)));
+			if (player.getTiles().size() != 0)
+			{
+				for (auto& tile : player.getTiles())
+				{
+					if (player.m_feet_collision.intersects(tile.getGlobalBounds()))
+					{
+						player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, std::floor(player.getAnimatedSprite().getPosition().y)));
+					}
+					else
+					{
+						player.m_tileIntersection = false;
+						player.m_isGrounded = false;
+						player.m_friction = .0f;
+					}
+				}
+			}
+			else
+			{
+				player.m_tileIntersection = false;
+				player.m_isGrounded = false;
+				player.m_friction = .0f;
+			}
 		}
 	}
 

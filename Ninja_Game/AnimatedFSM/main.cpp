@@ -13,6 +13,7 @@
 #include "EndScreen.h"
 #include "Audio.h"
 #include "Set3.h"
+#include "Score.h"
 
 using namespace std;
 
@@ -372,6 +373,9 @@ int main()
 	bool isTileOccupied = false;
 	int occupyingTile = 0;
 
+	Score score;
+	score.init(window);
+
 	gpp::Events input;
 
 	// Start the game loop
@@ -382,6 +386,9 @@ int main()
 
 		cPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x,
 							   player.getAnimatedSprite().getPosition().y);*/
+
+		if(!player.m_isDead)
+			score.update(window, .5f);
 
 		rPlayer.updateX(player.getAnimatedSprite().getPosition().x, .0f);
 		rPlayer.updateY(player.getAnimatedSprite().getPosition().y);
@@ -395,7 +402,7 @@ int main()
 		{
 			if (rectangle_to_rectangle(rPlayer, tileArray[i]->getEnemy().m_rectangle))
 			{
-				if (player.m_isAttacking)
+				if (player.m_isAttacking && !player.m_isDead)
 				{
 					std::cout << "RIP ENEMY NINJA\n";
 					tileArray[i]->getEnemy().m_rectangle.setWidth(.0f);
@@ -403,6 +410,7 @@ int main()
 					tileArray[i]->getEnemy().m_isDead = true;
 
 					enemiesHit++;
+					score.bonus(1000.0f);
 
 					audio.playHurtSound();
 
@@ -491,6 +499,8 @@ int main()
 					tileArray[i]->getEnemy().m_isDead = true;
 
 					enemiesHit++;
+					score.bonus(1000.0f);
+
 					player.m_shotsHit++;
 
 					audio.playHurtSound();
@@ -716,7 +726,7 @@ int main()
 				tiles_ground_1_copy[i].move(sf::Vector2f(-bg_friction, .0f));
 			}
 
-			endScreen.update(window, enemiesHit);
+			endScreen.update(window, score.getScore());
 		}
 
 		//std::cout << "ISGROUNDED : " << player.m_isGrounded << "\n";
@@ -728,22 +738,26 @@ int main()
 
 		if (player.m_daggers.size() > 0)
 		{
-			if (daggerThrow && !player.m_isDead)
+			if (daggerThrow)
 			{
 				player.m_daggers[0].move(10.0f, .0f);
 				//rDaggersReps[0].setPosition(player.m_daggers[0].getPosition().x, player.m_daggers[0].getPosition().y);
-				player.m_daggers_rectangles[0].updateX(player.m_daggers[0].getPosition().x, .0f);
-				player.m_daggers_rectangles[0].updateY(player.m_daggers[0].getPosition().y);
 
-				if (minusOneDagger)
+				if (!player.m_isDead)
 				{
-					numDaggers--;
-					player.m_totalShots++;
+					player.m_daggers_rectangles[0].updateX(player.m_daggers[0].getPosition().x, .0f);
+					player.m_daggers_rectangles[0].updateY(player.m_daggers[0].getPosition().y);
 
-					audio.playSwooshSound();
+					if (minusOneDagger)
+					{
+						numDaggers--;
+						player.m_totalShots++;
+
+						audio.playSwooshSound();
+					}
+
+					minusOneDagger = false;
 				}
-
-				minusOneDagger = false;
 			}
 
 			if (player.m_daggers[0].getPosition().x > window.getSize().x)
@@ -1066,8 +1080,10 @@ int main()
 			window.draw(life);
 		}
 
-		window.draw(enemiesHitText);
-		window.draw(enemyHUD);
+		/*window.draw(enemiesHitText);
+		window.draw(enemyHUD);*/
+
+		score.render(window);
 
 		window.draw(daggersHUDText);
 		window.draw(daggersHUD);
@@ -1114,4 +1130,4 @@ int main()
 	}
 
 	return EXIT_SUCCESS;
-};
+}
