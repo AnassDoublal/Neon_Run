@@ -26,7 +26,7 @@ PlayerState* ThrowAttackPlayerState::handleInput(gpp::Events& input)
 }
 void ThrowAttackPlayerState::update(Player& player) {
 	if (m_clock.getElapsedTime().asSeconds() > .3f) {
-		DEBUG_MSG("ThrowAttackPlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("ThrowAttackPlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
@@ -37,7 +37,7 @@ void ThrowAttackPlayerState::update(Player& player) {
 }
 void ThrowAttackPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering AttackPlayerState");
+	//DEBUG_MSG("Entering AttackPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	for (int i = 0; i < player.m_daggers.size(); i++)
@@ -60,7 +60,7 @@ void ThrowAttackPlayerState::enter(Player& player)
 }
 void ThrowAttackPlayerState::exit(Player& player)
 {
-	DEBUG_MSG("Exiting AttackPlayerState");
+	//DEBUG_MSG("Exiting AttackPlayerState");
 }
 
 //void ThrowAttackPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)

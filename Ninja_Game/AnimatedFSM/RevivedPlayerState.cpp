@@ -17,7 +17,7 @@ PlayerState* RevivedPlayerState::handleInput(gpp::Events& input)
 }
 void RevivedPlayerState::update(Player& player) {
 	// Switch from RevivedPlayerState to IdlePlayerState
-	DEBUG_MSG("RevivedPlayerState -> RunRightPlayerState");
+	//DEBUG_MSG("RevivedPlayerState -> RunRightPlayerState");
 	if (m_clock.getElapsedTime().asSeconds() > 0.5f) {
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();
@@ -29,7 +29,7 @@ void RevivedPlayerState::update(Player& player) {
 }
 void RevivedPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering RevivedPlayerState");
+	//DEBUG_MSG("Entering RevivedPlayerState");
 
 	// How long in State Clock
 	this->m_clock.restart();
@@ -58,7 +58,7 @@ void RevivedPlayerState::enter(Player& player)
 }
 void RevivedPlayerState::exit(Player& player)
 {
-	DEBUG_MSG("Exiting RevivedPlayerState");
+	//DEBUG_MSG("Exiting RevivedPlayerState");
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(true);
 }

@@ -8,23 +8,23 @@ AnimatedSpriteEnemy::AnimatedSpriteEnemy() :
 	m_max_plays(0),
 	m_played(false)
 {
-	DEBUG_MSG("AnimatedSprite()");
+	//DEBUG_MSG("AnimatedSprite()");
 }
 
 AnimatedSpriteEnemy::AnimatedSpriteEnemy(const sf::Texture& t) : AnimatedSpriteEnemy() {
-	DEBUG_MSG("AnimatedSprite(const Texture&)");
+	//DEBUG_MSG("AnimatedSprite(const Texture&)");
 	this->setTexture(t);
 }
 
 AnimatedSpriteEnemy::AnimatedSpriteEnemy(const sf::Texture& t, const sf::IntRect& rect) :
 	AnimatedSpriteEnemy(t)
 {
-	DEBUG_MSG("AnimatedSprite(const Texture&, const IntRect&)");
+	//DEBUG_MSG("AnimatedSprite(const Texture&, const IntRect&)");
 	m_frames.push_back(rect);
 }
 
 AnimatedSpriteEnemy::~AnimatedSpriteEnemy() {
-	DEBUG_MSG("~AnimatedSprite()");
+	//DEBUG_MSG("~AnimatedSprite()");
 }
 
 const sf::Clock& AnimatedSpriteEnemy::getClock() {

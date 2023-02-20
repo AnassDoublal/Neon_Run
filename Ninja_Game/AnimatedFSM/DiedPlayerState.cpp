@@ -24,7 +24,7 @@ void DiedPlayerState::update(Player& player) {
 			{
 				if (player.m_feet_collision.intersects(tile.getGlobalBounds()))
 				{
-					std::cout << "INTERSECTED" << "\n";
+					//std::cout << "INTERSECTED" << "\n";
 					//std::cout << tile.getPosition().x << "\n";
 					player.m_tileIntersection = true;
 				}
@@ -79,7 +79,7 @@ void DiedPlayerState::update(Player& player) {
 }
 void DiedPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering DiedPlayerState");
+	//DEBUG_MSG("Entering DiedPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	player.m_isDead = true;
@@ -102,7 +102,7 @@ void DiedPlayerState::enter(Player& player)
 }
 void DiedPlayerState::exit(Player& player)
 {
-	DEBUG_MSG("Exiting DiedPlayerState");
+	//DEBUG_MSG("Exiting DiedPlayerState");
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(true);
 }

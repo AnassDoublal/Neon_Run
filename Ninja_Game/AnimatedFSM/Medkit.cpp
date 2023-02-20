@@ -19,7 +19,7 @@ void Medkit::update(sf::RenderWindow& window, Player* player)
 {
 	if (!player->m_isDead)
 	{
-		m_sprite.move(-.5f, .0f);
+		m_sprite.move(-player->m_speed, .0f);
 	}
 	else
 	{

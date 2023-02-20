@@ -11,7 +11,7 @@ PlayerState* SlidePlayerState::handleInput(gpp::Events& input)
 {
 	if (input.getCurrent() == gpp::Events::Event::RUN_RIGHT_START_EVENT)
 	{
-		DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
 		return new RunRightPlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
@@ -19,7 +19,7 @@ PlayerState* SlidePlayerState::handleInput(gpp::Events& input)
 		return new DiedPlayerState(m_tiles);
 	}*/
 	else if (input.getCurrent() == gpp::Events::Event::JUMP_UP_EVENT) {
-		DEBUG_MSG("SlidePlayerState -> JumpPlayerState");
+		//DEBUG_MSG("SlidePlayerState -> JumpPlayerState");
 		return new JumpPlayerState();
 	}
 	return nullptr;
@@ -54,7 +54,7 @@ void SlidePlayerState::update(Player& player) {
 	}
 
 	if (m_clock.getElapsedTime().asSeconds() > 2.0f || player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall) {
-		DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
@@ -65,7 +65,7 @@ void SlidePlayerState::update(Player& player) {
 }
 void SlidePlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering SlidePlayerState");
+	//DEBUG_MSG("Entering SlidePlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	player.getAnimatedSprite().setPosition(sf::Vector2f(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y + 40.0f));
@@ -89,7 +89,7 @@ void SlidePlayerState::exit(Player& player)
 	player.getAnimatedSprite().setPosition(sf::Vector2f(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y - 40.0f));
 	player.m_canThrowDagger = true;
 
-	DEBUG_MSG("Exiting SlidePlayerState");
+	//DEBUG_MSG("Exiting SlidePlayerState");
 }
 
 //void SlidePlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)

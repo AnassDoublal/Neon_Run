@@ -40,6 +40,9 @@ public:
 
 	sf::Clock m_invincibilityTime;
 	bool m_isInvincibilityClockRestarted = false;
+
+	float m_speed = .8f;
+	float m_maxSpeed = 2.0f;
 private:
 	PlayerState* m_state;
 	AnimatedSprite m_animated_sprite;

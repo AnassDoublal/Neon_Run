@@ -14,7 +14,7 @@ PlayerState* JumpThrowAttackPlayerState::handleInput(gpp::Events& input)
 	}*/
 	if (input.getCurrent() == gpp::Events::Event::THROW_STOP_EVENT)
 	{
-		DEBUG_MSG("JumpThrowAttackPlayerState -> GlidePlayerState");
+		//DEBUG_MSG("JumpThrowAttackPlayerState -> GlidePlayerState");
 		return new GlidePlayerState();
 	}
 	return nullptr;
@@ -30,7 +30,7 @@ void JumpThrowAttackPlayerState::update(Player& player) {
 			{
 				if (player.m_feet_collision.intersects(tile.getGlobalBounds()))
 				{
-					std::cout << "INTERSECTED" << "\n";
+					//std::cout << "INTERSECTED" << "\n";
 					//std::cout << tile.getPosition().x << "\n";
 					player.m_tileIntersection = true;
 				}
@@ -45,7 +45,7 @@ void JumpThrowAttackPlayerState::update(Player& player) {
 	}
 
 	if (player.m_isGrounded) {
-		DEBUG_MSG("JumpThrowAttackPlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("JumpThrowAttackPlayerState -> RunRightPlayerState");
 		if (!player.m_tileIntersection)
 			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
 		else
@@ -70,7 +70,7 @@ void JumpThrowAttackPlayerState::update(Player& player) {
 }
 void JumpThrowAttackPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering JumpThrowAttackPlayerState");
+	//DEBUG_MSG("Entering JumpThrowAttackPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	//player.m_friction = .0f;
@@ -95,7 +95,7 @@ void JumpThrowAttackPlayerState::enter(Player& player)
 }
 void JumpThrowAttackPlayerState::exit(Player& player)
 {
-	DEBUG_MSG("Exiting JumpThrowAttackPlayerState");
+	//DEBUG_MSG("Exiting JumpThrowAttackPlayerState");
 }
 
 //void JumpThrowAttackPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)

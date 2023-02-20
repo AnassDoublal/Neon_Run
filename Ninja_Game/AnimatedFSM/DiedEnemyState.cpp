@@ -23,7 +23,7 @@ void DiedEnemyState::update(Enemy& enemy) {
 			enemy.m_daggers.push_back(dagger);
 		}
 
-		DEBUG_MSG("DiedEnemyState -> IdleEnemyState");
+		//DEBUG_MSG("DiedEnemyState -> IdleEnemyState");
 		EnemyState* temp = enemy.getEnemyState();
 		EnemyState* state = new IdleEnemyState();
 		enemy.getEnemyState()->exit(enemy);
@@ -35,7 +35,7 @@ void DiedEnemyState::update(Enemy& enemy) {
 
 void DiedEnemyState::enter(Enemy& enemy)
 {
-	DEBUG_MSG("ENTERED DIED ENEMY STATE");
+	//DEBUG_MSG("ENTERED DIED ENEMY STATE");
 	enemy.getAnimatedSprite().clearFrames();
 
 	enemy.getAnimatedSprite().setPlayed(false);
@@ -57,7 +57,7 @@ void DiedEnemyState::enter(Enemy& enemy)
 
 void DiedEnemyState::exit(Enemy& enemy)
 {
-	DEBUG_MSG("Exiting DiedEnemyState");
+	//DEBUG_MSG("Exiting DiedEnemyState");
 	enemy.getAnimatedSprite().setPlayed(false);
 	enemy.getAnimatedSprite().setLooped(true);
 }

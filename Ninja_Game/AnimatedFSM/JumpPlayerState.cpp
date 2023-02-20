@@ -16,17 +16,17 @@ PlayerState* JumpPlayerState::handleInput(gpp::Events& input)
 	//}
 	if (input.getCurrent() == gpp::Events::Event::ATTACK_START_EVENT)
 	{
-		DEBUG_MSG("JumpPlayerState -> JumpAttackPlayerState");
+		//DEBUG_MSG("JumpPlayerState -> JumpAttackPlayerState");
 		return new JumpAttackPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::THROW_START_EVENT)
 	{
-		DEBUG_MSG("JumpPlayerState -> JumpThrowAttackPlayerState");
+		//DEBUG_MSG("JumpPlayerState -> JumpThrowAttackPlayerState");
 		return new JumpThrowAttackPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::GLIDE_EVENT)
 	{
-		DEBUG_MSG("JumpPlayerState -> GlidePlayerState");
+		//DEBUG_MSG("JumpPlayerState -> GlidePlayerState");
 		return new GlidePlayerState();
 	}
 	return nullptr;
@@ -42,7 +42,7 @@ void JumpPlayerState::update(Player& player) {
 			{
 				if (player.m_feet_collision.intersects(tile.getGlobalBounds()))
 				{
-					std::cout << "INTERSECTED" << "\n";
+					//std::cout << "INTERSECTED" << "\n";
 					//std::cout << tile.getPosition().x << "\n";
 					player.m_tileIntersection = true;
 				}
@@ -58,7 +58,7 @@ void JumpPlayerState::update(Player& player) {
 	//std::cout << player.getAnimatedSprite().getPosition().y << "\n";
 
 	if (player.m_isGrounded) {
-		DEBUG_MSG("JumpPlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("JumpPlayerState -> RunRightPlayerState");
 		if(!player.m_tileIntersection)
 			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
 		else
@@ -73,7 +73,7 @@ void JumpPlayerState::update(Player& player) {
 }
 void JumpPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering JumpPlayerState");
+	//DEBUG_MSG("Entering JumpPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	player.m_isGrounded = false;
@@ -96,7 +96,7 @@ void JumpPlayerState::enter(Player& player)
 }
 void JumpPlayerState::exit(Player& player)
 {
-	DEBUG_MSG("Exiting JumpPlayerState");
+	//DEBUG_MSG("Exiting JumpPlayerState");
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(true);
 

@@ -73,7 +73,7 @@ void Enemy::update(sf::RenderWindow& window, Player* player)
 
 	if (!player->m_isDead)
 	{
-		m_animated_sprite.move(-.5f, .0f);
+		m_animated_sprite.move(-player->m_speed, .0f);
 	}
 	else
 	{

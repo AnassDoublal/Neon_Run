@@ -15,12 +15,12 @@ PlayerState* RunRightPlayerState::handleInput(gpp::Events& input)
 {
 	if (input.getCurrent() == gpp::Events::Event::ATTACK_START_EVENT)
 	{
-		DEBUG_MSG("RunRightPlayerState -> AttackPlayerState");
+		//DEBUG_MSG("RunRightPlayerState -> AttackPlayerState");
 		return new AttackPlayerState();
 	}
 	if (input.getCurrent() == gpp::Events::Event::THROW_START_EVENT)
 	{
-		DEBUG_MSG("RunRightPlayerState -> ThrowAttackPlayerState");
+		//DEBUG_MSG("RunRightPlayerState -> ThrowAttackPlayerState");
 		return new ThrowAttackPlayerState();
 	}
 	//else if (input.getCurrent() == gpp::Events::Event::HIT_WALL_EVENT || input.getCurrent() == gpp::Events::Event::RUN_RIGHT_STOP_EVENT)
@@ -39,11 +39,11 @@ PlayerState* RunRightPlayerState::handleInput(gpp::Events& input)
 	//	return new DecendLadderPlayerState();
 	//}
 	else if (input.getCurrent() == gpp::Events::Event::JUMP_UP_EVENT) {
-		DEBUG_MSG("IdlePlayerState -> JumpPlayerState");
+		//DEBUG_MSG("IdlePlayerState -> JumpPlayerState");
 		return new JumpPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::SLIDE_EVENT) {
-		DEBUG_MSG("RunRightPlayerState -> SlidePlayerState");
+		//DEBUG_MSG("RunRightPlayerState -> SlidePlayerState");
 		return new SlidePlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
@@ -95,7 +95,7 @@ void RunRightPlayerState::update(Player& player) {
 }
 void RunRightPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering RunRightPlayerState");
+	//DEBUG_MSG("Entering RunRightPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	player.m_isGrounded = true;
@@ -115,7 +115,7 @@ void RunRightPlayerState::enter(Player& player)
 }
 void RunRightPlayerState::exit(Player& player) 
 {
-	DEBUG_MSG("Exiting RunRightPlayerState");
+	//DEBUG_MSG("Exiting RunRightPlayerState");
 }
 
 //void RunRightPlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)

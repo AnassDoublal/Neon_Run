@@ -353,7 +353,7 @@ int main()
 
 	int numExtraKunais = 0;
 
-	std::cout << sf::Joystick::ButtonCount << "\n";
+	//std::cout << sf::Joystick::ButtonCount << "\n";
 
 	//std::vector<sf::Sprite> playerTiles;
 
@@ -376,6 +376,8 @@ int main()
 	Score score;
 	score.init(window);
 
+	int speedIncreaseFactor = 4000;
+
 	gpp::Events input;
 
 	// Start the game loop
@@ -388,7 +390,16 @@ int main()
 							   player.getAnimatedSprite().getPosition().y);*/
 
 		if(!player.m_isDead)
-			score.update(window, .5f);
+			score.update(window, player.m_speed);
+
+		if (player.m_speed < player.m_maxSpeed)
+		{
+			if (score.getScore() > 0 && score.getScore() > speedIncreaseFactor)
+			{
+				player.m_speed += .1f;
+				speedIncreaseFactor += 4000;
+			}
+		}
 
 		rPlayer.updateX(player.getAnimatedSprite().getPosition().x, .0f);
 		rPlayer.updateY(player.getAnimatedSprite().getPosition().y);
@@ -415,12 +426,13 @@ int main()
 					audio.playHurtSound();
 
 					isEnemyHit = true;
+					hitEnemy = i;
 				}
 			}
 
 			if (player.getAnimatedSprite().getGlobalBounds().intersects(tileArray[i]->getMedkit().getSprite().getGlobalBounds()))
 			{
-				if (lives.size() < 3)
+				if (lives.size() < 3 && lives.size() > 0)
 				{
 					sf::Sprite life;
 					life.setTexture(lives_texture);
@@ -493,7 +505,7 @@ int main()
 			{
 				if (rectangle_to_rectangle(player.m_daggers_rectangles[0], tileArray[i]->getEnemy().m_rectangle))
 				{
-					std::cout << "RIP ENEMY NINJA\n";
+					//std::cout << "RIP ENEMY NINJA\n";
 					tileArray[i]->getEnemy().m_rectangle.setWidth(.0f);
 					tileArray[i]->getEnemy().m_rectangle.setHeight(.0f);
 					tileArray[i]->getEnemy().m_isDead = true;
@@ -516,7 +528,7 @@ int main()
 				{
 					if (!minusOneLife && lives.size() > 0)
 					{
-						std::cout << "OUCH THAT HURTS\n";
+						//std::cout << "OUCH THAT HURTS\n";
 						lives.pop_back();
 						player.m_health--;
 						minusOneLife = true;
@@ -546,7 +558,7 @@ int main()
 					player.m_isInvincibilityClockRestarted = false;
 				}
 
-				std::cout << player.m_invincibilityTime.getElapsedTime().asSeconds() << "\n";
+				//std::cout << player.m_invincibilityTime.getElapsedTime().asSeconds() << "\n";
 			}
 
 			if (tileMove[i])
@@ -575,7 +587,7 @@ int main()
 			{
 				gotNewTileset = true;
 
-				std::cout << "WE'RE IN !!! POGCHAMP\n";
+				//std::cout << "WE'RE IN !!! POGCHAMP\n";
 
 				while (randomSet == currentSet)
 					randomSet = rand() % 3 + 1;
@@ -706,10 +718,10 @@ int main()
 
 			for (int i = 0; i < 40; i++)
 			{
-				tiles_ground[i].move(sf::Vector2f(-.5f, .0f));
-				tiles_ground_1[i].move(sf::Vector2f(-.5f, .0f));
-				tiles_ground_copy[i].move(sf::Vector2f(-.5f, .0f));
-				tiles_ground_1_copy[i].move(sf::Vector2f(-.5f, .0f));
+				tiles_ground[i].move(sf::Vector2f(-player.m_speed, .0f));
+				tiles_ground_1[i].move(sf::Vector2f(-player.m_speed, .0f));
+				tiles_ground_copy[i].move(sf::Vector2f(-player.m_speed, .0f));
+				tiles_ground_1_copy[i].move(sf::Vector2f(-player.m_speed, .0f));
 			}
 		}
 		else
@@ -773,7 +785,7 @@ int main()
 
 		if (Joystick::isButtonPressed(0, 0))
 		{
-			DEBUG_MSG("gpp::Events::Event::JUMP_UP_EVENT");
+			//DEBUG_MSG("gpp::Events::Event::JUMP_UP_EVENT");
 			input.setCurrent(gpp::Events::Event::JUMP_UP_EVENT);
 		}
 
@@ -791,24 +803,24 @@ int main()
 			case sf::Event::JoystickButtonPressed:
 				if (player.m_isGrounded && Joystick::isButtonPressed(0, 0))
 				{
-					DEBUG_MSG("gpp::Events::Event::JUMP_UP_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::JUMP_UP_EVENT");
 					input.setCurrent(gpp::Events::Event::JUMP_UP_EVENT);
 				}
 				else if (!player.m_isGrounded && Joystick::isButtonPressed(0, 0))
 				{
-					DEBUG_MSG("gpp::Events::Event::GLIDE_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::GLIDE_EVENT");
 					input.setCurrent(gpp::Events::Event::GLIDE_EVENT);
 				}
 				else if (sf::Joystick::isButtonPressed(0, 2))
 				{
-					DEBUG_MSG("gpp::Events::Event::ATTACK_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::ATTACK_START_EVENT");
 					input.setCurrent(gpp::Events::Event::ATTACK_START_EVENT);
 
 					audio.playSwooshSound();
 				}
 				else if (sf::Joystick::isButtonPressed(0, 5) && player.m_daggers.size() > 0 && !daggerThrow && player.m_canThrowDagger)
 				{
-					DEBUG_MSG("gpp::Events::Event::THROW_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::THROW_START_EVENT");
 					input.setCurrent(gpp::Events::Event::THROW_START_EVENT);
 
 					daggerThrow = true;
@@ -817,19 +829,19 @@ int main()
 			case sf::Event::JoystickMoved:
 				if (sf::Joystick::getAxisPosition(0, sf::Joystick::Y) > 90.0f)
 				{
-					DEBUG_MSG("gpp::Events::Event::SLIDE_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::SLIDE_EVENT");
 					input.setCurrent(gpp::Events::Event::SLIDE_EVENT);
 				}
 				else if(sf::Joystick::getAxisPosition(0, sf::Joystick::Y) <= 90.0f && !player.m_isAttacking)
 				{
-					DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
 					input.setCurrent(gpp::Events::Event::RUN_RIGHT_START_EVENT);
 				}
 				break;
 			case sf::Event::JoystickButtonReleased:
 				if (!player.m_isGrounded && event.joystickButton.button == (0, 0))
 				{
-					DEBUG_MSG("gpp::Events::Event::GLIDE_STOP_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::GLIDE_STOP_EVENT");
 					input.setCurrent(gpp::Events::Event::GLIDE_STOP_EVENT);
 				}
 				// Stop Attack
@@ -837,14 +849,14 @@ int main()
 					&&
 					player.m_isGrounded)
 				{
-					DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
 					input.setCurrent(gpp::Events::Event::RUN_RIGHT_START_EVENT);
 				}
 				else if (event.joystickButton.button == (0, 2)
 					&&
 					!player.m_isGrounded)
 				{
-					DEBUG_MSG("gpp::Events::Event::ATTACK_STOP_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::ATTACK_STOP_EVENT");
 					input.setCurrent(gpp::Events::Event::ATTACK_STOP_EVENT);
 				}
 				break;
@@ -876,7 +888,7 @@ int main()
 				// Attack
 				if (sf::Keyboard::isKeyPressed(sf::Keyboard::Z))
 				{
-					DEBUG_MSG("gpp::Events::Event::ATTACK_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::ATTACK_START_EVENT");
 					input.setCurrent(gpp::Events::Event::ATTACK_START_EVENT);
 
 					audio.playSwooshSound();
@@ -897,7 +909,7 @@ int main()
 				// Throw Attack
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X) && player.m_daggers.size() > 0 && !daggerThrow && player.m_canThrowDagger)
 				{
-					DEBUG_MSG("gpp::Events::Event::THROW_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::THROW_START_EVENT");
 					input.setCurrent(gpp::Events::Event::THROW_START_EVENT);
 
 					daggerThrow = true;
@@ -948,13 +960,13 @@ int main()
 				// Jump Event
 				else if (player.m_isGrounded && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
-					DEBUG_MSG("gpp::Events::Event::JUMP_UP_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::JUMP_UP_EVENT");
 					input.setCurrent(gpp::Events::Event::JUMP_UP_EVENT);
 				}
 				// Running Slide
 				else if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down))
 				{
-					DEBUG_MSG("gpp::Events::Event::SLIDE_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::SLIDE_EVENT");
 					input.setCurrent(gpp::Events::Event::SLIDE_EVENT);
 				}
 				// Hit Ground Event
@@ -981,7 +993,7 @@ int main()
 				// Glide
 				else if (player.m_isGrounded == false && sf::Keyboard::isKeyPressed(sf::Keyboard::Space))
 				{
-					DEBUG_MSG("gpp::Events::Event::GLIDE_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::GLIDE_EVENT");
 					input.setCurrent(gpp::Events::Event::GLIDE_EVENT);
 				}
 				break;
@@ -993,14 +1005,14 @@ int main()
 					&& 
 					player.m_isGrounded)
 				{
-					DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
 					input.setCurrent(gpp::Events::Event::RUN_RIGHT_START_EVENT);
 				}
 				else if(event.key.code == sf::Keyboard::Z
 					&&
 					player.m_isGrounded == false)
 				{
-					DEBUG_MSG("gpp::Events::Event::ATTACK_STOP_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::ATTACK_STOP_EVENT");
 					input.setCurrent(gpp::Events::Event::ATTACK_STOP_EVENT);
 				}
 				// Run and Stop Throw Attack
@@ -1028,7 +1040,7 @@ int main()
 					/*&&
 					sf::Keyboard::isKeyPressed(sf::Keyboard::Right)*/)
 				{
-					DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::RUN_RIGHT_START_EVENT");
 					input.setCurrent(gpp::Events::Event::RUN_RIGHT_START_EVENT);
 				}
 				// Stop Moving Up
@@ -1046,13 +1058,13 @@ int main()
 				// Stop gliding
 				else if (player.m_isGrounded == false && event.key.code == sf::Keyboard::Space)
 				{
-					DEBUG_MSG("gpp::Events::Event::GLIDE_STOP_EVENT");
+					//DEBUG_MSG("gpp::Events::Event::GLIDE_STOP_EVENT");
 					input.setCurrent(gpp::Events::Event::GLIDE_STOP_EVENT);
 				}
 				break;
 
 			default:
-				DEBUG_MSG("gpp::Events::Event::NONE");
+				//DEBUG_MSG("gpp::Events::Event::NONE");
 				input.setCurrent(gpp::Events::Event::NONE);
 				break;
 			}

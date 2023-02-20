@@ -11,12 +11,12 @@ PlayerState* AttackPlayerState::handleInput(gpp::Events& input)
 {
 	if (input.getCurrent() == gpp::Events::Event::RUN_RIGHT_START_EVENT)
 	{
-		DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
 		return new RunRightPlayerState();
 	}
 	else if (input.getCurrent() == gpp::Events::Event::ATTACK_STOP_EVENT)
 	{
-		DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
 		return new RunRightPlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
@@ -48,7 +48,7 @@ void AttackPlayerState::update(Player& player) {
 	}
 
 	if (m_clock.getElapsedTime().asSeconds() > .33f || player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall) {
-		DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();
 		player.getPlayerState()->exit(player);
@@ -59,7 +59,7 @@ void AttackPlayerState::update(Player& player) {
 }
 void AttackPlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering AttackPlayerState");
+	//DEBUG_MSG("Entering AttackPlayerState");
 	player.getAnimatedSprite().clearFrames();
 
 	player.m_isAttacking = true;
@@ -79,7 +79,7 @@ void AttackPlayerState::enter(Player& player)
 }
 void AttackPlayerState::exit(Player& player)
 {
-	DEBUG_MSG("Exiting AttackPlayerState");
+	//DEBUG_MSG("Exiting AttackPlayerState");
 
 	player.m_isAttacking = false;
 }

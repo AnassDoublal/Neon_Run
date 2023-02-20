@@ -45,7 +45,7 @@ void IdleEnemyState::update(Enemy& enemy) {
 		if (enemy.m_animated_sprite.getPosition().x < 1920.0f && !enemy.m_isPlayerDead)
 		{
 			if (m_clock.getElapsedTime().asSeconds() > 1.0f) {
-				DEBUG_MSG("IdleEnemyState -> ThrowAttackEnemyState");
+				//DEBUG_MSG("IdleEnemyState -> ThrowAttackEnemyState");
 				EnemyState* temp = enemy.getEnemyState();
 				EnemyState* state = new ThrowAttackEnemyState();
 				enemy.getEnemyState()->exit(enemy);
@@ -57,7 +57,7 @@ void IdleEnemyState::update(Enemy& enemy) {
 	}
 	else
 	{
-		DEBUG_MSG("IdleEnemyState -> DiedEnemyState");
+		//DEBUG_MSG("IdleEnemyState -> DiedEnemyState");
 		EnemyState* temp = enemy.getEnemyState();
 		EnemyState* state = new DiedEnemyState();
 		enemy.getEnemyState()->exit(enemy);
@@ -69,7 +69,7 @@ void IdleEnemyState::update(Enemy& enemy) {
 
 void IdleEnemyState::enter(Enemy& enemy)
 {
-	DEBUG_MSG("ENTERED THE IDLE ENEMY STATE BABY WE GOT IT OMG");
+	//DEBUG_MSG("ENTERED THE IDLE ENEMY STATE BABY WE GOT IT OMG");
 	enemy.getAnimatedSprite().clearFrames();
 
 	enemy.getAnimatedSprite().addFrame(sf::IntRect(3900, 0, 232, 439));
@@ -88,5 +88,5 @@ void IdleEnemyState::enter(Enemy& enemy)
 
 void IdleEnemyState::exit(Enemy& enemy)
 {
-	DEBUG_MSG("Exiting IdlePlayerState");
+	//DEBUG_MSG("Exiting IdlePlayerState");
 }

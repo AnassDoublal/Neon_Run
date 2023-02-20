@@ -11,7 +11,7 @@ PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 {
 	if (input.getCurrent() == gpp::Events::Event::HIT_GROUND_EVENT)
 	{
-		DEBUG_MSG("GlidePlayerState -> RunRightPlayerState");
+		//DEBUG_MSG("GlidePlayerState -> RunRightPlayerState");
 		return new RunRightPlayerState();
 	}
 	/*else if (input.getCurrent() == gpp::Events::Event::DIED_EVENT)
@@ -21,13 +21,13 @@ PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 	}*/
 	else if (input.getCurrent() == gpp::Events::Event::GLIDE_STOP_EVENT)
 	{
-		DEBUG_MSG("GlidePlayerState -> JumpPlayerState");
+		//DEBUG_MSG("GlidePlayerState -> JumpPlayerState");
 		return new JumpPlayerState();
 	}
 	return nullptr;
 }
 void GlidePlayerState::update(Player& player) {
-	DEBUG_MSG("GlidePlayerState -> RunRightPlayerState");
+	//DEBUG_MSG("GlidePlayerState -> RunRightPlayerState");
 
 	player.getAnimatedSprite().move(sf::Vector2f(.0f, .25f));
 
@@ -57,7 +57,7 @@ void GlidePlayerState::update(Player& player) {
 }
 void GlidePlayerState::enter(Player& player)
 {
-	DEBUG_MSG("Entering GlidePlayerState");
+	//DEBUG_MSG("Entering GlidePlayerState");
 
 	player.getAnimatedSprite().clearFrames();
 
@@ -82,7 +82,7 @@ void GlidePlayerState::exit(Player& player)
 
 	player.m_canThrowDagger = true;
 
-	DEBUG_MSG("Exiting GlidePlayerState");
+	//DEBUG_MSG("Exiting GlidePlayerState");
 }
 
 //void GlidePlayerState::setTiles(std::vector<sf::Sprite>& t_tiles)
