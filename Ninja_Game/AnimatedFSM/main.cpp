@@ -10,6 +10,7 @@
 #include "Set2.h"
 #include "Set3.h"
 #include "Set4.h"
+#include "Set5.h"
 #include "circle.h"
 #include "Rectangle.h"
 #include "EndScreen.h"
@@ -138,6 +139,7 @@ int main()
 	Set2 set2;
 	Set3 set3;
 	Set4 set4;
+	Set5 set5;
 
 	std::vector<Tiles*> tileArray;
 	std::vector<bool> tileMove;
@@ -146,11 +148,13 @@ int main()
 	set2.init(tile_texture, window);
 	set3.init(tile_texture, window);
 	set4.init(tile_texture, window);
+	set5.init(tile_texture, window);
 
 	tileArray.push_back(&set1);
 	tileArray.push_back(&set2);
 	tileArray.push_back(&set3);
 	tileArray.push_back(&set4);
+	tileArray.push_back(&set5);
 
 	for (size_t i = 0; i < tileArray.size(); i++)
 	{
@@ -450,11 +454,11 @@ int main()
 
 			if (player.getAnimatedSprite().getGlobalBounds().intersects(tileArray[i]->getExtraKunais().getSprite().getGlobalBounds()))
 			{
-				if (player.m_daggers.size() < 50)
+				if (player.m_daggers.size() < 5)
 				{
-					if (player.m_daggers.size() > 47)
+					if (player.m_daggers.size() > 2)
 					{
-						numExtraKunais = 50 - player.m_daggers.size();
+						numExtraKunais = 5 - player.m_daggers.size();
 					}
 					else
 						numExtraKunais = 3;

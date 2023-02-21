@@ -1,13 +1,1 @@
-﻿  Set4.cpp
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\Set4.cpp(10,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\Set4.cpp(59,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\Set4.cpp(83,20): warning C4018: '<': signed/unsigned mismatch
-  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe
+﻿  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe
