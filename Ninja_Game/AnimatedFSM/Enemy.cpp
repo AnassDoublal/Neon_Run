@@ -39,7 +39,7 @@ void Enemy::init(sf::RenderWindow& window, float posX, float PosY)
 		DEBUG_MSG("Failed to load kunai");
 	}
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		sf::Sprite dagger;
 		dagger.setTexture(m_daggerTexture);
@@ -48,7 +48,7 @@ void Enemy::init(sf::RenderWindow& window, float posX, float PosY)
 		m_daggers.push_back(dagger);
 	}
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 1; i++)
 	{
 		Rectangle rDagger(m_daggers[i].getPosition().x,
 						  m_daggers[i].getPosition().y,
@@ -111,8 +111,11 @@ void Enemy::update(sf::RenderWindow& window, Player* player)
 
 		if (m_daggers[0].getPosition().x < .0f)
 		{
-			m_daggers.erase(m_daggers.begin());
-			m_daggers_rectangles.erase(m_daggers_rectangles.begin());
+			/*m_daggers.erase(m_daggers.begin());
+			m_daggers_rectangles.erase(m_daggers_rectangles.begin());*/
+			m_daggers[0].setPosition(-10000.0f, -10000.0f);
+			m_daggers_rectangles[0].updateX(-10000.0f, .0f);
+			m_daggers_rectangles[0].updateY(-10000.0f);
 			m_daggerThrow = false;
 		}
 	}

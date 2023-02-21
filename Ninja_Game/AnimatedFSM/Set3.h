@@ -11,6 +11,7 @@ public:
 	virtual Enemy& getEnemy();
 	virtual Medkit& getMedkit();
 	virtual ExtraKunais& getExtraKunais();
+	virtual float getEnemyX();
 	/*virtual Circle& getEnemyCircle();
 	virtual Rectangle& getEnemyRectangle();*/
 private:
@@ -41,4 +42,6 @@ private:
 	ExtraKunais extraKunais;
 
 	float m_friction = .2f;
+
+	float m_enemyX = 1400.0f;
 };

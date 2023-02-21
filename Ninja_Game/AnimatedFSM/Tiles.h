@@ -19,6 +19,7 @@ class Tiles
 		virtual Enemy& getEnemy() = 0;
 		virtual Medkit& getMedkit() = 0;
 		virtual ExtraKunais& getExtraKunais() = 0;
+		virtual float getEnemyX() = 0;
 		//virtual Circle& getEnemyCircle() = 0;
 		//virtual Rectangle& getEnemyRectangle() = 0;
 

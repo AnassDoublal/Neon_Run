@@ -6,13 +6,14 @@
 #include <Events.h>
 #include <Debug.h>
 #include <Tiles.h>
-#include <Set1.h>
-#include <Set2.h>
+#include "Set1.h"
+#include "Set2.h"
+#include "Set3.h"
+#include "Set4.h"
 #include "circle.h"
 #include "Rectangle.h"
 #include "EndScreen.h"
 #include "Audio.h"
-#include "Set3.h"
 #include "Score.h"
 
 using namespace std;
@@ -136,6 +137,7 @@ int main()
 	Set1 set1;
 	Set2 set2;
 	Set3 set3;
+	Set4 set4;
 
 	std::vector<Tiles*> tileArray;
 	std::vector<bool> tileMove;
@@ -143,17 +145,17 @@ int main()
 	set1.init(tile_texture, window);
 	set2.init(tile_texture, window);
 	set3.init(tile_texture, window);
+	set4.init(tile_texture, window);
 
 	tileArray.push_back(&set1);
 	tileArray.push_back(&set2);
 	tileArray.push_back(&set3);
-
-	tileMove.push_back(false);
-	tileMove.push_back(false);
-	tileMove.push_back(false);
+	tileArray.push_back(&set4);
 
 	for (size_t i = 0; i < tileArray.size(); i++)
 	{
+		tileMove.push_back(false);
+
 		for (size_t j = 0; j < tileArray[i]->getTiles().size(); j++)
 		{
 			tileArray[i]->getTiles()[j].setScale(1.0f, 1.0f);
@@ -164,7 +166,7 @@ int main()
 		tileArray[i]->getExtraKunais().getSprite().setScale(.5f, .5f);
 	}
 
-	int randomSet = rand() % 3 + 1;
+	int randomSet = rand() % tileArray.size() + 1;
 	int currentSet = 0;
 	int previousSet = 0;
 
@@ -189,7 +191,7 @@ int main()
 		DEBUG_MSG("Failed to load kunai");
 	}
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		sf::Sprite dagger;
 		dagger.setTexture(daggerTexture);
@@ -202,7 +204,7 @@ int main()
 
 	//std::vector<sf::RectangleShape> rDaggersReps;
 
-	for (int i = 0; i < 50; i++)
+	for (int i = 0; i < 3; i++)
 	{
 		Rectangle rDagger(player.m_daggers[i].getPosition().x,
 						  player.m_daggers[i].getPosition().y,
@@ -296,7 +298,7 @@ int main()
 	enemyHUD.setScale(.2f, .2f);
 	enemyHUD.setPosition(enemiesHitText.getPosition().x - enemyHUD.getGlobalBounds().width - 10.0f, 20.0f);
 
-	int numDaggers = 50;
+	int numDaggers = 3;
 	bool minusOneDagger = true;
 
 	sf::Text daggersHUDText;
@@ -514,6 +516,7 @@ int main()
 					score.bonus(1000.0f);
 
 					player.m_shotsHit++;
+					std::cout << "SHOTS HIT : " << player.m_shotsHit << "\n";
 
 					audio.playHurtSound();
 
@@ -590,7 +593,7 @@ int main()
 				//std::cout << "WE'RE IN !!! POGCHAMP\n";
 
 				while (randomSet == currentSet)
-					randomSet = rand() % 3 + 1;
+					randomSet = rand() % tileArray.size() + 1;
 
 				currentSet = randomSet;
 
@@ -618,7 +621,7 @@ int main()
 					tileArray[i]->getTiles()[j].setPosition(window.getSize().x + baseTilePos - std::abs(tileArray[i]->getTiles()[j].getPosition().x), tileArray[i]->getTiles()[j].getPosition().y);
 				}
 
-				switch (i + 1)
+				/*switch (i + 1)
 				{
 					case 1:
 						tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
@@ -631,7 +634,11 @@ int main()
 					case 3:
 						tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + 1400.0f, tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
 						break;
-				}
+				}*/
+
+				tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + tileArray[i]->getEnemyX(), tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+				tileArray[i]->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tileArray[i]->getMedkit().getSprite().getPosition().y);
+				tileArray[i]->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tileArray[i]->getExtraKunais().getSprite().getPosition().y);
 
 				tileArray[i]->getMedkit().getSprite().setScale(.1f, .1f);
 				tileArray[i]->getExtraKunais().getSprite().setScale(.5f, .5f);
@@ -764,6 +771,7 @@ int main()
 					{
 						numDaggers--;
 						player.m_totalShots++;
+						std::cout << "TOTAL SHOTS : " << player.m_totalShots << "\n";
 
 						audio.playSwooshSound();
 					}

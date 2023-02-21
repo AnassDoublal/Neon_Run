@@ -125,6 +125,11 @@ ExtraKunais& Set1::getExtraKunais()
 	return extraKunais;
 }
 
+float Set1::getEnemyX()
+{
+	return m_enemyX;
+}
+
 //Circle& Set1::getEnemyCircle()
 //{
 //	return enemy.m_circle;

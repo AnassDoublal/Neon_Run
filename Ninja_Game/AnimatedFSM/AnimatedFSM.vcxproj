@@ -164,6 +164,8 @@
     <ClInclude Include="Set1.h" />
     <ClInclude Include="Set2.h" />
     <ClInclude Include="Set3.h" />
+    <ClInclude Include="Set4.h" />
+    <ClInclude Include="Set5.h" />
     <ClInclude Include="SlidePlayerState.h" />
     <ClInclude Include="ThrowAttackEnemyState.h" />
     <ClInclude Include="ThrowAttackPlayerState.h" />
@@ -203,6 +205,8 @@
     <ClCompile Include="Set1.cpp" />
     <ClCompile Include="Set2.cpp" />
     <ClCompile Include="Set3.cpp" />
+    <ClCompile Include="Set4.cpp" />
+    <ClCompile Include="Set5.cpp" />
     <ClCompile Include="SlidePlayerState.cpp" />
     <ClCompile Include="ThrowAttackEnemyState.cpp" />
     <ClCompile Include="ThrowAttackPlayerState.cpp" />

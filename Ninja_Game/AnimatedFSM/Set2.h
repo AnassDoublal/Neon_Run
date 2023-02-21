@@ -11,6 +11,7 @@ class Set2 : public Tiles {
 		virtual Enemy& getEnemy();
 		virtual Medkit& getMedkit();
 		virtual ExtraKunais& getExtraKunais();
+		virtual float getEnemyX();
 		/*virtual Circle& getEnemyCircle();
 		virtual Rectangle& getEnemyRectangle();*/
 	private:
@@ -36,4 +37,6 @@ class Set2 : public Tiles {
 		ExtraKunais extraKunais;
 
 		float m_friction = .2f;
+
+		float m_enemyX = 750.0f;
 };

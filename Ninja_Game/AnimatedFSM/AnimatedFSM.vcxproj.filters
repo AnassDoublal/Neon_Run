@@ -207,6 +207,12 @@
     <ClInclude Include="Score.h">
       <Filter>Header Files\Managers</Filter>
     </ClInclude>
+    <ClInclude Include="Set4.h">
+      <Filter>Header Files\Tiles</Filter>
+    </ClInclude>
+    <ClInclude Include="Set5.h">
+      <Filter>Header Files\Tiles</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Player.cpp">
@@ -316,6 +322,12 @@
     </ClCompile>
     <ClCompile Include="Score.cpp">
       <Filter>Source Files\Managers</Filter>
+    </ClCompile>
+    <ClCompile Include="Set4.cpp">
+      <Filter>Source Files\Tiles</Filter>
+    </ClCompile>
+    <ClCompile Include="Set5.cpp">
+      <Filter>Source Files\Tiles</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

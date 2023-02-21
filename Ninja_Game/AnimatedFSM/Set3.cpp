@@ -187,3 +187,8 @@ ExtraKunais& Set3::getExtraKunais()
 {
 	return extraKunais;
 }
+
+float Set3::getEnemyX()
+{
+	return m_enemyX;
+}
