@@ -1,9 +1,9 @@
 #pragma once
 
-#include <Debug.h>
-#include <Events.h>
-#include <vector>
-#include <SFML/Graphics.hpp>
+#include "Debug.h"
+#include "Events.h"
+#include "vector"
+#include "SFML/Graphics.hpp"
 
 class Enemy;
 class Player;

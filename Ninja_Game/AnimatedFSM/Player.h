@@ -1,9 +1,9 @@
 #ifndef PLAYER_H
 #define PLAYER_H
-#include <Events.h>
-#include <PlayerState.h>
-#include <AnimatedSprite.h>
-#include <map>
+#include "Events.h"
+#include "PlayerState.h"
+#include "AnimatedSprite.h"
+#include "map"
 #include "Tiles.h"
 
 class Player
@@ -43,6 +43,9 @@ public:
 
 	float m_speed = .8f;
 	float m_maxSpeed = 2.0f;
+
+	bool m_hasCollectedMedkit = false;
+	bool m_hasCollectedKunais = false;
 private:
 	PlayerState* m_state;
 	AnimatedSprite m_animated_sprite;

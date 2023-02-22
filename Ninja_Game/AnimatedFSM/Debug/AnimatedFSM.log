@@ -1,1 +1,3 @@
-﻿  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe
+﻿  EnemyScore.cpp
+C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\AnimatedFSM\EnemyScore.cpp(12,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Downloads\Ninja-Runner\Ninja_Game\Debug\AnimatedFSM.exe

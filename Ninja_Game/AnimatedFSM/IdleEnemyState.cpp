@@ -1,8 +1,8 @@
-#include <Events.h>
+#include "Events.h"
 
-#include <IdleEnemyState.h>
-#include <ThrowAttackEnemyState.h>
-#include <DiedEnemyState.h>
+#include "IdleEnemyState.h"
+#include "ThrowAttackEnemyState.h"
+#include "DiedEnemyState.h"
 
 EnemyState* IdleEnemyState::setAction() {
 

@@ -1,8 +1,8 @@
 #ifndef THROW_ATTACK_PLAYER_STATE_H
 #define THROW_ATTACK_PLAYER_STATE_H
 
-#include <Player.h>
-#include <PlayerState.h>
+#include "Player.h"
+#include "PlayerState.h"
 
 class ThrowAttackPlayerState : public PlayerState {
 public:

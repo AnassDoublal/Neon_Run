@@ -1,9 +1,9 @@
-#include <stdio.h>
-#include <Player.h>
-#include <Events.h>
-#include <IdlePlayerState.h>
-#include <RunRightPlayerState.h>
-#include <DiedPlayerState.h>
+#include "stdio.h"
+#include "Player.h"
+#include "Events.h"
+#include "IdlePlayerState.h"
+#include "RunRightPlayerState.h"
+#include "DiedPlayerState.h"
 
 Player::Player(const AnimatedSprite& sprite) : m_animated_sprite(sprite)
 {

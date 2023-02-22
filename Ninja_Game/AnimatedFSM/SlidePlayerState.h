@@ -1,8 +1,8 @@
 #ifndef SLIDE_PLAYER_STATE_H
 #define SLIDE_PLAYER_STATE_H
 
-#include <Player.h>
-#include <PlayerState.h>
+#include "Player.h"
+#include "PlayerState.h"
 
 class SlidePlayerState : public PlayerState {
 public:

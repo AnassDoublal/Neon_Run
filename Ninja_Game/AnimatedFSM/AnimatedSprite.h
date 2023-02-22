@@ -1,10 +1,10 @@
 #ifndef ANIMATED_SPRITE_H
 #define ANIMATED_SPRITE_H
 
-#include <SFML\Graphics\Sprite.hpp>
-#include <SFML\System\Clock.hpp>
-#include <vector>
-#include <Debug.h>
+#include "SFML\Graphics\Sprite.hpp"
+#include "SFML\System\Clock.hpp"
+#include "vector"
+#include "Debug.h"
 
 using namespace std;
 using namespace sf;

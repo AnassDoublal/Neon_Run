@@ -1,5 +1,5 @@
-#include <SFML/Graphics.hpp>
-#include <iostream>
+#include "SFML/Graphics.hpp"
+#include "iostream"
 #include "EndScreen.h"
 
 EndScreen::EndScreen(sf::RenderWindow& window, Player& t_player) : m_player(t_player)

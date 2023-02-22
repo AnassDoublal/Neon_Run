@@ -1,8 +1,8 @@
 #ifndef JUMP_PLAYER_STATE_H
 #define JUMP_PLAYER_STATE_H
 
-#include <Player.h>
-#include <PlayerState.h>
+#include "Player.h"
+#include "PlayerState.h"
 
 class JumpPlayerState : public PlayerState {
 public:

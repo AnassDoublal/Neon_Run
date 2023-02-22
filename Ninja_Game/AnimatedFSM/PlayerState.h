@@ -1,10 +1,10 @@
 #ifndef PLAYER_STATE_H
 #define PLAYER_STATE_H
 
-#include <Debug.h>
-#include <Events.h>
-#include <vector>
-#include <SFML/Graphics.hpp>
+#include "Debug.h"
+#include "Events.h"
+#include "vector"
+#include "SFML/Graphics.hpp"
 
 class Player;
 

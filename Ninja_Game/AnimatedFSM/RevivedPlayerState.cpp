@@ -1,10 +1,10 @@
-#include <Events.h>
+#include "Events.h"
 
-#include <RevivedPlayerState.h>
+#include "RevivedPlayerState.h"
 
-#include <DiedPlayerState.h>
-#include <IdlePlayerState.h>
-#include <RunRightPlayerState.h>
+#include "DiedPlayerState.h"
+#include "IdlePlayerState.h"
+#include "RunRightPlayerState.h"
 
 PlayerState* RevivedPlayerState::handleInput(gpp::Events& input)
 {

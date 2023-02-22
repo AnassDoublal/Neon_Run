@@ -79,12 +79,12 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\devtools\SFML-2.5.1-x86\include;C:\Users\c00290201\Documents\Thor\include;C:\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\devtools\Candle\include;C:\devtools\SFML-2.5.1-x86\include;C:\Users\c00290201\Documents\Thor\include;C:\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <DebugInformationFormat>OldStyle</DebugInformationFormat>
     </ClCompile>
     <Link>
       <AdditionalDependencies>sfml-main-d.lib;sfml-audio-d.lib;sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\devtools\SFML-2.5.1-x86\lib;C:\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\devtools\Candle\lib;C:\devtools\SFML-2.5.1-x86\lib;C:\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -93,10 +93,11 @@
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\devtools\SFML-2.5.1\include;C:\devtools\Candle\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <AdditionalLibraryDirectories>%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\devtools\Candle\build\lib;C:\devtools\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>sfml-main-d.lib;sfml-audio-d.lib;sfml-graphics-d.lib;sfml-network-d.lib;sfml-system-d.lib;sfml-window-d.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -144,6 +145,7 @@
     <ClInclude Include="DiedPlayerState.h" />
     <ClInclude Include="EndScreen.h" />
     <ClInclude Include="Enemy.h" />
+    <ClInclude Include="EnemyScore.h" />
     <ClInclude Include="EnemyState.h" />
     <ClInclude Include="ExtraKunais.h" />
     <ClInclude Include="GlidePlayerState.h" />
@@ -186,6 +188,7 @@
     <ClCompile Include="DiedPlayerState.cpp" />
     <ClCompile Include="EndScreen.cpp" />
     <ClCompile Include="Enemy.cpp" />
+    <ClCompile Include="EnemyScore.cpp" />
     <ClCompile Include="Events.cpp" />
     <ClCompile Include="ExtraKunais.cpp" />
     <ClCompile Include="GlidePlayerState.cpp" />

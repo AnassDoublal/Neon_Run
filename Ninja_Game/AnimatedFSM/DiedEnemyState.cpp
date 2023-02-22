@@ -1,7 +1,7 @@
-#include <Events.h>
+#include "Events.h"
 
-#include <DiedEnemyState.h>
-#include <IdleEnemyState.h>
+#include "DiedEnemyState.h"
+#include "IdleEnemyState.h"
 
 EnemyState* DiedEnemyState::setAction() {
 	return nullptr;

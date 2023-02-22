@@ -1,7 +1,7 @@
 #pragma once
 
-#include <Enemy.h>
-#include <EnemyState.h>
+#include "Enemy.h"
+#include "EnemyState.h"
 
 class ThrowAttackEnemyState : public EnemyState {
 public:

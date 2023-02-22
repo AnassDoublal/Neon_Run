@@ -1,11 +1,16 @@
-#include <Defines.h>
+//#ifdef _DEBUG
+//#pragma comment(lib, "libCandle-s.a") 
+//#endif
 
-#include <iostream>
-#include <SFML/Graphics.hpp>
+#include "Defines.h"
+
+#include "iostream"
+#include "SFML/Graphics.hpp"
 //#include <Player.h>
-#include <Events.h>
-#include <Debug.h>
-#include <Tiles.h>
+//#include "AnimatedSprite.h"
+#include "Events.h"
+#include "Debug.h"
+#include "Tiles.h"
 #include "Set1.h"
 #include "Set2.h"
 #include "Set3.h"
@@ -16,6 +21,8 @@
 #include "EndScreen.h"
 #include "Audio.h"
 #include "Score.h"
+#include "EnemyScore.h"
+//#include "Candle/RadialLight.hpp"
 
 using namespace std;
 
@@ -382,7 +389,14 @@ int main()
 	Score score;
 	score.init(window);
 
+	float scoreBonus = 1000.0f;
 	int speedIncreaseFactor = 4000;
+
+	int collectedMedkit = 0;
+	int collectedKunais = 0;
+
+	std::vector<std::shared_ptr<EnemyScore>> enemyScores;
+	std::vector<int> hitEnemies;
 
 	gpp::Events input;
 
@@ -415,31 +429,45 @@ int main()
 		//std::cout << "x : " << tileArray[currentSet - 1]->getTiles()[tileArray[currentSet - 1]->getTiles().size() - 1].getPosition().x << "\n";
 		//std::cout << playerTiles.size() << "\n";
 
+		//std::cout << enemyScores.size() << "\n";
+
 		for (size_t i = 0; i < tileArray.size(); i++)
 		{
 			if (rectangle_to_rectangle(rPlayer, tileArray[i]->getEnemy().m_rectangle))
 			{
 				if (player.m_isAttacking && !player.m_isDead)
 				{
-					std::cout << "RIP ENEMY NINJA\n";
+					std::shared_ptr<EnemyScore> enemyScore = std::make_unique<EnemyScore>(scoreBonus);
+					enemyScores.push_back(enemyScore);
+
 					tileArray[i]->getEnemy().m_rectangle.setWidth(.0f);
 					tileArray[i]->getEnemy().m_rectangle.setHeight(.0f);
 					tileArray[i]->getEnemy().m_isDead = true;
 
 					enemiesHit++;
-					score.bonus(1000.0f);
+					score.bonus(scoreBonus);
 
 					audio.playHurtSound();
 
 					isEnemyHit = true;
 					hitEnemy = i;
+					hitEnemies.push_back(i);
 				}
+			}
+
+			for (size_t i = 0; i < enemyScores.size(); i++)
+			{
+					if (hitEnemies.size() > 0)
+						enemyScores[i]->update(&(tileArray[hitEnemies[i]]->getEnemy()), enemyScores, hitEnemies);
 			}
 
 			if (player.getAnimatedSprite().getGlobalBounds().intersects(tileArray[i]->getMedkit().getSprite().getGlobalBounds()))
 			{
 				if (lives.size() < 3 && lives.size() > 0)
 				{
+					player.m_hasCollectedMedkit = true;
+					collectedMedkit = i;
+
 					sf::Sprite life;
 					life.setTexture(lives_texture);
 					life.setTextureRect(sf::IntRect(0, 0, 211, 200));
@@ -456,6 +484,9 @@ int main()
 			{
 				if (player.m_daggers.size() < 5)
 				{
+					player.m_hasCollectedKunais = true;
+					collectedKunais = i;
+
 					if (player.m_daggers.size() > 2)
 					{
 						numExtraKunais = 5 - player.m_daggers.size();
@@ -493,7 +524,7 @@ int main()
 
 				if (enemyBlood.getTextureRect().left < 3072)
 				{
-					if (enemyBloodFrame > 20)
+					if (enemyBloodFrame > 100)
 					{
 						enemyBlood.setTextureRect(sf::IntRect(enemyBlood.getTextureRect().left + 512, 0, 512, 512));
 						enemyBloodFrame = 0;
@@ -512,12 +543,16 @@ int main()
 				if (rectangle_to_rectangle(player.m_daggers_rectangles[0], tileArray[i]->getEnemy().m_rectangle))
 				{
 					//std::cout << "RIP ENEMY NINJA\n";
+
+					std::shared_ptr<EnemyScore> enemyScore = std::make_unique<EnemyScore>(scoreBonus);
+					enemyScores.push_back(enemyScore);
+
 					tileArray[i]->getEnemy().m_rectangle.setWidth(.0f);
 					tileArray[i]->getEnemy().m_rectangle.setHeight(.0f);
 					tileArray[i]->getEnemy().m_isDead = true;
 
 					enemiesHit++;
-					score.bonus(1000.0f);
+					score.bonus(scoreBonus);
 
 					player.m_shotsHit++;
 					std::cout << "SHOTS HIT : " << player.m_shotsHit << "\n";
@@ -526,6 +561,7 @@ int main()
 
 					isEnemyHit = true;
 					hitEnemy = i;
+					hitEnemies.push_back(i);
 				}
 			}
 
@@ -828,7 +864,8 @@ int main()
 					//DEBUG_MSG("gpp::Events::Event::ATTACK_START_EVENT");
 					input.setCurrent(gpp::Events::Event::ATTACK_START_EVENT);
 
-					audio.playSwooshSound();
+					if(!player.m_isDead)
+						audio.playSwooshSound();
 				}
 				else if (sf::Joystick::isButtonPressed(0, 5) && player.m_daggers.size() > 0 && !daggerThrow && player.m_canThrowDagger)
 				{
@@ -903,7 +940,8 @@ int main()
 					//DEBUG_MSG("gpp::Events::Event::ATTACK_START_EVENT");
 					input.setCurrent(gpp::Events::Event::ATTACK_START_EVENT);
 
-					audio.playSwooshSound();
+					if (!player.m_isDead)
+						audio.playSwooshSound();
 				}
 				// Throw attack
 				//else if (sf::Keyboard::isKeyPressed(sf::Keyboard::X) 
@@ -1143,6 +1181,21 @@ int main()
 
 		window.draw(playerBlood);
 		window.draw(enemyBlood);
+
+		if (player.m_hasCollectedMedkit)
+		{
+			tileArray[collectedMedkit]->getMedkit().displayExtraLife(window, &player);
+		}
+
+		if (player.m_hasCollectedKunais)
+		{
+			tileArray[collectedKunais]->getExtraKunais().displayExtraKunais(window, &player);
+		}
+
+		for (auto& enemyScore : enemyScores)
+		{
+			enemyScore->render(window);
+		}
 
 		if (player.m_isDead)
 		{

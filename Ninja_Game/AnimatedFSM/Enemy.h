@@ -1,6 +1,6 @@
 #pragma once
-#include <SFML/Graphics.hpp>
-#include <iostream>
+#include "SFML/Graphics.hpp"
+#include "iostream"
 #include "EnemyState.h"
 #include "AnimatedSpriteEnemy.h"
 #include "circle.h"

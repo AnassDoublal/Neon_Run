@@ -1,8 +1,8 @@
-#include <Events.h>
+#include "Events.h"
 
-#include <ThrowAttackEnemyState.h>
-#include <IdleEnemyState.h>
-#include <DiedEnemyState.h>
+#include "ThrowAttackEnemyState.h"
+#include "IdleEnemyState.h"
+#include "DiedEnemyState.h"
 
 EnemyState* ThrowAttackEnemyState::setAction() {
 	return nullptr;

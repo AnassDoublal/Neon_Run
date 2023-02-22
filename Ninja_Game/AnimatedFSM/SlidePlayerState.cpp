@@ -1,11 +1,11 @@
-#include <Events.h>
+#include "Events.h"
 
-#include <SlidePlayerState.h>
+#include "SlidePlayerState.h"
 
-#include <RunRightPlayerState.h>
-#include <DiedPlayerState.h>
-#include <IdlePlayerState.h>
-#include <JumpPlayerState.h>
+#include "RunRightPlayerState.h"
+#include "DiedPlayerState.h"
+#include "IdlePlayerState.h"
+#include "JumpPlayerState.h"
 
 PlayerState* SlidePlayerState::handleInput(gpp::Events& input)
 {
