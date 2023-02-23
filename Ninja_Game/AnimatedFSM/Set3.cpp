@@ -3,6 +3,8 @@
 
 void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 {
+	srand(time(NULL));
+
 	// Left tiles
 
 	m_sprite_edge_left.setTexture(texture);
@@ -136,7 +138,13 @@ void Set3::init(sf::Texture& texture, sf::RenderWindow& window)
 
 	m_sprites.push_back(m_sprite_edge_right_top);
 
-	enemy.init(window, 1400.0f, 445.0f);
+	m_positions[0] = { 1400.0f, m_sprite_edge_left_top.getPosition().y };
+	m_positions[1] = { 1000.0f, m_sprite_edge_left_middle.getPosition().y };
+	m_positions[2] = { 200.0f, m_sprite_edge_left.getPosition().y };
+	m_positions[3] = { 1350.0f, m_sprite_edge_left_right.getPosition().y };
+	m_positions[4] = { 700.0f, 936.7f };
+	sf::Vector2f enemyPos = getNewEnemyPos();
+	enemy.init(window, enemyPos.x, enemyPos.y);
 }
 
 void Set3::update(sf::RenderWindow& window, Player* player)
@@ -191,4 +199,10 @@ ExtraKunais& Set3::getExtraKunais()
 float Set3::getEnemyX()
 {
 	return m_enemyX;
+}
+
+sf::Vector2f Set3::getNewEnemyPos()
+{
+	int r = rand() % (sizeof(m_positions) / sizeof(sf::Vector2f));
+	return m_positions[r];
 }

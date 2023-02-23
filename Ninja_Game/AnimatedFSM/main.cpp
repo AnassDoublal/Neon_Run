@@ -398,6 +398,12 @@ int main()
 	std::vector<std::shared_ptr<EnemyScore>> enemyScores;
 	std::vector<int> hitEnemies;
 
+	float accuracyCooldown = .5f;
+	sf::Clock accuracyClock;
+	bool setAccuracy = true;
+	bool startAccuracyClock = false;
+	bool hasResetAccuracyClock = false;
+
 	gpp::Events input;
 
 	// Start the game loop
@@ -554,14 +560,38 @@ int main()
 					enemiesHit++;
 					score.bonus(scoreBonus);
 
-					player.m_shotsHit++;
-					std::cout << "SHOTS HIT : " << player.m_shotsHit << "\n";
+					if (setAccuracy)
+					{
+						player.m_shotsHit++;
+						std::cout << "SHOTS HIT : " << player.m_shotsHit << "\n";
+					}
+
+					if(!startAccuracyClock)
+						startAccuracyClock = true;
 
 					audio.playHurtSound();
 
 					isEnemyHit = true;
 					hitEnemy = i;
 					hitEnemies.push_back(i);
+				}
+			}
+
+			if (startAccuracyClock)
+			{
+				setAccuracy = false;
+
+				if (!hasResetAccuracyClock)
+				{
+					accuracyClock.restart();
+					hasResetAccuracyClock = true;
+				}
+
+				if (accuracyClock.getElapsedTime().asSeconds() > accuracyCooldown)
+				{
+					setAccuracy = true;
+					startAccuracyClock = false;
+					hasResetAccuracyClock = false;
 				}
 			}
 
@@ -676,7 +706,9 @@ int main()
 						break;
 				}*/
 
-				tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + tileArray[i]->getEnemyX(), tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+				//tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + tileArray[i]->getEnemyX(), tileArray[i]->getEnemy().getAnimatedSprite().getPosition().y);
+				sf::Vector2f newEnemyPos = tileArray[i]->getNewEnemyPos();
+				tileArray[i]->getEnemy().getAnimatedSprite().setPosition(window.getSize().x + newEnemyPos.x, newEnemyPos.y - 131.7f);
 				tileArray[i]->getMedkit().getSprite().setPosition(window.getSize().x + 850.0f, tileArray[i]->getMedkit().getSprite().getPosition().y);
 				tileArray[i]->getExtraKunais().getSprite().setPosition(window.getSize().x + 620.0f, tileArray[i]->getExtraKunais().getSprite().getPosition().y);
 

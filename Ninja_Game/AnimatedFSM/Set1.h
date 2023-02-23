@@ -12,6 +12,7 @@ class Set1 : public Tiles{
 		virtual Medkit& getMedkit();
 		virtual ExtraKunais& getExtraKunais();
 		virtual float getEnemyX();
+		virtual sf::Vector2f getNewEnemyPos();
 		/*virtual Circle& getEnemyCircle();
 		virtual Rectangle& getEnemyRectangle();*/
 	private:
@@ -34,4 +35,6 @@ class Set1 : public Tiles{
 		float m_friction = .2f;
 
 		float m_enemyX = 400.0f;
+
+		sf::Vector2f m_positions[3];
 };

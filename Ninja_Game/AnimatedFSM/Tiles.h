@@ -12,14 +12,15 @@ class Player;
 class Tiles
 {
 	public:
-		virtual void init(sf::Texture& texture, sf::RenderWindow& window) = 0;
-		virtual void update(sf::RenderWindow& window, Player* player) = 0;
-		virtual void render(sf::RenderWindow& window) = 0;
+		virtual void init(sf::Texture&, sf::RenderWindow&) = 0;
+		virtual void update(sf::RenderWindow&, Player*) = 0;
+		virtual void render(sf::RenderWindow&) = 0;
 		virtual std::vector<sf::Sprite>& getTiles() = 0;
 		virtual Enemy& getEnemy() = 0;
 		virtual Medkit& getMedkit() = 0;
 		virtual ExtraKunais& getExtraKunais() = 0;
 		virtual float getEnemyX() = 0;
+		virtual sf::Vector2f getNewEnemyPos() = 0;
 		//virtual Circle& getEnemyCircle() = 0;
 		//virtual Rectangle& getEnemyRectangle() = 0;
 

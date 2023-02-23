@@ -23,6 +23,8 @@ private:
 	sf::Text m_scoreText;
 	sf::Text m_accuarcyText;
 
+	int m_accuracy = 0;
+
 	sf::RectangleShape m_restartButton;
 	sf::Text m_restartText;
 

@@ -3,6 +3,8 @@
 
 void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 {
+	srand(time(NULL));
+
 	m_sprite_edge_left.setTexture(texture);
 	m_sprite_edge_left.setTextureRect(sf::IntRect(32*4, 32, 32, 32));
 	m_sprite_edge_left.setPosition(sf::Vector2f(window.getSize().x, 775.0f));
@@ -64,7 +66,11 @@ void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 		m_sprites[i].setScale(.0f, .0f);
 	}
 
-	enemy.init(window, 400.0f, 645.0f);
+	m_positions[0] = {400.0f, m_sprite_edge_left.getPosition().y};
+	m_positions[1] = {700.0f, m_sprite_edge_left_top.getPosition().y};
+	m_positions[2] = {1000.0f, 936.7f};
+	sf::Vector2f enemyPos = getNewEnemyPos();
+	enemy.init(window, enemyPos.x, enemyPos.y);
 	medkit.init(window);
 	extraKunais.init(window);
 }
@@ -128,6 +134,12 @@ ExtraKunais& Set1::getExtraKunais()
 float Set1::getEnemyX()
 {
 	return m_enemyX;
+}
+
+sf::Vector2f Set1::getNewEnemyPos()
+{
+	int r = rand() % (sizeof(m_positions) / sizeof(sf::Vector2f));
+	return m_positions[r];
 }
 
 //Circle& Set1::getEnemyCircle()

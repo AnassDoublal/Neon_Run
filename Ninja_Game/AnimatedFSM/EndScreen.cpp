@@ -50,7 +50,7 @@ void EndScreen::init(sf::RenderWindow& window)
 	m_restartButton.setFillColor(sf::Color::Black);
 
 	m_restartText.setFont(m_font);
-	m_restartText.setString("Exit");
+	m_restartText.setString("Restart");
 	m_restartText.setCharacterSize(24);
 	m_restartText.setFillColor(sf::Color::White);
 	m_restartText.setPosition(m_restartButton.getPosition().x + m_restartButton.getSize().x / 2.0f - m_restartText.getGlobalBounds().width / 2.0f, m_restartButton.getPosition().y + m_restartButton.getSize().y / 2.0f - 17.0f);
@@ -67,7 +67,10 @@ void EndScreen::update(sf::RenderWindow& window, int score)
 	m_scoreText.setString("Score : " + std::to_string(score));
 
 	if (m_player.m_totalShots != 0)
-		m_accuarcyText.setString("Shot accuracy : " + std::to_string(m_player.m_shotsHit * 100 / m_player.m_totalShots) + " %");
+		m_accuracy = m_player.m_shotsHit * 100 / m_player.m_totalShots;
+
+	if (m_player.m_totalShots != 0)
+		m_accuarcyText.setString("Shot accuracy : " + std::to_string(m_accuracy) + " %");
 
 	m_scoreText.setPosition(m_panel.getPosition().x + m_panel.getGlobalBounds().width / 2.0f - m_scoreText.getGlobalBounds().width / 2.0f, m_panel.getPosition().y + m_panel.getGlobalBounds().height / 2.0f - m_gameOverText.getGlobalBounds().height - 20);
 	m_accuarcyText.setPosition(m_panel.getPosition().x + m_panel.getGlobalBounds().width / 2.0f - m_accuarcyText.getGlobalBounds().width / 2.0f, m_panel.getPosition().y + m_panel.getGlobalBounds().height / 2.0f - m_gameOverText.getGlobalBounds().height + 20);
