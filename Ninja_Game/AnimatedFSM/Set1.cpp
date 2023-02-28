@@ -5,6 +5,10 @@ void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 {
 	srand(time(NULL));
 
+	m_sprites_middle.clear();
+	m_sprites_middle_top.clear();
+	m_sprites.clear();
+
 	m_sprite_edge_left.setTexture(texture);
 	m_sprite_edge_left.setTextureRect(sf::IntRect(32*4, 32, 32, 32));
 	m_sprite_edge_left.setPosition(sf::Vector2f(window.getSize().x, 775.0f));

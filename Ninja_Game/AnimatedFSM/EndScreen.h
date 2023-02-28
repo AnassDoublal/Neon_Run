@@ -2,15 +2,15 @@
 
 #include "SFML/Graphics.hpp"
 #include "Player.h"
+#include "Game.h"
 
 class EndScreen
 {
 public:
-	EndScreen(sf::RenderWindow& window, Player& t_player);
-	void init(sf::RenderWindow& window);
-	void update(sf::RenderWindow& window, int enemiesHit);
-	void render(sf::RenderWindow& window);
-	void restart(sf::RenderWindow& window);
+	void init(sf::RenderWindow&, Player&);
+	void update(sf::RenderWindow&, int, Player&, Game&);
+	void render(sf::RenderWindow&);
+	void restart(sf::RenderWindow&, Game&);
 private:
 	sf::RectangleShape m_bg;
 	//sf::RectangleShape m_panel;
@@ -30,6 +30,4 @@ private:
 
 	sf::Vector2i m_restartButtonPosMin;
 	sf::Vector2i m_restartButtonPosMax;
-
-	Player& m_player;
 };

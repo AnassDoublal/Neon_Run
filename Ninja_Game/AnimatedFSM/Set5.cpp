@@ -5,6 +5,11 @@ void Set5::init(sf::Texture& texture, sf::RenderWindow& window)
 {
 	srand(time(NULL));
 
+	m_sprites_middle.clear();
+	m_sprites_middle_bottom.clear();
+	m_sprites_middle_right.clear();
+	m_sprites.clear();
+
 	// Bottom tiles
 
 	//m_sprite_edge_left_bottom = m_sprite_edge_left;

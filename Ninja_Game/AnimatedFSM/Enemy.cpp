@@ -39,6 +39,8 @@ void Enemy::init(sf::RenderWindow& window, float posX, float PosY)
 		DEBUG_MSG("Failed to load kunai");
 	}
 
+	m_daggers.clear();
+
 	for (int i = 0; i < 1; i++)
 	{
 		sf::Sprite dagger;
@@ -47,6 +49,8 @@ void Enemy::init(sf::RenderWindow& window, float posX, float PosY)
 		dagger.setScale(-.5f, .5f);
 		m_daggers.push_back(dagger);
 	}
+
+	m_daggers_rectangles.clear();
 
 	for (int i = 0; i < 1; i++)
 	{

@@ -40,7 +40,10 @@ void JumpPlayerState::update(Player& player) {
 		{
 			if (player.m_friction < 0.0f)
 			{
-				if (player.m_feet_collision.intersects(tile.getGlobalBounds()))
+				if (player.m_feet_collision.intersects(sf::FloatRect(tile.getGlobalBounds().left,
+																	 tile.getGlobalBounds().top,
+																     tile.getGlobalBounds().width,
+																	 tile.getGlobalBounds().height)))
 				{
 					//std::cout << "INTERSECTED" << "\n";
 					//std::cout << tile.getPosition().x << "\n";

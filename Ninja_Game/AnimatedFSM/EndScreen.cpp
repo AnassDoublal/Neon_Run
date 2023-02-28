@@ -2,12 +2,7 @@
 #include "iostream"
 #include "EndScreen.h"
 
-EndScreen::EndScreen(sf::RenderWindow& window, Player& t_player) : m_player(t_player)
-{
-	init(window);
-}
-
-void EndScreen::init(sf::RenderWindow& window)
+void EndScreen::init(sf::RenderWindow& window, Player& t_player)
 {
 	m_bg.setPosition(0, 0);
 	m_bg.setSize(sf::Vector2f(window.getSize().x, window.getSize().y));
@@ -62,14 +57,14 @@ void EndScreen::init(sf::RenderWindow& window)
 	m_restartButtonPosMax.y = m_restartButton.getPosition().y + m_restartButton.getSize().y;
 }
 
-void EndScreen::update(sf::RenderWindow& window, int score)
+void EndScreen::update(sf::RenderWindow& window, int score, Player& t_player, Game& game)
 {
 	m_scoreText.setString("Score : " + std::to_string(score));
 
-	if (m_player.m_totalShots != 0)
-		m_accuracy = m_player.m_shotsHit * 100 / m_player.m_totalShots;
+	if (t_player.m_totalShots != 0)
+		m_accuracy = t_player.m_shotsHit * 100 / t_player.m_totalShots;
 
-	if (m_player.m_totalShots != 0)
+	if (t_player.m_totalShots != 0)
 		m_accuarcyText.setString("Shot accuracy : " + std::to_string(m_accuracy) + " %");
 
 	m_scoreText.setPosition(m_panel.getPosition().x + m_panel.getGlobalBounds().width / 2.0f - m_scoreText.getGlobalBounds().width / 2.0f, m_panel.getPosition().y + m_panel.getGlobalBounds().height / 2.0f - m_gameOverText.getGlobalBounds().height - 20);
@@ -82,7 +77,7 @@ void EndScreen::update(sf::RenderWindow& window, int score)
 			&& sf::Mouse::getPosition(window).y > m_restartButtonPosMin.y
 			&& sf::Mouse::getPosition(window).y < m_restartButtonPosMax.y)
 		{
-			restart(window);
+			restart(window, game);
 		}
 	}
 
@@ -99,7 +94,8 @@ void EndScreen::render(sf::RenderWindow& window)
 	window.draw(m_restartText);
 }
 
-void EndScreen::restart(sf::RenderWindow& window)
+void EndScreen::restart(sf::RenderWindow& window, Game& game)
 {
-	window.close();
+	//window.close();
+	game.init(window);
 }

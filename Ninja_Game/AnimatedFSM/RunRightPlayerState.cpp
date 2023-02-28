@@ -111,6 +111,17 @@ void RunRightPlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(sf::IntRect(5712, 4472, 363, 458));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4986, 4930, 363, 458));
 
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(4800, 3479, 5178 - 4800, 4027 - 3479));
+	player.getAnimatedSprite().addFrame(sf::IntRect(5386, 3494, 5752 - 5386, 4017 - 3494));
+	player.getAnimatedSprite().addFrame(sf::IntRect(6062, 3511, 6268 - 6062, 4055 - 3511));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4920, 4032, 5188 - 4920, 4579 - 4032));
+	player.getAnimatedSprite().addFrame(sf::IntRect(5370, 4042, 5780 - 5370, 4547 - 4042));
+	player.getAnimatedSprite().addFrame(sf::IntRect(5982, 4078, 6260 - 5982, 4595 - 4078));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4872, 4627, 5208 - 4872, 5165 - 4627));
+	player.getAnimatedSprite().addFrame(sf::IntRect(5352, 4627, 5780 - 5352, 5129 - 4627));
+	player.getAnimatedSprite().addFrame(sf::IntRect(5958, 4627, 6310 - 5958, 5165 - 4627));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4800, 3479, 5178 - 4800, 4027 - 3479));*/
+
 	player.getAnimatedSpriteFrame().setTime(seconds(0.05f));
 }
 void RunRightPlayerState::exit(Player& player) 
