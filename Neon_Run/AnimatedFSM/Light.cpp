@@ -2,7 +2,7 @@
 
 candle::LightingArea fog(candle::LightingArea::FOG,
 	sf::Vector2f(0.f, 0.f),
-	sf::Vector2f(64.0f, 36.0f));
+	sf::Vector2f(64, 36));
 
 void Light::init()
 {

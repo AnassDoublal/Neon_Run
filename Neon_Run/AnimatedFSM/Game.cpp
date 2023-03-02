@@ -24,6 +24,7 @@
 #include "Score.h"
 #include "EnemyScore.h"
 #include "DoubleKill.h"
+#include "Light.h"
 
 using namespace std;
 
@@ -514,6 +515,7 @@ void Game::init(sf::RenderWindow& window)
 	daggersHUD.setPosition(daggersHUDText.getPosition().x - daggersHUD.getGlobalBounds().width - 10.0f, 105.0f);
 
 
+	//audio.playBgMusic();
 
 
 	if (!bloodTexture.loadFromFile("assets/images/blood.png"))

@@ -1,1 +1,26 @@
-﻿  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\Debug\AnimatedFSM.exe
+﻿  Game.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(49,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(49,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(49,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(49,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(49,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(49,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(213,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(454,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(483,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(501,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(870,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(1422,20): warning C4018: '<': signed/unsigned mismatch
+  Light.cpp
+  Generating Code...
+  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\Debug\AnimatedFSM.exe
