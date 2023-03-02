@@ -18,7 +18,7 @@ void Light::update(Player& t_player)
 						t_player.getAnimatedSprite().getPosition().y + t_player.getAnimatedSprite().getGlobalBounds().height / 2.0f);
 }
 
-void Light::render(sf::RenderWindow& t_window, std::string t_drawable)
+void Light::render(sf::RenderWindow& t_window)
 {
 	fog.clear();
 	fog.draw(m_light);
