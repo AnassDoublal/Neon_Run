@@ -24,7 +24,7 @@
 #include "Score.h"
 #include "EnemyScore.h"
 #include "DoubleKill.h"
-//#include "Candle/RadialLight.hpp"
+#include "Light.h"
 
 using namespace std;
 
@@ -203,6 +203,10 @@ sf::Clock doubleKillClock;
 bool hasResetDoubleKillClock = false;
 
 gpp::Events input;
+
+sf::RectangleShape darkOverlay;
+
+Light light;
 
 void Game::init(sf::RenderWindow& window)
 {
@@ -511,7 +515,7 @@ void Game::init(sf::RenderWindow& window)
 	daggersHUD.setPosition(daggersHUDText.getPosition().x - daggersHUD.getGlobalBounds().width - 10.0f, 105.0f);
 
 
-	audio.playBgMusic();
+	//audio.playBgMusic();
 
 
 	if (!bloodTexture.loadFromFile("assets/images/blood.png"))
@@ -553,6 +557,11 @@ void Game::init(sf::RenderWindow& window)
 
 	enemyScores.clear();
 	hitEnemies.clear();
+
+	darkOverlay.setSize(sf::Vector2f(1920.0f, 1080.0f));
+	darkOverlay.setFillColor(sf::Color::Color(0, 0, 0, 127));
+
+	light.init();
 }
 
 void Game::update(sf::RenderWindow& window)
@@ -562,6 +571,8 @@ void Game::update(sf::RenderWindow& window)
 
 		cPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x,
 							   player.getAnimatedSprite().getPosition().y);*/
+
+	light.update(player);
 
 	if (!player.m_isDead)
 		score.update(window, player.m_speed);
@@ -1355,6 +1366,11 @@ void Game::render(sf::RenderWindow& window)
 	window.draw(bg2_sprite);
 	window.draw(bg3_sprite);
 
+	//window.draw(darkOverlay);
+	light.render(window, "ambient");
+
+	//window.draw(light.m_fog->(~Drawable));
+
 	window.draw(livesText);
 
 	for (auto& life : lives)
@@ -1400,6 +1416,8 @@ void Game::render(sf::RenderWindow& window)
 	}
 	else
 		window.draw(player.getAnimatedSpriteFrame());
+
+	//light.render(window, "radial");
 
 	for (int i = 0; i < player.m_daggers.size(); i++)
 	{

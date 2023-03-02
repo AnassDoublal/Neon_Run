@@ -85,7 +85,7 @@ void EndScreen::update(sf::RenderWindow& window, int score, Player& t_player, Ga
 
 void EndScreen::render(sf::RenderWindow& window)
 {
-	window.draw(m_bg);
+	//window.draw(m_bg);
 	window.draw(m_panel);
 	window.draw(m_gameOverText);
 	window.draw(m_scoreText);

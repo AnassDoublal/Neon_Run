@@ -1,47 +1,94 @@
-﻿  AnimatedSprite.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\AnimatedSprite.cpp(1,10): fatal  error C1083: Cannot open include file: 'AnimatedSprite.h': No such file or directory
+﻿  Color.cpp
+C:\devtools\Candle\src\Color.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/graphics/Color.hpp': No such file or directory
+  Constants.cpp
+C:\devtools\Candle\src\Constants.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/Constants.hpp': No such file or directory
+  DirectedLight.cpp
+C:\devtools\Candle\src\DirectedLight.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/DirectedLight.hpp': No such file or directory
+  LightingArea.cpp
+C:\devtools\Candle\src\LightingArea.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/LightingArea.hpp': No such file or directory
+  LightSource.cpp
+C:\devtools\Candle\src\LightSource.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/LightSource.hpp': No such file or directory
+  Line.cpp
+C:\devtools\Candle\src\Line.cpp(3,10): fatal  error C1083: Cannot open include file: 'Candle/geometry/Line.hpp': No such file or directory
+  Polygon.cpp
+C:\devtools\Candle\src\Polygon.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/geometry/Polygon.hpp': No such file or directory
+  RadialLight.cpp
+C:\devtools\Candle\src\RadialLight.cpp(6,10): fatal  error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
+  VertexArray.cpp
+C:\devtools\Candle\src\VertexArray.cpp(1,10): fatal  error C1083: Cannot open include file: 'Candle/graphics/VertexArray.hpp': No such file or directory
+  AnimatedSprite.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\AnimatedSprite.h(4,10): fatal  error C1083: Cannot open include file: 'SFML\Graphics\Sprite.hpp': No such file or directory
   AnimatedSpriteEnemy.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\AnimatedSpriteEnemy.cpp(1,10): fatal  error C1083: Cannot open include file: 'AnimatedSpriteEnemy.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\AnimatedSpriteEnemy.h(3,10): fatal  error C1083: Cannot open include file: 'SFML\Graphics\Sprite.hpp': No such file or directory
   AttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\AttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Audio.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Audio.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
   circle.cpp
   ClimbDownPlayerState.cpp
   AccendLadderPlayerState.cpp
   ClimbPausePlayerState.cpp
   ClimbUpPlayerState.cpp
   DecendLadderPlayerState.cpp
-  DiedPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\DiedPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  Enemy.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Enemy.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
-  Events.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Events.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  GlidePlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\GlidePlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  IdleEnemyState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\IdleEnemyState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  JumpAttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\JumpAttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  JumpPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\JumpPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  JumpThrowAttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\JumpThrowAttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
-  Player.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Player.cpp(2,10): fatal  error C1083: Cannot open include file: 'Player.h': No such file or directory
-  main.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\main.cpp(1,10): fatal  error C1083: Cannot open include file: 'Defines.h': No such file or directory
-  IdlePlayerState.cpp
+  DiedEnemyState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Enemy.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Compiling...
+  DiedPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  DoubleKill.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\DoubleKill.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  EndScreen.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(1,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Enemy.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Enemy.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  EnemyScore.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EnemyScore.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Events.cpp
+  ExtraKunais.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\ExtraKunais.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Game.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  GlidePlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  IdleEnemyState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Enemy.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  JumpAttackPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  JumpPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  JumpThrowAttackPlayerState.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Blood.cpp
+  Light.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Light.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Medkit.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Medkit.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Player.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  main.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\main.cpp(1,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  IdlePlayerState.cpp
   Rectangle.cpp
+  Compiling...
   RevivedPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\RevivedPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   RunRightPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\RunRightPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Score.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Score.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   Set1.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set2.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set3.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set4.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set5.cpp
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Tiles.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   SlidePlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\SlidePlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   ThrowAttackEnemyState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\ThrowAttackEnemyState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Enemy.h(2,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
   ThrowAttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Gameplay_Programming_I\gameplay-programming-i-lab-03-c\AnimatedFSM\ThrowAttackPlayerState.cpp(1,10): fatal  error C1083: Cannot open include file: 'Events.h': No such file or directory
+C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\PlayerState.h(7,10): fatal  error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
