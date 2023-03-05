@@ -9,7 +9,7 @@ class Light
 public:
 	void init();
 	void update(Player&);
-	void render(sf::RenderWindow&, std::string);
+	void render(sf::RenderWindow&);
 private:
 	candle::RadialLight m_light;
 };

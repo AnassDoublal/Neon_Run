@@ -1455,8 +1455,8 @@ void Game::render(sf::RenderWindow& window)
 	window.draw(bg2_sprite);
 	window.draw(bg3_sprite);
 
-	//window.draw(darkOverlay);
-	light.render(window, "ambient");
+	window.draw(darkOverlay);
+	//light.render(window);
 
 	//window.draw(light.m_fog->(~Drawable));
 
