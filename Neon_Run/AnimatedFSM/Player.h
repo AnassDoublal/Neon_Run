@@ -5,6 +5,8 @@
 #include "AnimatedSprite.h"
 #include "map"
 #include "Tiles.h"
+#include "Defines.h"
+#include "Reward.h"
 
 class Player
 {
@@ -19,6 +21,7 @@ public:
 	void setPlayerState(PlayerState*);
 	void setTiles(std::vector<sf::Sprite>& t_tiles);
 	std::vector<sf::Sprite>& getTiles();
+	void addReward(sf::RenderWindow&, std::string, std::vector<std::shared_ptr<Reward>>&);
 	float m_friction = 1.0f;
 	bool m_isGrounded = true;
 	bool m_tileIntersection = false;

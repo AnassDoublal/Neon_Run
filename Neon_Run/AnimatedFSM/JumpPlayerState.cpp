@@ -8,6 +8,7 @@
 #include "GlidePlayerState.h"
 #include "RunRightPlayerState.h"
 
+
 PlayerState* JumpPlayerState::handleInput(gpp::Events& input)
 {
 	//if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
@@ -34,7 +35,7 @@ PlayerState* JumpPlayerState::handleInput(gpp::Events& input)
 void JumpPlayerState::update(Player& player) {
 	player.m_friction -= .0075f;
 	
-	if (player.getAnimatedSprite().getPosition().y <= 805.0f && !player.m_tileIntersection)
+	if (player.getAnimatedSprite().getPosition().y <= GROUND_POS && !player.m_tileIntersection)
 	{
 		for (auto& tile : player.getTiles())
 		{
@@ -63,7 +64,7 @@ void JumpPlayerState::update(Player& player) {
 	if (player.m_isGrounded) {
 		//DEBUG_MSG("JumpPlayerState -> RunRightPlayerState");
 		if(!player.m_tileIntersection)
-			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
+			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, GROUND_POS));
 		else
 			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, std::floor(player.getAnimatedSprite().getPosition().y + 10.0f)));
 		PlayerState* temp = player.getPlayerState();
@@ -84,18 +85,26 @@ void JumpPlayerState::enter(Player& player)
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(false);
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(3900, 1756, 362, 483));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 420 * 2, 420, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(420, 420 * 2, 420, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(420 * 2, 420 * 2, 420, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(420 * 3, 420 * 2, 420, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(420 * 4, 420 * 2, 420, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(420 * 5, 420 * 2, 420, 760));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(3900, 2722, 362, 483));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4262, 2722, 362, 483));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4624, 2722, 362, 483));
+	player.getAnimatedSprite().addFrame(sf::IntRect(3900, 3205, 362, 483));*/
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(3900, 1756, 362, 483));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4262, 1756, 362, 483));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4624, 1756, 362, 483));
 	player.getAnimatedSprite().addFrame(sf::IntRect(3900, 2239, 362, 483));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4262, 2239, 362, 483));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4624, 2239, 362, 483));
-	player.getAnimatedSprite().addFrame(sf::IntRect(3900, 2722, 362, 483));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4262, 2722, 362, 483));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4624, 2722, 362, 483));
-	player.getAnimatedSprite().addFrame(sf::IntRect(3900, 3205, 362, 483));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4624, 2239, 362, 483));*/
 
-	player.getAnimatedSpriteFrame().setTime(seconds(0.03f));
+	player.getAnimatedSpriteFrame().setTime(seconds(0.1f));
 }
 void JumpPlayerState::exit(Player& player)
 {

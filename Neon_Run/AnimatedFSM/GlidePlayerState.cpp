@@ -7,6 +7,7 @@
 #include "RunRightPlayerState.h"
 #include "JumpPlayerState.h"
 
+
 PlayerState* GlidePlayerState::handleInput(gpp::Events& input)
 {
 	if (input.getCurrent() == gpp::Events::Event::HIT_GROUND_EVENT)
@@ -31,9 +32,9 @@ void GlidePlayerState::update(Player& player) {
 
 	player.getAnimatedSprite().move(sf::Vector2f(.0f, .25f));
 
-	if (player.getAnimatedSprite().getPosition().y >= 805.0f)
+	if (player.getAnimatedSprite().getPosition().y >= GROUND_POS)
 	{
-		player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
+		player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, GROUND_POS));
 		player.m_isGrounded = true;
 	}
 
@@ -63,7 +64,19 @@ void GlidePlayerState::enter(Player& player)
 
 	player.m_canThrowDagger = false;
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(0, 1992, 443, 454));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 2, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 3, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 4, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 5, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 6, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 7, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 8, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 9, 575 * 3, 575, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(575 * 10, 575 * 3, 575, 760));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(0, 1992, 443, 454));
 	player.getAnimatedSprite().addFrame(sf::IntRect(443, 1992, 443, 454));
 	player.getAnimatedSprite().addFrame(sf::IntRect(886, 1992, 443, 454));
 	player.getAnimatedSprite().addFrame(sf::IntRect(0, 2446, 443, 454));
@@ -72,9 +85,9 @@ void GlidePlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(sf::IntRect(0, 2900, 443, 454));
 	player.getAnimatedSprite().addFrame(sf::IntRect(443, 2900, 443, 454));
 	player.getAnimatedSprite().addFrame(sf::IntRect(886, 2900, 443, 454));
-	player.getAnimatedSprite().addFrame(sf::IntRect(0, 3354, 443, 454));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 3354, 443, 454));*/
 
-	player.getAnimatedSprite().setTime(seconds(0.03f));
+	player.getAnimatedSprite().setTime(seconds(0.04f));
 }
 void GlidePlayerState::exit(Player& player)
 {

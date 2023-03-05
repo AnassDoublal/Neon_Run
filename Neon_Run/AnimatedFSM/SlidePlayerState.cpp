@@ -7,6 +7,7 @@
 #include "IdlePlayerState.h"
 #include "JumpPlayerState.h"
 
+
 PlayerState* SlidePlayerState::handleInput(gpp::Events& input)
 {
 	if (input.getCurrent() == gpp::Events::Event::RUN_RIGHT_START_EVENT)
@@ -53,7 +54,7 @@ void SlidePlayerState::update(Player& player) {
 		}
 	}
 
-	if (m_clock.getElapsedTime().asSeconds() > 2.0f || player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall) {
+	if (m_clock.getElapsedTime().asSeconds() > 2.0f || player.getAnimatedSprite().getPosition().y < GROUND_POS && player.m_canFall) {
 		//DEBUG_MSG("SlidePlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();
@@ -68,10 +69,12 @@ void SlidePlayerState::enter(Player& player)
 	//DEBUG_MSG("Entering SlidePlayerState");
 	player.getAnimatedSprite().clearFrames();
 
-	player.getAnimatedSprite().setPosition(sf::Vector2f(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y + 40.0f));
+	player.getAnimatedSprite().setPosition(sf::Vector2f(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y + 90.0f));
 	player.m_canThrowDagger = false;
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(0, 5388, 373, 351));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 550 * 11, 550, 500));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(0, 5388, 373, 351));
 	player.getAnimatedSprite().addFrame(sf::IntRect(373, 5388, 373, 351));
 	player.getAnimatedSprite().addFrame(sf::IntRect(746, 5388, 373, 351));
 	player.getAnimatedSprite().addFrame(sf::IntRect(0, 5739, 373, 351));
@@ -80,13 +83,13 @@ void SlidePlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(sf::IntRect(0, 6090, 373, 351));
 	player.getAnimatedSprite().addFrame(sf::IntRect(373, 6090, 373, 351));
 	player.getAnimatedSprite().addFrame(sf::IntRect(746, 6090, 373, 351));
-	player.getAnimatedSprite().addFrame(sf::IntRect(0, 6441, 373, 351));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 6441, 373, 351));*/
 
 	player.getAnimatedSpriteFrame().setTime(seconds(0.03f));
 }
 void SlidePlayerState::exit(Player& player)
 {
-	player.getAnimatedSprite().setPosition(sf::Vector2f(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y - 40.0f));
+	player.getAnimatedSprite().setPosition(sf::Vector2f(player.getAnimatedSprite().getPosition().x, player.getAnimatedSprite().getPosition().y - 90.0f));
 	player.m_canThrowDagger = true;
 
 	//DEBUG_MSG("Exiting SlidePlayerState");

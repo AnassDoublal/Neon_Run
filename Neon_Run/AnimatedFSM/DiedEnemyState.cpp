@@ -47,12 +47,12 @@ void DiedEnemyState::enter(Enemy& enemy)
 	enemy.getAnimatedSprite().addFrame(sf::IntRect(2454, 498, 482, 498));
 	enemy.getAnimatedSprite().addFrame(sf::IntRect(2936, 498, 482, 498));
 	enemy.getAnimatedSprite().addFrame(sf::IntRect(3418, 498, 482, 498));
-	enemy.getAnimatedSprite().addFrame(sf::IntRect(2454, 996, 482, 498));
+	/*enemy.getAnimatedSprite().addFrame(sf::IntRect(2454, 996, 482, 498));
 	enemy.getAnimatedSprite().addFrame(sf::IntRect(2936, 996, 482, 498));
 	enemy.getAnimatedSprite().addFrame(sf::IntRect(3418, 996, 482, 498));
-	enemy.getAnimatedSprite().addFrame(sf::IntRect(2454, 1494, 482, 498));
+	enemy.getAnimatedSprite().addFrame(sf::IntRect(2454, 1494, 482, 498));*/
 
-	enemy.getAnimatedSprite().setTime(seconds(0.03f));
+	enemy.getAnimatedSprite().setTime(seconds(0.07f));
 }
 
 void DiedEnemyState::exit(Enemy& enemy)

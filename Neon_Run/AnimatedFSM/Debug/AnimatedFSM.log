@@ -22,5 +22,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           ]
 C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(1422,20): warning C4018: '<': signed/unsigned mismatch
   Light.cpp
+  main.cpp
   Generating Code...
+  LINK : C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\Debug\AnimatedFSM.exe not found or not built by the last incremental link; performing full link
   AnimatedFSM.vcxproj -> C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\Debug\AnimatedFSM.exe

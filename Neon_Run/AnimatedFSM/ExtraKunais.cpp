@@ -3,7 +3,7 @@
 
 void ExtraKunais::init(sf::RenderWindow& window)
 {
-	if (!m_texture.loadFromFile("assets/images/extraKunais.png"))
+	if (!m_texture.loadFromFile("assets/images/extraKnives.png"))
 	{
 		// Error
 	}

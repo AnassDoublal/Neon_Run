@@ -42,10 +42,20 @@ void ThrowAttackPlayerState::enter(Player& player)
 
 	for (int i = 0; i < player.m_daggers.size(); i++)
 	{
-		player.m_daggers[0].setPosition(player.getAnimatedSprite().getPosition().x + 90.0f, player.getAnimatedSprite().getPosition().y + 70.0f);
+		player.m_daggers[0].setPosition(player.getAnimatedSprite().getPosition().x + 90.0f, player.getAnimatedSprite().getPosition().y + 120.0f);
 	}
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(6075, 0, 377, 451));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 2, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 3, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 4, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 5, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 6, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 7, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 8, 600 * 7, 600, 760));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(6075, 0, 377, 451));
 	player.getAnimatedSprite().addFrame(sf::IntRect(6452, 0, 377, 451));
 	player.getAnimatedSprite().addFrame(sf::IntRect(6829, 0, 377, 451));
 	player.getAnimatedSprite().addFrame(sf::IntRect(6075, 451, 377, 451));
@@ -54,7 +64,7 @@ void ThrowAttackPlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(sf::IntRect(6075, 902, 377, 451));
 	player.getAnimatedSprite().addFrame(sf::IntRect(6452, 902, 377, 451));
 	player.getAnimatedSprite().addFrame(sf::IntRect(6829, 902,377, 451));
-	player.getAnimatedSprite().addFrame(sf::IntRect(6075, 1353, 377, 451));
+	player.getAnimatedSprite().addFrame(sf::IntRect(6075, 1353, 377, 451));*/
 
 	player.getAnimatedSprite().setTime(seconds(0.03f));
 }

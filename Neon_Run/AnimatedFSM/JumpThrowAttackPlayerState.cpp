@@ -6,6 +6,7 @@
 #include "GlidePlayerState.h"
 #include "DiedPlayerState.h"
 
+
 PlayerState* JumpThrowAttackPlayerState::handleInput(gpp::Events& input)
 {
 	/*if (input.getCurrent() == gpp::Events::Event::DIED_EVENT) {
@@ -22,7 +23,7 @@ PlayerState* JumpThrowAttackPlayerState::handleInput(gpp::Events& input)
 void JumpThrowAttackPlayerState::update(Player& player) {
 	player.m_friction -= .0075f;
 
-	if (player.getAnimatedSprite().getPosition().y <= 805.0f && !player.m_tileIntersection)
+	if (player.getAnimatedSprite().getPosition().y <= GROUND_POS && !player.m_tileIntersection)
 	{
 		for (auto& tile : player.getTiles())
 		{
@@ -47,7 +48,7 @@ void JumpThrowAttackPlayerState::update(Player& player) {
 	if (player.m_isGrounded) {
 		//DEBUG_MSG("JumpThrowAttackPlayerState -> RunRightPlayerState");
 		if (!player.m_tileIntersection)
-			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
+			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, GROUND_POS));
 		else
 			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, std::floor(player.getAnimatedSprite().getPosition().y - 25.0f)));
 		PlayerState* temp = player.getPlayerState();
@@ -80,18 +81,29 @@ void JumpThrowAttackPlayerState::enter(Player& player)
 		player.m_daggers[0].setPosition(player.getAnimatedSprite().getPosition().x + 90.0f, player.getAnimatedSprite().getPosition().y + 70.0f);
 	}
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(4596, 0, 360, 431));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 2, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 3, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 4, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 5, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 6, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 7, 600 * 7, 600, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(600 * 8, 600 * 7, 600, 760));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(4596, 0, 360, 431));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4956, 0, 360, 431));
 	player.getAnimatedSprite().addFrame(sf::IntRect(5316, 0, 360, 431));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4596, 431, 360, 431));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4956, 431, 360, 431));
 	player.getAnimatedSprite().addFrame(sf::IntRect(5316, 431, 360, 431));
 	player.getAnimatedSprite().addFrame(sf::IntRect(4596, 862, 360, 431));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4956, 862, 360, 431));
-	player.getAnimatedSprite().addFrame(sf::IntRect(5316, 862, 360, 431));
-	player.getAnimatedSprite().addFrame(sf::IntRect(4596, 1293, 360, 431));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4956, 862, 360, 431));*/
 
-	player.getAnimatedSprite().setTime(seconds(0.05f));
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(5316, 862, 360, 431));
+	player.getAnimatedSprite().addFrame(sf::IntRect(4596, 1293, 360, 431));*/
+
+	player.getAnimatedSprite().setTime(seconds(0.07f));
 }
 void JumpThrowAttackPlayerState::exit(Player& player)
 {

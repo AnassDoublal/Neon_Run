@@ -88,3 +88,11 @@ std::vector<sf::Sprite>& Player::getTiles()
 {
 	return m_tiles;
 }
+
+void Player::addReward(sf::RenderWindow& window, std::string string, std::vector<std::shared_ptr<Reward>>& rewards)
+{
+	std::shared_ptr<Reward> reward = std::make_shared<Reward>();
+	reward->init(window, rewards.size() + 1);
+	reward->getText().setString(string);
+	rewards.push_back(reward);
+}

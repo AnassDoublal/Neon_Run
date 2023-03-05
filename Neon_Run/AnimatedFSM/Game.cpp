@@ -23,7 +23,7 @@
 #include "Audio.h"
 #include "Score.h"
 #include "EnemyScore.h"
-#include "DoubleKill.h"
+#include "Reward.h"
 #include "Light.h"
 
 using namespace std;
@@ -50,6 +50,8 @@ bool rectangle_to_rectangle(Rectangle& a, Rectangle& b)
 	bool yOverlap = valueInRange(a.getY(), b.getY(), b.getY() + b.getHeight()) || valueInRange(b.getY(), a.getY(), a.getY() + a.getHeight());
 	return xOverlap && yOverlap;
 }
+
+float GROUND_POS = 750.0f;
 
 sf::Texture player_texture;
 
@@ -194,7 +196,9 @@ bool startAccuracyClock = false;
 
 bool hasResetAccuracyClock = false;
 
-DoubleKill doubleKill;
+//Reward reward;
+
+std::vector<std::shared_ptr<Reward>> rewards;
 
 bool showDoubleKill = false;
 
@@ -207,6 +211,18 @@ gpp::Events input;
 sf::RectangleShape darkOverlay;
 
 Light light;
+
+int scoreReward = 5000;
+
+float daggersDistanceTop = .0f;
+float daggersDistanceBottom = .0f;
+bool closeDaggerCall = false;
+sf::Clock closeDaggerCallClock;
+bool hasResetCloseDaggerCallClock;
+
+int killStreakCounter = 0;
+int killStreakNb = 3;
+bool killStreaked = false;
 
 void Game::init(sf::RenderWindow& window)
 {
@@ -348,6 +364,10 @@ void Game::init(sf::RenderWindow& window)
 
 	collectedKunais = 0;
 
+	scoreReward = 5000;
+
+	killStreakCounter = 0;
+
 	//Tiles* tilesPtr = nullptr;
 
 	set1.init(tile_texture, window);
@@ -394,9 +414,9 @@ void Game::init(sf::RenderWindow& window)
 
 	tileMove[currentSet - 1] = true;
 
-	player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
+	player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, GROUND_POS));
 
-	if (!daggerTexture.loadFromFile("assets/Kunai.png"))
+	if (!daggerTexture.loadFromFile("assets/Knife.png"))
 	{
 		DEBUG_MSG("Failed to load kunai");
 	}
@@ -486,7 +506,7 @@ void Game::init(sf::RenderWindow& window)
 	enemiesHitText.setFillColor(sf::Color::Black);
 
 
-	if (!enemyHUD_texture.loadFromFile("assets/EnemySpriteSheet.png"))
+	if (!enemyHUD_texture.loadFromFile("assets/RobotSpriteSheet.png"))
 	{
 		DEBUG_MSG("Failed to load lives texture");
 	}
@@ -504,7 +524,7 @@ void Game::init(sf::RenderWindow& window)
 	daggersHUDText.setFillColor(sf::Color::Black);
 
 
-	if (!daggersHUD_texture.loadFromFile("assets/Kunai.png"))
+	if (!daggersHUD_texture.loadFromFile("assets/Knife.png"))
 	{
 		DEBUG_MSG("Failed to load lives texture");
 	}
@@ -553,7 +573,7 @@ void Game::init(sf::RenderWindow& window)
 
 
 	score.init(window);
-	doubleKill.init(window);
+	//reward.init(window);
 
 	enemyScores.clear();
 	hitEnemies.clear();
@@ -596,6 +616,11 @@ void Game::update(sf::RenderWindow& window)
 
 	//std::cout << enemyScores.size() << "\n";
 
+	for (size_t i = 0; i < rewards.size(); i++)
+	{
+		rewards[i]->update(window, rewards, i);
+	}
+
 	for (size_t i = 0; i < tileArray.size(); i++)
 	{
 		if (rectangle_to_rectangle(rPlayer, tileArray[i]->getEnemy().m_rectangle))
@@ -617,6 +642,8 @@ void Game::update(sf::RenderWindow& window)
 				isEnemyHit = true;
 				hitEnemy = i;
 				hitEnemies.push_back(i);
+
+				killStreakCounter++;
 			}
 		}
 
@@ -726,8 +753,7 @@ void Game::update(sf::RenderWindow& window)
 				}
 				else
 				{
-					std::cout << "DOUBLE KILL\n";
-					showDoubleKill = true;
+					player.addReward(window, "DOUBLE KILL\n + 2000", rewards);
 					score.bonus(2000.0f);
 				}
 
@@ -739,7 +765,23 @@ void Game::update(sf::RenderWindow& window)
 				isEnemyHit = true;
 				hitEnemy = i;
 				hitEnemies.push_back(i);
+
+				killStreakCounter++;
 			}
+		}
+
+		if (killStreakCounter > 0 && killStreakCounter % killStreakNb == 0)
+		{
+			if (!killStreaked)
+			{
+				player.addReward(window, "Kill streak x" + std::to_string(killStreakCounter) + "\n   +" + std::to_string(1000 * (killStreakCounter / killStreakNb)), rewards);
+				killStreaked = true;
+			}
+		}
+
+		if (killStreakCounter > 0 && killStreakCounter % killStreakNb == 1)
+		{
+			killStreaked = false;
 		}
 
 		if (startAccuracyClock)
@@ -760,9 +802,9 @@ void Game::update(sf::RenderWindow& window)
 			}
 		}
 
-		if (showDoubleKill)
+		/*if (showDoubleKill)
 		{
-			doubleKill.update(window);
+			reward.update(window);
 
 			if (!hasResetDoubleKillClock)
 			{
@@ -774,9 +816,9 @@ void Game::update(sf::RenderWindow& window)
 			{
 				showDoubleKill = false;
 				hasResetDoubleKillClock = false;
-				doubleKill.getText().setScale(.0f, .0f);
+				reward.getText().setFillColor(sf::Color(255, 255, 255, 0));
 			}
-		}
+		}*/
 
 		if (tileArray[i]->getEnemy().m_daggers_rectangles.size() > 0)
 		{
@@ -792,12 +834,44 @@ void Game::update(sf::RenderWindow& window)
 					audio.playHurtSound();
 
 					isPlayerHit = true;
+					killStreakCounter = 0;
 				}
 			}
-			//else
-			//{
-			//	minusOneLife = false;
-			//}
+			else
+			{
+				daggersDistanceTop = std::sqrt((tileArray[i]->getEnemy().m_daggers_rectangles[0].getX() - rPlayer.getX()) * (tileArray[i]->getEnemy().m_daggers_rectangles[0].getX() - rPlayer.getX()) +
+											  (tileArray[i]->getEnemy().m_daggers_rectangles[0].getY() - rPlayer.getY()) * (tileArray[i]->getEnemy().m_daggers_rectangles[0].getY() - rPlayer.getY()));
+
+				daggersDistanceBottom = std::sqrt((tileArray[i]->getEnemy().m_daggers_rectangles[0].getX() - rPlayer.getX()) * (tileArray[i]->getEnemy().m_daggers_rectangles[0].getX() - rPlayer.getX()) +
+					(tileArray[i]->getEnemy().m_daggers_rectangles[0].getY() - (rPlayer.getY() + rPlayer.getHeight())) * (tileArray[i]->getEnemy().m_daggers_rectangles[0].getY() - (rPlayer.getY() + rPlayer.getHeight())));
+
+				std::cout << "DAGGER DISTANCE : " << std::abs(daggersDistanceTop) << "\n";
+
+				if ((std::abs(daggersDistanceTop) < 50.0f || (std::abs(daggersDistanceBottom) < 50.0f)) && tileArray[i]->getEnemy().m_daggers_rectangles[0].getX() < rPlayer.getX())
+				{
+					if (!closeDaggerCall)
+					{
+						player.addReward(window, "Close call\n +2000", rewards);
+						score.bonus(2000);
+						closeDaggerCall = true;
+					}
+				}
+			}
+		}
+
+		if (closeDaggerCall)
+		{
+			if (!hasResetCloseDaggerCallClock)
+			{
+				closeDaggerCallClock.restart();
+				hasResetCloseDaggerCallClock = true;
+			}
+
+			if (closeDaggerCallClock.getElapsedTime().asSeconds() > 5.0f)
+			{
+				closeDaggerCall = false;
+				hasResetCloseDaggerCallClock = false;
+			}
 		}
 
 		if (minusOneLife)
@@ -1355,6 +1429,21 @@ void Game::update(sf::RenderWindow& window)
 
 	// Update the Player
 	player.update();
+
+	/*for (size_t i = 0; i < rewards.size(); i++)
+	{
+		rewards[i].render(window);
+	}*/
+
+	if (score.getScore() > scoreReward)
+	{
+		std::string newScore = "Hit " + std::to_string(scoreReward) + " score\n        +500";
+
+		player.addReward(window, newScore, rewards);
+		score.bonus(500);
+			
+		scoreReward += 5000;
+	}
 }
 
 void Game::render(sf::RenderWindow& window)
@@ -1409,10 +1498,10 @@ void Game::render(sf::RenderWindow& window)
 	// Draw the Players Current Animated Sprite
 	if (minusOneLife && !player.m_isDead)
 	{
-		if (player.m_invincibilityTime.getElapsedTime().asMilliseconds() % 200 < 100)
-		{
+		/*if (player.m_invincibilityTime.getElapsedTime().asMilliseconds() % 200 < 100)
+		{*/
 			window.draw(player.getAnimatedSpriteFrame());
-		}
+		/*}*/
 	}
 	else
 		window.draw(player.getAnimatedSpriteFrame());
@@ -1443,8 +1532,12 @@ void Game::render(sf::RenderWindow& window)
 		enemyScore->render(window);
 	}
 
-	if (showDoubleKill)
-		doubleKill.render(window);
+	for (size_t i = 0; i < rewards.size(); i++)
+	{
+		rewards[i]->render(window);
+	}
+
+	//std::cout << "REWARDS SIZE : " << rewards.size() << "\n";
 
 	if (player.m_isDead)
 	{

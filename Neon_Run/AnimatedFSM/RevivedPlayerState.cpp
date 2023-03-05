@@ -6,6 +6,7 @@
 #include "IdlePlayerState.h"
 #include "RunRightPlayerState.h"
 
+
 PlayerState* RevivedPlayerState::handleInput(gpp::Events& input)
 {
 	/*if (input.getCurrent() == gpp::Events::Event::DIED_EVENT)

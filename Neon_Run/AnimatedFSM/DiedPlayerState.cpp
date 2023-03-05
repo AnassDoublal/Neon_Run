@@ -4,6 +4,7 @@
 
 #include "RevivedPlayerState.h"
 
+
 PlayerState* DiedPlayerState::handleInput(gpp::Events& input)
 {
 	/*if (input.getCurrent() == gpp::Events::Event::REVIVED_EVENT)
@@ -16,7 +17,7 @@ PlayerState* DiedPlayerState::handleInput(gpp::Events& input)
 void DiedPlayerState::update(Player& player) {
 	player.m_friction -= .0075f;
 
-	if (player.getAnimatedSprite().getPosition().y < 805.0f && !player.m_tileIntersection && !player.m_isGrounded)
+	if (player.getAnimatedSprite().getPosition().y < GROUND_POS && !player.m_tileIntersection && !player.m_isGrounded)
 	{
 		for (auto& tile : player.getTiles())
 		{
@@ -41,9 +42,9 @@ void DiedPlayerState::update(Player& player) {
 	}
 
 	if (player.m_isGrounded) {
-		if (player.getAnimatedSprite().getPosition().y >= 805.0f)
+		if (player.getAnimatedSprite().getPosition().y >= GROUND_POS)
 		{
-			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, 805.0f));
+			player.getAnimatedSprite().setPosition(sf::Vector2f(50.0f, GROUND_POS));
 		}
 		else
 		{
@@ -87,7 +88,17 @@ void DiedPlayerState::enter(Player& player)
 	player.getAnimatedSprite().setPlayed(false);
 	player.getAnimatedSprite().setLooped(false);
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 0, 482, 498));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 2, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 3, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 4, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 5, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 6, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 7, 750 * 7, 750, 760));
+	player.getAnimatedSprite().addFrame(sf::IntRect(750 * 8, 750 * 7, 750, 760));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(2454, 0, 482, 498));
 	player.getAnimatedSprite().addFrame(sf::IntRect(2936, 0, 482, 498));
 	player.getAnimatedSprite().addFrame(sf::IntRect(3418, 0, 482, 498));
 	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 498, 482, 498));
@@ -96,7 +107,7 @@ void DiedPlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 996, 482, 498));
 	player.getAnimatedSprite().addFrame(sf::IntRect(2936, 996, 482, 498));
 	player.getAnimatedSprite().addFrame(sf::IntRect(3418, 996, 482, 498));
-	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 1494, 482, 498));
+	player.getAnimatedSprite().addFrame(sf::IntRect(2454, 1494, 482, 498));*/
 
 	player.getAnimatedSprite().setTime(seconds(0.03f));
 }

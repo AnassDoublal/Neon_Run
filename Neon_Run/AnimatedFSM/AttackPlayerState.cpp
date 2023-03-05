@@ -47,7 +47,7 @@ void AttackPlayerState::update(Player& player) {
 		}
 	}
 
-	if (m_clock.getElapsedTime().asSeconds() > .33f || player.getAnimatedSprite().getPosition().y < 805.0f && player.m_canFall) {
+	if (m_clock.getElapsedTime().asSeconds() > .33f || player.getAnimatedSprite().getPosition().y < GROUND_POS && player.m_canFall) {
 		//DEBUG_MSG("AttackPlayerState -> RunRightPlayerState");
 		PlayerState* temp = player.getPlayerState();
 		PlayerState* state = new RunRightPlayerState();
@@ -64,7 +64,16 @@ void AttackPlayerState::enter(Player& player)
 
 	player.m_isAttacking = true;
 
-	player.getAnimatedSprite().addFrame(sf::IntRect(0, 0, 536, 495));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700 * 2, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700 * 3, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700 * 4, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700 * 5, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700 * 6, 700 * 4, 700, 820));
+	player.getAnimatedSprite().addFrame(sf::IntRect(700 * 7, 700 * 4, 700, 820));
+
+	/*player.getAnimatedSprite().addFrame(sf::IntRect(0, 0, 536, 495));
 	player.getAnimatedSprite().addFrame(sf::IntRect(536, 0, 536, 495));
 	player.getAnimatedSprite().addFrame(sf::IntRect(1072, 0, 536, 495));
 	player.getAnimatedSprite().addFrame(sf::IntRect(0, 495, 536, 495));
@@ -73,9 +82,9 @@ void AttackPlayerState::enter(Player& player)
 	player.getAnimatedSprite().addFrame(sf::IntRect(0, 990, 536, 495));
 	player.getAnimatedSprite().addFrame(sf::IntRect(536, 990, 536, 495));
 	player.getAnimatedSprite().addFrame(sf::IntRect(1072, 990, 536, 495));
-	player.getAnimatedSprite().addFrame(sf::IntRect(0, 1485, 536, 495));
+	player.getAnimatedSprite().addFrame(sf::IntRect(0, 1485, 536, 495));*/
 
-	player.getAnimatedSprite().setTime(seconds(0.03f));
+	player.getAnimatedSprite().setTime(seconds(0.04f));
 }
 void AttackPlayerState::exit(Player& player)
 {
