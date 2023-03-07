@@ -6,7 +6,7 @@
 
 int main()
 {
-	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Neon Rush");
+	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Neon Rush", sf::Style::Fullscreen);
 	window.setFramerateLimit(480);
 
 	Menu menu;

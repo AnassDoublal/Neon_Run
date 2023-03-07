@@ -12,7 +12,7 @@ void Background::init()
 			}
 
 			m_layers[i][j].setTexture(m_textures[i][j]);
-			//m_layers[i][j].setScale(4.0f, 4.0f);
+			m_layers[i][j].setScale(4.0f, 4.0f);
 			m_layers[i][j].setPosition(1920.0f / 4.0f * j, .0f);
 		}
 	}
