@@ -1,13 +1,240 @@
 ﻿C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(499,5): warning MSB8004: Intermediate Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Intermediate Directory.
 C:\Program Files\Microsoft Visual Studio\2022\Community\MSBuild\Microsoft\VC\v170\Microsoft.CppBuild.targets(500,5): warning MSB8004: Output Directory does not end with a trailing slash.  This build instance will add the slash as it is required to allow proper evaluation of the Output Directory.
+  Color.cpp
+  Constants.cpp
+  DirectedLight.cpp
+  LightingArea.cpp
+  LightSource.cpp
+  Line.cpp
+  Polygon.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(5,60): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(5,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(5,30): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(9,60): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(9,45): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(9,30): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(13,109): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(13,83): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(13,57): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(13,31): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
+  RadialLight.cpp
+  AttackEnemyState.cpp
+  AttackPlayerState.cpp
+  DiedEnemyState.cpp
+  DiedPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(16,44): warning C4244: 'argument': conversion from 'const T' to 'unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(16,36): warning C4244: 'argument': conversion from 'const T' to 'unsigned int', possible loss of data
+          with
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(93,18): warning C4244: '*=': conversion from 'const float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(121,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(121,50): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(130,70): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(130,59): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(131,83): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(131,65): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(132,88): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(132,65): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(133,75): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(133,59): warning C4244: 'argument': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightSource.cpp(20,25): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\AttackPlayerState.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\AttackPlayerState.cpp(36,9): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(29,69): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(29,50): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(30,70): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(30,51): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(199,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(200,32): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(26,22): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(30,41): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(31,41): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(32,41): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(33,41): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(37,23): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(37,45): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(38,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(38,49): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(39,23): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(39,47): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(40,23): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(40,47): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(83,19): warning C4244: 'initializing': conversion from 'double' to 'float', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(154,26): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(154,37): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(158,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(158,49): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(159,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(159,49): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(160,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(160,49): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(161,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(161,49): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(163,67): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(163,78): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(164,67): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(164,78): warning C4244: 'argument': conversion from 'float' to 'const unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(165,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(165,49): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(166,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(166,49): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(167,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(167,51): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(168,27): warning C4244: 'argument': conversion from 'float' to 'size_t', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(168,51): warning C4244: '=': conversion from 'float' to 'sf::Uint8', possible loss of data
+  EndScreen.cpp
+  Enemy.cpp
+  EnemyScore.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\DiedEnemyState.cpp(17,21): warning C4018: '<': signed/unsigned mismatch
   ExtraKunais.cpp
   Game.cpp
-  Medkit.cpp
-C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\ExtraKunais.cpp(26,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  GlidePlayerState.cpp
+  IdleEnemyState.cpp
+  JumpAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(8,64): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(8,44): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(73,51): warning C4244: '=': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(74,54): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(76,51): warning C4244: '=': conversion from 'const T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(77,54): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=float
+          ]
+          and
+          [
+              T=int
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EnemyScore.cpp(12,31): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(50,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(50,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(50,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Medkit.cpp(26,31): warning C4305: 'argument': truncation from 'double' to 'float'
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(50,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(50,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(50,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
@@ -17,6 +244,7 @@ C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(51,37): warning C42
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(51,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(51,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(51,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  JumpPlayerState.cpp
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(243,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(490,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(552,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
@@ -28,9 +256,92 @@ C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(1029,60): warning C
               T=unsigned int
           ]
 C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.cpp(1603,20): warning C4018: '<': signed/unsigned mismatch
+  JumpThrowAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\ExtraKunais.cpp(26,31): warning C4305: 'argument': truncation from 'double' to 'float'
+  Light.cpp
+  Medkit.cpp
+  Player.cpp
+  RevivedPlayerState.cpp
+  RunRightPlayerState.cpp
+  Set1.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\JumpThrowAttackPlayerState.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+  Set2.cpp
+  Set3.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Medkit.cpp(26,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\RunRightPlayerState.cpp(60,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\RunRightPlayerState.cpp(67,9): warning C4018: '>=': signed/unsigned mismatch
+  Set4.cpp
+  Set5.cpp
+  SlidePlayerState.cpp
+  ThrowAttackEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set1.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set1.cpp(16,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set1.cpp(70,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set1.cpp(91,17): warning C4018: '<': signed/unsigned mismatch
+  ThrowAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set2.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set2.cpp(19,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set2.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set2.cpp(132,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set3.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set3.cpp(20,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set3.cpp(133,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set3.cpp(163,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set4.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set4.cpp(18,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set4.cpp(67,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set4.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set5.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set5.cpp(20,69): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+          with
+          [
+              T=unsigned int
+          ]
+          and
+          [
+              T=float
+          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set5.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Set5.cpp(130,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\SlidePlayerState.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\SlidePlayerState.cpp(43,9): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\ThrowAttackEnemyState.cpp(48,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\ThrowAttackPlayerState.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
   Generating code
-  3 of 1493 functions ( 0.2%) were compiled, the rest were copied from previous compilation.
+  0 of 1493 functions ( 0.0%) were compiled, the rest were copied from previous compilation.
     0 functions were new in current compilation
-    5 functions had inline decision re-evaluated but remain unchanged
+    0 functions had inline decision re-evaluated but remain unchanged
   Finished generating code
   AnimatedFSM.vcxproj -> C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Executable\Neon_Rush.exe
