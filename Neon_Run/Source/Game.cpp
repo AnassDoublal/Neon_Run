@@ -641,7 +641,7 @@ void Game::update(sf::RenderWindow& window, GAME_STATE& gameState, Audio& audio)
 		cPlayerRep.setPosition(player.getAnimatedSprite().getPosition().x,
 							   player.getAnimatedSprite().getPosition().y);*/
 
-	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape) && !player.m_isDead)
+	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Escape))
 	{
 		gameState = GAME_STATE::PAUSE;
 	}

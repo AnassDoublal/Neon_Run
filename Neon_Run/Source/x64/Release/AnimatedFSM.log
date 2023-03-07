@@ -1,0 +1,102 @@
+﻿  Color.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\Color.cpp': No such file or directory
+  Constants.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\Constants.cpp': No such file or directory
+  DirectedLight.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\DirectedLight.cpp': No such file or directory
+  LightingArea.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\LightingArea.cpp': No such file or directory
+  LightSource.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\LightSource.cpp': No such file or directory
+  Line.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\Line.cpp': No such file or directory
+  Polygon.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\Polygon.cpp': No such file or directory
+  RadialLight.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\RadialLight.cpp': No such file or directory
+  VertexArray.cpp
+c1xx : fatal error C1083: Cannot open source file: '..\Libraries\Candle\src\VertexArray.cpp': No such file or directory
+  AnimatedSprite.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\AnimatedSprite.h(4,10): fatal error C1083: Cannot open include file: 'SFML\Graphics\Sprite.hpp': No such file or directory
+  AnimatedSpriteEnemy.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\AnimatedSpriteEnemy.h(3,10): fatal error C1083: Cannot open include file: 'SFML\Graphics\Sprite.hpp': No such file or directory
+  AttackEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  AttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Audio.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Audio.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Audio.hpp': No such file or directory
+  Background.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Background.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  circle.cpp
+  ClimbDownPlayerState.cpp
+  AccendLadderPlayerState.cpp
+  ClimbPausePlayerState.cpp
+  ClimbUpPlayerState.cpp
+  Compiling...
+  DecendLadderPlayerState.cpp
+  DiedEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  DiedPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Menu.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Menu.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Pause.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Reward.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Reward.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  EndScreen.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EndScreen.cpp(1,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Enemy.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  EnemyScore.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\EnemyScore.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Events.cpp
+  ExtraKunais.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\ExtraKunais.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Game.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Game.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  GlidePlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  IdleEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  JumpAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  JumpPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  JumpThrowAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Blood.cpp
+  Light.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Light.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Medkit.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Medkit.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Compiling...
+  Player.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  main.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\main.cpp(1,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  IdlePlayerState.cpp
+  Rectangle.cpp
+  RevivedPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  RunRightPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Score.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Score.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set1.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Tiles.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set2.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Tiles.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set3.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Tiles.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set4.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Tiles.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  Set5.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Tiles.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  SlidePlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ThrowAttackEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(2,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory
+  ThrowAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\PlayerState.h(7,10): fatal error C1083: Cannot open include file: 'SFML/Graphics.hpp': No such file or directory

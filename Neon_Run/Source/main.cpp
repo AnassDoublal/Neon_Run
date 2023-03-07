@@ -7,6 +7,7 @@
 int main()
 {
 	sf::RenderWindow window(sf::VideoMode(1920, 1080), "Neon Rush");
+	window.setFramerateLimit(480);
 
 	Menu menu;
 	Game game;

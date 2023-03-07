@@ -3,6 +3,8 @@
 
 void Medkit::init(sf::RenderWindow& window)
 {
+	m_friction = .2f;
+
 	if (!m_texture.loadFromFile("assets/images/health.png"))
 	{
 		// Error

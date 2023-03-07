@@ -1,18 +1,47 @@
-﻿  AttackEnemyState.cpp
+﻿  Color.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Color.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/graphics/Color.hpp': No such file or directory
+  Constants.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Constants.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/Constants.hpp': No such file or directory
+  DirectedLight.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\DirectedLight.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/DirectedLight.hpp': No such file or directory
+  LightingArea.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightingArea.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/LightingArea.hpp': No such file or directory
+  LightSource.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\LightSource.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/LightSource.hpp': No such file or directory
+  Line.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Line.cpp(3,10): fatal error C1083: Cannot open include file: 'Candle/geometry/Line.hpp': No such file or directory
+  Polygon.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\Polygon.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/geometry/Polygon.hpp': No such file or directory
+  RadialLight.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\RadialLight.cpp(6,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
+  VertexArray.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Libraries\Candle\src\VertexArray.cpp(1,10): fatal error C1083: Cannot open include file: 'Candle/graphics/VertexArray.hpp': No such file or directory
+  AnimatedSprite.cpp
+  AnimatedSpriteEnemy.cpp
+  AttackEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   AttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\AttackPlayerState.cpp(29,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\AttackPlayerState.cpp(36,9): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Audio.cpp
   Background.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Background.cpp(5,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Background.cpp(7,24): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Background.cpp(27,23): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Background.cpp(29,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Background.cpp(5,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Background.cpp(7,24): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Background.cpp(27,23): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Background.cpp(29,24): warning C4018: '<': signed/unsigned mismatch
+  circle.cpp
+  ClimbDownPlayerState.cpp
+  AccendLadderPlayerState.cpp
+  ClimbPausePlayerState.cpp
+  ClimbUpPlayerState.cpp
+  Generating Code...
+  Compiling...
+  DecendLadderPlayerState.cpp
   DiedEnemyState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\DiedEnemyState.cpp(17,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   DiedPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Menu.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Menu.cpp(30,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Menu.cpp(38,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -21,7 +50,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Menu.cpp(30,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Menu.cpp(38,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -30,7 +59,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Menu.cpp(45,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Menu.cpp(53,91): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -39,7 +68,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Menu.cpp(45,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Menu.cpp(53,63): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -49,7 +78,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
               T=float
           ]
   Pause.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Pause.cpp(73,96): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.cpp(73,96): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -58,7 +87,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Pause.cpp(73,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.cpp(73,68): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -67,7 +96,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Pause.cpp(89,95): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.cpp(89,95): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -76,7 +105,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Pause.cpp(89,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.cpp(89,67): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -85,7 +114,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Pause.cpp(106,92): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.cpp(106,92): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -94,7 +123,7 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Pause.cpp(106,64): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Pause.cpp(106,64): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
           with
           [
               T=int
@@ -103,178 +132,62 @@ C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedF
           [
               T=float
           ]
+  Reward.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Reward.cpp(24,47): warning C4244: 'argument': conversion from 'float' to 'sf::Uint8', possible loss of data
   EndScreen.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(8,64): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(8,44): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(73,51): warning C4244: '=': conversion from 'const T' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(74,54): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(76,51): warning C4244: '=': conversion from 'const T' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EndScreen.cpp(77,54): warning C4244: '=': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=float
-          ]
-          and
-          [
-              T=int
-          ]
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Enemy.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   EnemyScore.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\EnemyScore.cpp(12,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
+  Events.cpp
   ExtraKunais.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\ExtraKunais.cpp(24,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Game.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,121): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,108): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(50,98): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(51,60): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(51,47): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(51,37): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(51,122): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(51,109): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(51,99): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(242,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(489,29): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(551,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(577,34): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(863,22): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(1028,60): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Game.cpp(1602,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   GlidePlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   IdleEnemyState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   JumpAttackPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   JumpPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   JumpThrowAttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\JumpThrowAttackPlayerState.cpp(79,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
+  Blood.cpp
   Light.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Light.h(3,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Medkit.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Medkit.cpp(24,31): warning C4305: 'argument': truncation from 'double' to 'float'
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Generating Code...
   Compiling...
   Player.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   main.cpp
+  IdlePlayerState.cpp
+  Rectangle.cpp
   RevivedPlayerState.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   RunRightPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\RunRightPlayerState.cpp(60,17): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\RunRightPlayerState.cpp(67,9): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
+  Score.cpp
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Score.cpp(21,31): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Score.cpp(30,15): warning C4305: '+=': truncation from 'double' to 'float'
   Set1.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set1.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set1.cpp(16,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set1.cpp(70,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set1.cpp(91,17): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Set2.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set2.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set2.cpp(19,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set2.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set2.cpp(132,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Set3.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set3.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set3.cpp(20,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set3.cpp(133,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set3.cpp(163,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Set4.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set4.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set4.cpp(18,62): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set4.cpp(67,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set4.cpp(95,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Set5.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set5.cpp(6,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set5.cpp(20,69): warning C4244: 'argument': conversion from 'T' to 'T', possible loss of data
-          with
-          [
-              T=unsigned int
-          ]
-          and
-          [
-              T=float
-          ]
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set5.cpp(112,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\Set5.cpp(130,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   SlidePlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\SlidePlayerState.cpp(36,20): warning C4018: '<': signed/unsigned mismatch
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\SlidePlayerState.cpp(43,9): warning C4018: '>=': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   ThrowAttackEnemyState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\ThrowAttackEnemyState.cpp(48,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   ThrowAttackPlayerState.cpp
-C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\AnimatedFSM\ThrowAttackPlayerState.cpp(43,20): warning C4018: '<': signed/unsigned mismatch
+C:\Users\gamejam\Documents\Neon_Run\Neon_Run\Source\Enemy.h(8,10): fatal error C1083: Cannot open include file: 'Candle/RadialLight.hpp': No such file or directory
   Generating Code...
-  AnimatedFSM.vcxproj -> C:\Users\SolerioX\Documents\SETU_Carlow\Games_Fleadh\Neon_Run\Neon_Run\Debug\AnimatedFSM.exe
