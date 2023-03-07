@@ -52,10 +52,12 @@ bool rectangle_to_rectangle(Rectangle& a, Rectangle& b)
 	return xOverlap && yOverlap;
 }
 
-float GROUND_POS = 725.0f;
+float GROUND_POS = 700.0f;
 Audio audio;
 
 sf::Texture player_texture;
+sf::Texture enemy_texture;
+bool hasLoadedEnemyTexture = false;
 
 sf::Texture bg1_texture;
 sf::Texture bg2_texture;
@@ -384,13 +386,22 @@ void Game::init(sf::RenderWindow& window, Audio& audio)
 	background = std::make_unique<Background>();
 	background->init();
 
+	if (!hasLoadedEnemyTexture)
+	{
+		if (!enemy_texture.loadFromFile("assets/NemesisSpriteSheet.png"))
+		{
+			// Error
+		}
+		hasLoadedEnemyTexture = true;
+	}
+
 	//Tiles* tilesPtr = nullptr;
 
-	set1.init(tile_texture, window);
-	set2.init(tile_texture, window);
-	set3.init(tile_texture, window);
-	set4.init(tile_texture, window);
-	set5.init(tile_texture, window);
+	set1.init(tile_texture, window, enemy_texture);
+	set2.init(tile_texture, window, enemy_texture);
+	set3.init(tile_texture, window, enemy_texture);
+	set4.init(tile_texture, window, enemy_texture);
+	set5.init(tile_texture, window, enemy_texture);
 
 	tileArray.clear();
 

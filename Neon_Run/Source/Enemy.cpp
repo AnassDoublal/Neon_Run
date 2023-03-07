@@ -8,15 +8,11 @@
 //
 //}
 
-void Enemy::init(sf::RenderWindow& window, float posX, float PosY)
+void Enemy::init(sf::RenderWindow& window, float posX, float PosY, sf::Texture& texture)
 {
 	m_friction = .2f;
 
-	if (!m_texture.loadFromFile("assets/NemesisSpriteSheet.png")) {
-		std::cout << "error loading enemy spritesheet";
-	}
-
-	m_animated_sprite.setTexture(m_texture);
+	m_animated_sprite.setTexture(texture);
 	m_animated_sprite.setTextureRect(sf::IntRect(0, 0, 400, 970));
 	m_animated_sprite.setScale(.25f, .25f);
 	m_animated_sprite.setPosition(window.getSize().x + posX, PosY - m_animated_sprite.getGlobalBounds().height + 55.0f);

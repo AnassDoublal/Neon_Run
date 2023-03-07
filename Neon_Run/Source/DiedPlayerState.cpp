@@ -23,7 +23,7 @@ void DiedPlayerState::update(Player& player) {
 		{
 			if (player.m_friction < 0.0f)
 			{
-				if (player.m_feet_collision.intersects(sf::FloatRect(tile.getGlobalBounds().left, tile.getGlobalBounds().top + 20.0f, tile.getGlobalBounds().width, tile.getGlobalBounds().height - 20.0f)))
+				if (player.m_feet_collision.intersects(sf::FloatRect(tile.getGlobalBounds().left - 10.0f, tile.getGlobalBounds().top + 20.0f, tile.getGlobalBounds().width + 10.0f, tile.getGlobalBounds().height - 20.0f)))
 				{
 					//std::cout << "INTERSECTED" << "\n";
 					//std::cout << tile.getPosition().x << "\n";

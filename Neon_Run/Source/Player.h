@@ -44,6 +44,8 @@ public:
 	sf::Clock m_invincibilityTime;
 	bool m_isInvincibilityClockRestarted = false;
 
+	float m_initialSpeed = 1.5f;
+
 	float m_speed = 1.5f;
 	float m_maxSpeed = 2.7f;
 

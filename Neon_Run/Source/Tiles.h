@@ -12,7 +12,7 @@ class Player;
 class Tiles
 {
 	public:
-		virtual void init(sf::Texture&, sf::RenderWindow&) = 0;
+		virtual void init(sf::Texture&, sf::RenderWindow&, sf::Texture&) = 0;
 		virtual void update(sf::RenderWindow&, Player*) = 0;
 		virtual void render(sf::RenderWindow&) = 0;
 		virtual std::vector<sf::Sprite>& getTiles() = 0;

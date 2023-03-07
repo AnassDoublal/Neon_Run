@@ -12,7 +12,7 @@ class Player;
 class Enemy
 {
 	public:
-		void init(sf::RenderWindow&, float, float);
+		void init(sf::RenderWindow&, float, float, sf::Texture&);
 		void update(sf::RenderWindow&, Player*);
 		void render(sf::RenderWindow&);
 

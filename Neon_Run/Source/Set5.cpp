@@ -1,7 +1,7 @@
 #include "Set5.h"
 #include "Player.h"
 
-void Set5::init(sf::Texture& texture, sf::RenderWindow& window)
+void Set5::init(sf::Texture& texture, sf::RenderWindow& window, sf::Texture& enemyTexture)
 {
 	srand(time(NULL));
 
@@ -117,9 +117,9 @@ void Set5::init(sf::Texture& texture, sf::RenderWindow& window)
 	m_positions[0] = { 550.0f, m_sprite_edge_left.getPosition().y };
 	m_positions[1] = { 200.0f, m_sprite_edge_left_bottom.getPosition().y };
 	m_positions[2] = { 950.0f, m_sprite_edge_left_right.getPosition().y };
-	m_positions[3] = { 1050.0f, 936.7f };
+	m_positions[3] = { 1050.0f, 900.0f };
 	sf::Vector2f enemyPos = getNewEnemyPos();
-	enemy.init(window, enemyPos.x, enemyPos.y);
+	enemy.init(window, enemyPos.x, enemyPos.y, enemyTexture);
 }
 
 void Set5::update(sf::RenderWindow& window, Player* player)

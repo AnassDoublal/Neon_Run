@@ -1,7 +1,7 @@
 #include "Set2.h"
 #include "Player.h"
 
-void Set2::init(sf::Texture& texture, sf::RenderWindow& window)
+void Set2::init(sf::Texture& texture, sf::RenderWindow& window, sf::Texture& enemyTexture)
 {
 	srand(time(NULL));
 
@@ -114,12 +114,12 @@ void Set2::init(sf::Texture& texture, sf::RenderWindow& window)
 		m_sprites[i].setScale(.0f, .0f);
 	}
 
-	m_positions[0] = { 700.0f, m_sprite_edge_right.getPosition().y };
+	m_positions[0] = { 650.0f, m_sprite_edge_right.getPosition().y };
 	m_positions[1] = { 400.0f, m_sprite_edge_left_top.getPosition().y };
 	m_positions[2] = { 100.0f, m_sprite_edge_left.getPosition().y };
-	m_positions[3] = { 400.0f, 936.7f };
+	m_positions[3] = { 400.0f, 900.0f };
 	sf::Vector2f enemyPos = getNewEnemyPos();
-	enemy.init(window, enemyPos.x, enemyPos.y);
+	enemy.init(window, enemyPos.x, enemyPos.y, enemyTexture);
 }
 
 void Set2::update(sf::RenderWindow& window, Player* player)

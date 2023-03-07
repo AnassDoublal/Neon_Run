@@ -1,7 +1,7 @@
 #include "Set1.h"
 #include "Player.h"
 
-void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
+void Set1::init(sf::Texture& texture, sf::RenderWindow& window, sf::Texture& enemyTexture)
 {
 	srand(time(NULL));
 
@@ -74,9 +74,9 @@ void Set1::init(sf::Texture& texture, sf::RenderWindow& window)
 
 	m_positions[0] = {350.0f, m_sprite_edge_left.getPosition().y};
 	m_positions[1] = {650.0f, m_sprite_edge_left_top.getPosition().y};
-	m_positions[2] = {950.0f, 936.7f};
+	m_positions[2] = {950.0f, 900.0f};
 	sf::Vector2f enemyPos = getNewEnemyPos();
-	enemy.init(window, enemyPos.x, enemyPos.y);
+	enemy.init(window, enemyPos.x, enemyPos.y, enemyTexture);
 	medkit.init(window);
 	extraKunais.init(window);
 }

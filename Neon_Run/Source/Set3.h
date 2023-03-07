@@ -4,7 +4,7 @@
 // Three levels
 class Set3 : public Tiles {
 public:
-	virtual void init(sf::Texture& texture, sf::RenderWindow& window);
+	virtual void init(sf::Texture& texture, sf::RenderWindow& window, sf::Texture& enemyTexture);
 	virtual void update(sf::RenderWindow& window, Player* player);
 	virtual void render(sf::RenderWindow& window);
 	virtual std::vector<sf::Sprite>& getTiles();
