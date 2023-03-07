@@ -1,9 +1,9 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.28307.902
+# Visual Studio Version 17
+VisualStudioVersion = 17.2.32505.173
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AnimatedFSM", "AnimatedFSM\AnimatedFSM.vcxproj", "{4C2CE8BB-B5B6-43AE-82CB-C567BB99150C}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "AnimatedFSM", "Source\AnimatedFSM.vcxproj", "{4C2CE8BB-B5B6-43AE-82CB-C567BB99150C}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -26,6 +26,6 @@ Global
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
-		SolutionGuid = {2CC905B5-1812-4AF6-A6B4-8BCF9B0642CE}
+		SolutionGuid = {1A24CF02-CD6B-49B8-9E7F-BB8AB08A3B12}
 	EndGlobalSection
 EndGlobal

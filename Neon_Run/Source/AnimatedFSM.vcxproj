@@ -77,8 +77,10 @@
     <IncludePath>$(CANDLE_SDK)\include;$(IncludePath)</IncludePath>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
-    <IncludePath>C:\devtools\Candle\include;$(IncludePath)</IncludePath>
+    <IncludePath>$(SolutionDir)\Libraries\Candle\include;$(IncludePath)</IncludePath>
     <IntDir>$(Configuration)</IntDir>
+    <TargetName>Neon_Rush</TargetName>
+    <OutDir>$(SolutionDir)Executable</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -116,7 +118,7 @@
       <SDLCheck>true</SDLCheck>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\devtools\SFML-2.5.1-x86\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
-      <AdditionalIncludeDirectories>C:\SFML-2.5.1\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>$(SolutionDir)\Libraries\SFML\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
       <MultiProcessorCompilation>true</MultiProcessorCompilation>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
     </ClCompile>
@@ -124,7 +126,7 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalLibraryDirectories>C:\devtools\SFML-2.5.1-x86\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
-      <AdditionalLibraryDirectories>C:\SFML-2.5.1\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>$(SolutionDir)\Libraries\SFML\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <AdditionalDependencies>sfml-main.lib;sfml-audio.lib;sfml-graphics.lib;sfml-network.lib;sfml-system.lib;sfml-window.lib;%(AdditionalDependencies)</AdditionalDependencies>
     </Link>
   </ItemDefinitionGroup>
@@ -196,15 +198,15 @@
     <ClInclude Include="Tiles.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\Color.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\Constants.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\DirectedLight.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\LightingArea.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\LightSource.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\Line.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\Polygon.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\RadialLight.cpp" />
-    <ClCompile Include="..\..\..\..\..\..\..\..\devtools\Candle\src\VertexArray.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\Color.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\Constants.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\DirectedLight.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\LightingArea.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\LightSource.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\Line.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\Polygon.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\RadialLight.cpp" />
+    <ClCompile Include="..\Libraries\Candle\src\VertexArray.cpp" />
     <ClCompile Include="AnimatedSprite.cpp" />
     <ClCompile Include="AnimatedSpriteEnemy.cpp" />
     <ClCompile Include="AttackEnemyState.cpp" />
