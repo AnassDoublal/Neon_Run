@@ -1,0 +1,3 @@
+[submodule "Neon_Run/Libraries/Candle"]
+	path = Neon_Run/Libraries/Candle
+	url = https://github.com/MiguelMJ/Candle
