@@ -7,6 +7,7 @@ KEYBOARD CONTROLS :
 - Sword Attack -> Z
 - Dagger Throw -> X
 - Slide -> Down Arrow
+- Pause -> Escape
 
 CONTROLLER CONTROLS :
 
